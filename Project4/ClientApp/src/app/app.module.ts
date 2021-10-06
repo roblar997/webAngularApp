@@ -7,14 +7,16 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { PersonComponent } from './skjemaer/person/person.component';
+
 import { LugarComponent } from './skjemaer/lugar/lugar.component';
+import { PersonComponent } from './skjemaer/person/person.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    LugarComponent
+    LugarComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -22,7 +24,9 @@ import { LugarComponent } from './skjemaer/lugar/lugar.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: LugarComponent, pathMatch: 'full'  },
+      { path: '', component: LugarComponent, pathMatch: 'full' },
+      { path: 'lugar', component: LugarComponent, pathMatch: 'full' },
+      { path: 'person', component: PersonComponent, pathMatch: 'full' },
     ])
   ],
   providers: [],
