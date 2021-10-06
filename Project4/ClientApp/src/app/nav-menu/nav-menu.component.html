@@ -1,35 +1,55 @@
 <header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
-    <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">Project4</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target=".navbar-collapse"
-        aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-        [ngClass]="{ show: isExpanded }"
-      >
-        <ul class="navbar-nav flex-grow">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-dark" [routerLink]="['/']">Lugar endring</a>
+
+
+            <div class="container">
+        <ul class="nav nav-pills  " style="background-color:g; border-radius: 2em">
+
+
+          <li 
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-white btn-primary" [routerLink]="['/lugar']" style="font-weight: bolder; border-radius: 300px; margin-left: 1em; ">Lugar </a>
+          </li>
+          <li 
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/person']" style="font-weight: bolder; border-radius: 300px; margin-left: 1em; ">Person</a>
           </li>
 
+          <li 
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/reiseInformasjon']" style="font-weight: bolder; border-radius: 300px; margin-left: 1em; ">Reiseinformasjon</a>
+          </li>
+
+
+          <li 
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/billettPerson']" style="font-weight: bolder; border-radius: 300px; margin-left: 1em; ">BillettPerson</a>
+          </li>
+
+          <li 
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/billettLugar']" style="font-weight: bolder; border-radius: 300px; margin-left: 1em; ">Billettlugar</a>
+          </li>
+          <li 
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/rute'] " style="font-weight: bolder; border-radius: 300px; margin-left: 1em; ">Rute</a>
+          </li>
+          <li 
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/ruteForekomstDato']" style="font-weight: bolder; border-radius: 300px; margin-left: 1em; ">RuteForekomstDato</a>
+          </li>
+          <li 
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/ruteForekomstDatoTid']" style="font-weight: bolder; border-radius: 300px; margin-left: 1em; ">RuteForekomstDatoTid</a>
+          </li>
         </ul>
       </div>
-    </div>
-  </nav>
+
 </header>
