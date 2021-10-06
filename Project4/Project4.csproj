@@ -22,28 +22,20 @@
     <Compile Remove="ClientApp\src\app\skjemaer\fetch-data\**" />
     <Compile Remove="ClientApp\src\app\skjemaer\home\**" />
     <Compile Remove="ClientApp\src\app\skjemaer\nav-menu\**" />
-    <Compile Remove="ClientApp\src\app\skjemaer\person\**" />
-    <Compile Remove="ClientApp\src\app\skjemaer\reiseInformasjon\**" />
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="ClientApp\src\app\skjemaer\counter\**" />
     <Content Remove="ClientApp\src\app\skjemaer\fetch-data\**" />
     <Content Remove="ClientApp\src\app\skjemaer\home\**" />
     <Content Remove="ClientApp\src\app\skjemaer\nav-menu\**" />
-    <Content Remove="ClientApp\src\app\skjemaer\person\**" />
-    <Content Remove="ClientApp\src\app\skjemaer\reiseInformasjon\**" />
     <EmbeddedResource Remove="ClientApp\src\app\skjemaer\counter\**" />
     <EmbeddedResource Remove="ClientApp\src\app\skjemaer\fetch-data\**" />
     <EmbeddedResource Remove="ClientApp\src\app\skjemaer\home\**" />
     <EmbeddedResource Remove="ClientApp\src\app\skjemaer\nav-menu\**" />
-    <EmbeddedResource Remove="ClientApp\src\app\skjemaer\person\**" />
-    <EmbeddedResource Remove="ClientApp\src\app\skjemaer\reiseInformasjon\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="ClientApp\src\app\skjemaer\counter\**" />
     <None Remove="ClientApp\src\app\skjemaer\fetch-data\**" />
     <None Remove="ClientApp\src\app\skjemaer\home\**" />
     <None Remove="ClientApp\src\app\skjemaer\nav-menu\**" />
-    <None Remove="ClientApp\src\app\skjemaer\person\**" />
-    <None Remove="ClientApp\src\app\skjemaer\reiseInformasjon\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
@@ -62,10 +54,6 @@
     <None Remove="ClientApp\src\app\skjemaer\nav-menu\nav-menu.component.css" />
     <None Remove="ClientApp\src\app\skjemaer\nav-menu\nav-menu.component.html" />
     <None Remove="ClientApp\src\app\skjemaer\nav-menu\nav-menu.component.ts" />
-    <None Remove="ClientApp\src\app\skjemaer\person\person.component.html" />
-    <None Remove="ClientApp\src\app\skjemaer\person\person.component.ts" />
-    <None Remove="ClientApp\src\app\skjemaer\reiseInformasjon\reiseInformasjon.component.html" />
-    <None Remove="ClientApp\src\app\skjemaer\reiseInformasjon\reiseInformasjon.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
