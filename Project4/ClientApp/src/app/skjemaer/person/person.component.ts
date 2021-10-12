@@ -8,6 +8,9 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 export class PersonComponent {
 
   Skjema: FormGroup;
+  public fornavn: string;
+  public etternavn: string;
+  public telefon: string;
 
   constructor(private fb: FormBuilder) {
     this.Skjema = fb.group({
