@@ -1,5 +1,7 @@
+import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Person } from "../../Models-typescript/Person";
 
 @Component({
   selector: "app-person",
@@ -8,14 +10,19 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 export class PersonComponent {
 
   Skjema: FormGroup;
+
   public fornavn: string;
   public etternavn: string;
   public telefon: string;
+  public personer: Array<Person>;
 
-  constructor(private fb: FormBuilder) {
+  public laster: string;
+
+  constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
-      brukernavn: ["", Validators.required],
-      passord: ["", Validators.pattern("[0-9]{6,15}")]
+      fornavn: ["", Validators.required],
+      etternavn: ["", Validators.required],
+      telefon: ["", Validators.required]
     });
   }
 
@@ -24,6 +31,15 @@ export class PersonComponent {
     console.log(this.Skjema);
     console.log(this.Skjema.value.brukernavn);
     console.log(this.Skjema.touched);
+  }
+
+
+  hentAllePersoner() {
+    this.laster = "Laster inn...";
+    this._http.get<Person[]>("admin/hentPersoner").subscribe((res) => {
+      this.personer = res;
+      this.laster = "";
+    }, err => { }, () => { });
   }
 }
 

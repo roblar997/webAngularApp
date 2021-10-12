@@ -44,4 +44,12 @@
         </tr>
       </table>
     </form>
+
+     <table>
+       <tr *ngFor="let person of personer">
+         <td>{{person.fornavn}}</td>
+         <td>{{person.etternavn}}</td>
+         <td>{{person.telefon}}</td>
+       </tr>
+     </table>
 </div>
