@@ -1,0 +1,34 @@
+<div>
+
+
+
+  <h2>Havn Skjema </h2>
+  <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
+    <table>
+
+      <tr>
+        <td>
+          <label>havnId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="havnId">
+        </td>
+        <td *ngIf="this.Skjema.controls.havnId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>navn:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="navn">
+        </td>
+        <td *ngIf="this.Skjema.controls.navn.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+     
+    </table>
+  </form>
+</div>
