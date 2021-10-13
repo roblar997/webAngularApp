@@ -32,6 +32,27 @@ export class LugarComponent {
     });
   }
 
+  lagreLugar() {
+
+    const lugar = new Lugar();
+    lugar.lugarId = this.Skjema.value.lugarId;
+    lugar.bildeUrl = this.Skjema.value.bildeUrl;
+    lugar.beskrivelse = this.Skjema.value.beskrivelse;
+    lugar.antall = this.Skjema.value.antall;
+    lugar.lugarType = this.Skjema.value.lugarType;
+    lugar.tittel = this.Skjema.value.tittel;
+    lugar.romNr = this.Skjema.value.romNr;
+    lugar.pris = this.Skjema.value.pris;
+    lugar.harWc = this.Skjema.value.harWc;
+    lugar.harDysj = this.Skjema.value.harDysj;
+    lugar.hawrWifi = this.Skjema.value.hawrWifi;
+
+    this._http.post("admin/lagreLugar", lugar).subscribe((res) => {
+
+    });
+  }
+
+
   hentAlleLugarer() {
     this.laster = "Laster inn...";
     this._http.get<Lugar[]>("admin/hentLugarer").subscribe((res) => {
