@@ -35,5 +35,19 @@ export class RuteComponent {
 
     });
   }
+
+  endreRute() {
+
+    const rute = new Rute();
+    rute.ruteId = this.Skjema.value.ruteId;
+    rute.fra = this.Skjema.value.fra;
+    rute.til = this.Skjema.value.til;
+    rute.prisVoksen = this.Skjema.value.prisVoksen;
+    rute.prisBarn = this.Skjema.value.prisBarn;
+
+    this._http.post("admin/endreRute", rute).subscribe((res) => {
+
+    });
+  }
 }
 

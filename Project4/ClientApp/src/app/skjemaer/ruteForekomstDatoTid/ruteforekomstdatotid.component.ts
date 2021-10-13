@@ -39,5 +39,21 @@ export class RuteforekomstdatotidComponent {
     });
 
   }
+  endreForekomstDatoTid() {
+
+    const ruteforekomstdatotid = new RuteForekomstDatoTid();
+    ruteforekomstdatotid.ruteId = this.Skjema.value.ruteId;
+    ruteforekomstdatotid.avgangsDato = this.Skjema.value.avgangsDato;
+    ruteforekomstdatotid.avgangsTid = this.Skjema.value.avgangsTid;
+    ruteforekomstdatotid.ankomstDato = this.Skjema.value.ankomstDato;
+    ruteforekomstdatotid.ankomstTid = this.Skjema.value.ankomstTid;
+    ruteforekomstdatotid.forekomstDatoId = this.Skjema.value.forekomstDatoId;
+    ruteforekomstdatotid.erUtsolgt = this.Skjema.value.erUtsolgt;
+
+    this._http.post("admin/endreRuteforekomstdatotid", ruteforekomstdatotid).subscribe((res) => {
+
+    });
+
+  }
 }
 

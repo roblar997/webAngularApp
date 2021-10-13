@@ -29,5 +29,16 @@ export class BillettpersonComponent {
 
     });
   }
+  endreBillettPerson() {
+
+    const billettperson = new BillettPerson();
+    billettperson.billettId = this.Skjema.value.billettId;
+    billettperson.personId = this.Skjema.value.personId;
+
+
+    this._http.post("admin/endrebillettperson", billettperson).subscribe((res) => {
+
+    });
+  }
 }
 

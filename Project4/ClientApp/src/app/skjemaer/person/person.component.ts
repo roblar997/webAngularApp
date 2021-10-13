@@ -40,6 +40,20 @@ export class PersonComponent {
 
     });
   }
+  endrePerson() {
+
+    const person = new Person();
+    person.personId = this.Skjema.value.personId;
+    person.fornavn = this.Skjema.value.fornavn;
+    person.etternavn = this.Skjema.value.etternavn;
+    person.telefon = this.Skjema.value.telefon;
+
+
+    this._http.post("admin/endrePerson", person).subscribe((res) => {
+
+    });
+  }
+
 
 
   hentAllePersoner() {

@@ -33,5 +33,19 @@ export class ReservasjonComponent {
 
     });
   }
+
+  endreReservasjon() {
+
+    const reservasjon = new Reservasjon();
+    reservasjon.billettId = this.Skjema.value.billettId;
+    reservasjon.ruteId = this.Skjema.value.ruteId;
+    reservasjon.avgangsDato = this.Skjema.value.avgangsDato;
+    reservasjon.avgangsTid = this.Skjema.value.avgangsTid;
+
+
+    this._http.post("admin/endreReservasjon", reservasjon).subscribe((res) => {
+
+    });
+  }
 }
 

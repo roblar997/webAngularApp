@@ -62,8 +62,6 @@ export class LugarComponent {
   }
 
 
-  onSubmit() {
-
-  }
+  
 }
 

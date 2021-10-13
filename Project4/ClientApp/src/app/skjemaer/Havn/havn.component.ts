@@ -32,4 +32,15 @@ export class HavnComponent {
 
     });
   }
+  endreHavn() {
+
+    const havn = new Havn();
+    havn.havnId = this.Skjema.value.havnId;
+    havn.navn = this.Skjema.value.navn;
+
+
+    this._http.post("admin/endreHavn", havn).subscribe((res) => {
+
+    });
+  }
 }

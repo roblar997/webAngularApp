@@ -33,5 +33,18 @@ export class RuteforekomstdatoComponent {
 
     });
   }
+  endreForekomstDato() {
+
+    const ruteforekomstdato = new RuteforekomstDato();
+    ruteforekomstdato.forekomstDatoId = this.Skjema.value.forekomstDatoId;
+    ruteforekomstdato.avgangsDato = this.Skjema.value.avgangsDato;
+    ruteforekomstdato.ruteId = this.Skjema.value.ruteId;
+    ruteforekomstdato.erUtsolgt = this.Skjema.value.erUtsolgt;
+
+
+    this._http.post("admin/endreRuteforekomstdato", ruteforekomstdato).subscribe((res) => {
+
+    });
+  }
 }
 
