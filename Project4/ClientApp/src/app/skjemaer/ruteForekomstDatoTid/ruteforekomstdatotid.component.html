@@ -1,0 +1,96 @@
+<div>
+
+
+
+  <h2>RuteforekomstDatoTid Skjema </h2>
+  <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>
+          <label>ruteId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="ruteId">
+        </td>
+        <td *ngIf="this.Skjema.controls.ruteId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>avgangsDato:</label>
+        </td>
+        <td>
+          <input type="date" formControlName="avgangsDato">
+        </td>
+        <td *ngIf="this.Skjema.controls.avgangsDato.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>avgangsTid:</label>
+        </td>
+        <td>
+          <input type="time" formControlName="avgangsTid">
+        </td>
+        <td *ngIf="this.Skjema.controls.avgangsTid.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>ankomstDato:</label>
+        </td>
+        <td>
+          <input type="date" formControlName="ankomstDato">
+        </td>
+        <td *ngIf="this.Skjema.controls.ankomstDato.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>ankomstTid:</label>
+        </td>
+        <td>
+          <input type="time" formControlName="ankomstTid">
+        </td>
+        <td *ngIf="this.Skjema.controls.ankomstTid.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+   
+      <tr>
+        <td>
+          <label>forekomstDatoId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="forekomstDatoId">
+        </td>
+        <td *ngIf="this.Skjema.controls.forekomstDatoId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>erUtsolgt:</label>
+        </td>
+        <td>
+          <input type="checkbox" formControlName="erUtsolgt">
+        </td>
+        <td *ngIf="this.Skjema.controls.erUtsolgt.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <button type="submit" [disabled]="!Skjema.valid">Register</button>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
