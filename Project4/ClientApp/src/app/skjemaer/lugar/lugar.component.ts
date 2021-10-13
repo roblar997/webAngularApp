@@ -18,9 +18,17 @@ export class LugarComponent {
 
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
-      fornavn: ["", Validators.required],
-      etternavn: ["", Validators.required],
-      telefon: ["", Validators.required]
+      lugarId: ["", Validators.required],
+      bildeUrl: ["", Validators.required],
+      beskrivelse: ["", Validators.required],
+      antall: ["", Validators.required],
+      lugarType: ["", Validators.required],
+      tittel: ["", Validators.required],
+      romNr: ["", Validators.required],
+      pris: ["", Validators.required],
+      harWc: ["", Validators.required],
+      harDysj: ["", Validators.required],
+      hawrWifi: ["", Validators.required]
     });
   }
 
