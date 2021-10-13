@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -14,6 +14,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.11" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,20 +26,24 @@
     <Compile Remove="ClientApp\src\app\skjemaer\fetch-data\**" />
     <Compile Remove="ClientApp\src\app\skjemaer\home\**" />
     <Compile Remove="ClientApp\src\app\skjemaer\nav-menu\**" />
+    <Compile Remove="Controllers\**" />
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="ClientApp\src\app\skjemaer\counter\**" />
     <Content Remove="ClientApp\src\app\skjemaer\fetch-data\**" />
     <Content Remove="ClientApp\src\app\skjemaer\home\**" />
     <Content Remove="ClientApp\src\app\skjemaer\nav-menu\**" />
+    <Content Remove="Controllers\**" />
     <EmbeddedResource Remove="ClientApp\src\app\skjemaer\counter\**" />
     <EmbeddedResource Remove="ClientApp\src\app\skjemaer\fetch-data\**" />
     <EmbeddedResource Remove="ClientApp\src\app\skjemaer\home\**" />
     <EmbeddedResource Remove="ClientApp\src\app\skjemaer\nav-menu\**" />
+    <EmbeddedResource Remove="Controllers\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="ClientApp\src\app\skjemaer\counter\**" />
     <None Remove="ClientApp\src\app\skjemaer\fetch-data\**" />
     <None Remove="ClientApp\src\app\skjemaer\home\**" />
     <None Remove="ClientApp\src\app\skjemaer\nav-menu\**" />
+    <None Remove="Controllers\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
@@ -57,8 +65,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\DAL\" />
-    <Folder Include="Controllers\" />
+    <None Include="Models\Betaling.cs" />
+    <None Include="Models\Billett.cs" />
+    <None Include="Models\BillettPerson.cs" />
+    <None Include="Models\FilterLugar.cs" />
+    <None Include="Models\Havn.cs" />
+    <None Include="Models\Lugar.cs" />
+    <None Include="Models\Person.cs" />
+    <None Include="Models\Reservasjon.cs" />
+    <None Include="Models\Rute.cs" />
+    <None Include="Models\RuteForekomstDato.cs" />
+    <None Include="Models\RuteForekomstDatoTid.cs" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
