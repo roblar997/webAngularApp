@@ -38,4 +38,14 @@
       </tr>
     </table>
   </form>
+  <table>
+    havnId: number;
+    navn: string;
+    <tr *ngFor="let havn of havner">
+      <td>{{havn.havnId}}</td>
+      <td>{{havn.navn}}</td>
+
+    </tr>
+  </table>
+
 </div>
