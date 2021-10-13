@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Havn } from "../../Models-typescript/Havn";
 
 @Component({
   selector: "app-skjemaer-havn",
@@ -19,7 +20,16 @@ export class HavnComponent {
     });
   }
 
-  onSubmit() {
 
+  lagreHavn() {
+
+    const havn = new Havn();
+    havn.havnId = this.Skjema.value.havnId;
+    havn.navn = this.Skjema.value.navn;
+
+
+    this._http.post("admin/lagreHavn", havn).subscribe((res) => {
+
+    });
   }
 }
