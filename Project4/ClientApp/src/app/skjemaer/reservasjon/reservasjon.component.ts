@@ -5,7 +5,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
   selector: "app-skjemaer-reservasjon",
   templateUrl: "reservasjon.component.html"
 })
-export class LugarComponent {
+export class ReservasjonComponent {
 
   Skjema: FormGroup;
 

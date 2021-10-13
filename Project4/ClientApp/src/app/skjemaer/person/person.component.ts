@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { Person } from "../../Models-typescript/Person";
 
 @Component({
-  selector: "app-person",
+  selector: "app-skjemaer-person",
   templateUrl: "./person.component.html"
 })
 export class PersonComponent {
@@ -27,10 +27,7 @@ export class PersonComponent {
   }
 
   onSubmit() {
-    console.log("Modellbasert skjema submitted:");
-    console.log(this.Skjema);
-    console.log(this.Skjema.value.brukernavn);
-    console.log(this.Skjema.touched);
+
   }
 
 
