@@ -37,7 +37,23 @@ export class BillettComponent {
     this._http.post("admin/lagreBillett", billett).subscribe((res) => {
 
     });
-
   }
-}
 
+
+    endreBillett() {
+      const billett = new Billett();
+      billett.pris = this.Skjema.value.pris;
+      billett.fra = this.Skjema.value.fra;
+      billett.til = this.Skjema.value.til;
+      billett.avgangsDato = this.Skjema.value.avgangsDato;
+      billett.avgangsTid = this.Skjema.value.avgangsTid;
+      billett.antVoksen = this.Skjema.value.antVoksen;
+      billett.antBarn = this.Skjema.value.antBarn;
+
+       this._http.post("admin/endreBillett", billett).subscribe((res) => {
+
+      });
+     }
+
+
+}
