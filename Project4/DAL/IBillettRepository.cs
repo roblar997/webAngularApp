@@ -41,7 +41,7 @@ namespace webAppBillett.DAL {
         public Task<List<Lugar>> hentFiltrerteLugarer(FilterLugar filterLugar);
         public  Task<List<Havn>> hentTilHavner(int id);
         public  Task<List<RuteForekomstDato>> hentForekomsterDato(Rute rute);
-
+        public Task<List<Person>> hentAllePersoner();
         public  Task<List<RuteForekomstDatoTid>> hentForekomsterDatoTid(RuteForekomstDato ruteForekomstDato);
 
         public  Task<int> lagrePerson(Person person, int billettId);

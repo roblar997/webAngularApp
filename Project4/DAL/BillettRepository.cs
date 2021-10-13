@@ -76,6 +76,14 @@ namespace webAppBillett.DAL
             return lugarer;
 
         }
+        public async Task<List<Person>> hentAllePersoner()
+        {
+
+        
+            return await _lugDb.personer.ToListAsync();
+
+        }
+
         public async Task<List<Person>> hentPersoner(int billettId)
         {
 
