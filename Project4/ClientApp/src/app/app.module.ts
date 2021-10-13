@@ -17,6 +17,7 @@ import { RuteforekomstdatotidComponent } from './skjemaer/ruteForekomstDatoTid/r
 import { HavnComponent } from './skjemaer/Havn/havn.component';
 import { Rute } from './Models-typescript/Rute';
 import { RuteComponent } from './skjemaer/rute/rute.component';
+import { BillettpersonComponent } from './skjemaer/billettPerson/billettperson.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RuteComponent } from './skjemaer/rute/rute.component';
     BillettComponent,
     RuteforekomstdatoComponent,
     RuteforekomstdatotidComponent,
+    BillettpersonComponent,
     BetalingComponent,
     HavnComponent
   ],
@@ -42,6 +44,7 @@ import { RuteComponent } from './skjemaer/rute/rute.component';
       { path: 'billett', component: BillettComponent, pathMatch: 'full' },
       { path: 'havn', component: HavnComponent, pathMatch: 'full' },
       { path: 'rute', component: RuteComponent, pathMatch: 'full' },
+      { path: 'billettperson', component: BillettpersonComponent, pathMatch: 'full' },
       { path: 'ruteforekomstdato', component: RuteforekomstdatoComponent, pathMatch: 'full' },
       { path: 'ruteforekomstdatotid', component: RuteforekomstdatotidComponent, pathMatch: 'full' },
       { path: 'betaling', component: BetalingComponent, pathMatch: 'full' }
