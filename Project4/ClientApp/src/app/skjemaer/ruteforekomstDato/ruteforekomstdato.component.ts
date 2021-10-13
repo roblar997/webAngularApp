@@ -32,5 +32,6 @@ export class RuteforekomstdatoComponent {
     this._http.post("admin/lagreRuteforekomstdato", ruteforekomstdato).subscribe((res) => {
 
     });
+  }
 }
 

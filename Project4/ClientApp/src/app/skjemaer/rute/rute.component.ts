@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Rute } from "../../Models-typescript/Rute";
 
 @Component({
   selector: "app-skjemaer-rute",
@@ -21,8 +22,18 @@ export class RuteComponent {
     });
   }
 
-  onSubmit() {
+  lagreRute() {
 
+    const rute = new Rute();
+    rute.ruteId = this.Skjema.value.ruteId;
+    rute.fra = this.Skjema.value.fra;
+    rute.til = this.Skjema.value.til;
+    rute.prisVoksen = this.Skjema.value.prisVoksen;
+    rute.prisBarn = this.Skjema.value.prisBarn;
+
+    this._http.post("admin/lagreRute", rute).subscribe((res) => {
+
+    });
   }
 }
 
