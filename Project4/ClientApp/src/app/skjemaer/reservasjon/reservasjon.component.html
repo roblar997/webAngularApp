@@ -1,0 +1,61 @@
+
+<div>
+  <h2>Reservasjon Skjema </h2>
+  <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>
+          <label>billettId:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="billettId">
+        </td>
+        <td *ngIf="this.Skjema.controls.billettId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+      <tr>
+        <td>
+          <label>ruteId:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="ruteId">
+        </td>
+        <td *ngIf="this.Skjema.controls.ruteId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+      <tr>
+        <td>
+          <label>avgangsDato:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="avgangsDato">
+        </td>
+        <td *ngIf="this.Skjema.controls.avgangsDato.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>avgangsTid:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="avgangsTid">
+        </td>
+        <td *ngIf="this.Skjema.controls.avgangsTid.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="submit" [disabled]="!Skjema.valid">Register</button>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
