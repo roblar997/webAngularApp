@@ -24,7 +24,7 @@ namespace Project4
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IBillettRepository, webAppBillett.DAL.BillettRepository>();
+            services.AddScoped<IBillettRepository, webAppBillett.DAL.AdminRepository>();
             services.AddDistributedMemoryCache();
             services.AddControllersWithViews();
             services.AddDbContext<BillettContext>(options => options.UseSqlite("Data source =Billett.db")); //Skal endres etterhvert.

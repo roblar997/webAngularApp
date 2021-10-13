@@ -14,10 +14,10 @@ namespace webAppBillett.Controllers
     public class AdminController : Controller
     {
 
-        private readonly IBillettRepository _lugDb;
+        private readonly IAdminRepository _lugDb;
         private ILogger<AdminController> _log;
 
-        public AdminController(IBillettRepository db, ILogger<AdminController> log)
+        public AdminController(IAdminRepository db, ILogger<AdminController> log)
         {
 
             _lugDb = db;
