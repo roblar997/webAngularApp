@@ -1,0 +1,64 @@
+
+<div>
+  <h2>Rute Skjema </h2>
+  <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>
+          <label>ruteId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="ruteId">
+        </td>
+        <td *ngIf="this.Skjema.controls.ruteId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>fra:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="fra">
+        </td>
+        <td *ngIf="this.Skjema.controls.fra.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>til:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="til">
+        </td>
+        <td *ngIf="this.Skjema.controls.til.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>prisVoksen:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="prisVoksen">
+        </td>
+        <td *ngIf="this.Skjema.controls.prisVoksen.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Brukernavn:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="prisBarn">
+        </td>
+        <td *ngIf="this.Skjema.controls.fornavn.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      
+    </table>
+  </form>
+</div>

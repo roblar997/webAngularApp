@@ -2,18 +2,17 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: "app-skjemaer-lugar",
-  templateUrl: "lugar.component.html"
+  selector: "app-skjemaer-billettperson",
+  templateUrl: "billettperson.component.html"
 })
-export class LugarComponent {
+export class BillettpersonComponent {
 
   Skjema: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.Skjema = fb.group({
-      fornavn: ["", Validators.required],
-      etternavn: ["", Validators.required],
-      telefon: ["", Validators.required]
+      billettId: ["", Validators.required],
+      personId: ["", Validators.required]
     });
   }
 
