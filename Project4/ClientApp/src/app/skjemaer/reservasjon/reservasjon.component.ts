@@ -1,5 +1,7 @@
+import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Reservasjon } from "../../Models-typescript/Reservasjon";
 
 @Component({
   selector: "app-skjemaer-reservasjon",
@@ -18,8 +20,18 @@ export class ReservasjonComponent {
     });
   }
 
-  onSubmit() {
+  lagreReservasjon() {
 
+    const reservasjon = new Reservasjon();
+    reservasjon.billettId = this.Skjema.value.billettId;
+    reservasjon.ruteId = this.Skjema.value.ruteId;
+    reservasjon.avgangsDato = this.Skjema.value.avgangsDato;
+    reservasjon.avgangsTid = this.Skjema.value.avgangsTid;
+
+
+    this._http.post("admin/lagreReservasjon", reservasjon).subscribe((res) => {
+
+    });
   }
 }
 
