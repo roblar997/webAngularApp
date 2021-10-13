@@ -25,6 +25,7 @@ import { BillettpersonComponent } from './skjemaer/billettPerson/billettperson.c
     NavMenuComponent,
     LugarComponent,
     PersonComponent,
+    RuteComponent,
     BillettComponent,
     RuteforekomstdatoComponent,
     RuteforekomstdatotidComponent,
