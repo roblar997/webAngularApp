@@ -4,6 +4,17 @@
       <table>
         <tr>
           <td>
+            <label>personId:</label>
+          </td>
+          <td>
+            <input type="number" formControlName="personId" [(ngModel)]="personId">
+          </td>
+          <td *ngIf="this.Skjema.controls.personId.status=='INVALID'">
+            Obligatorisk
+          </td>
+        </tr>
+        <tr>
+          <td>
             <label>Fornavn:</label>
           </td>
           <td>

@@ -20,14 +20,25 @@ export class PersonComponent {
 
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
+      personId: ["", Validators.required],
       fornavn: ["", Validators.required],
       etternavn: ["", Validators.required],
       telefon: ["", Validators.required]
     });
   }
 
-  onSubmit() {
+  lagrePerson() {
 
+    const person = new Person();
+    person.personId = this.Skjema.value.personId;
+    person.fornavn = this.Skjema.value.fornavn;
+    person.etternavn = this.Skjema.value.etternavn;
+    person.telefon = this.Skjema.value.telefon;
+
+
+    this._http.post("admin/lagrePerson", person).subscribe((res) => {
+
+    });
   }
 
 
