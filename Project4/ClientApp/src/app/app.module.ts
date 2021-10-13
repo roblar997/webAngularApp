@@ -10,13 +10,15 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 import { LugarComponent } from './skjemaer/lugar/lugar.component';
 import { PersonComponent } from './skjemaer/person/person.component';
+import { BillettComponent } from './skjemaer/billett/billett.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     LugarComponent,
-    PersonComponent
+    PersonComponent,
+    BillettComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -27,6 +29,7 @@ import { PersonComponent } from './skjemaer/person/person.component';
       { path: '', component: LugarComponent, pathMatch: 'full' },
       { path: 'lugar', component: LugarComponent, pathMatch: 'full' },
       { path: 'person', component: PersonComponent, pathMatch: 'full' },
+      { path: 'billett', component: BillettComponent, pathMatch: 'full' }
     ])
   ],
   providers: [],

@@ -1,0 +1,92 @@
+<div>
+
+  <h2>Billett Skjema </h2>
+  <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>
+          <label>pris:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="pris">
+        </td>
+        <td *ngIf="this.Skjema.controls.pris.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>fra:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="fra">
+        </td>
+        <td *ngIf="this.Skjema.controls.fra.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>til:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="til">
+        </td>
+        <td *ngIf="this.Skjema.controls.til.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>avgangsDato:</label>
+        </td>
+        <td>
+          <input type="date" formControlName="avgangsDato">
+        </td>
+        <td *ngIf="this.Skjema.controls.avgangsDato.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>avgangsTid:</label>
+        </td>
+        <td>
+          <input type="time" formControlName="avgangsTid">
+        </td>
+        <td *ngIf="this.Skjema.controls.avgangsTid.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>antVoksen:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="antVoksen">
+        </td>
+        <td *ngIf="this.Skjema.controls.antVoksen.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>antBarn:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="antBarn">
+        </td>
+        <td *ngIf="this.Skjema.controls.antBarn.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="submit" [disabled]="!Skjema.valid">Register</button>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
