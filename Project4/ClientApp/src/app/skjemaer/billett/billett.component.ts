@@ -1,5 +1,7 @@
+import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Billett } from "../../Models-typescript/Billett";
 
 @Component({
   selector: "app-skjemaer-billett",
@@ -9,7 +11,7 @@ export class BillettComponent {
 
   Skjema: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       pris: ["", Validators.required],
       fra: ["", Validators.required],
@@ -22,7 +24,19 @@ export class BillettComponent {
     });
   }
 
-  onSubmit() {
+  lagreBillett() {
+    const billett = new Billett();
+    billett.pris = this.Skjema.value.pris;
+    billett.fra = this.Skjema.value.fra;
+    billett.til = this.Skjema.value.til;
+    billett.avgangsDato = this.Skjema.value.avgangsDato;
+    billett.avgangsTid = this.Skjema.value.avgangsTid;
+    billett.antVoksen = this.Skjema.value.antVoksen;
+    billett.antBarn = this.Skjema.value.antBarn;
+
+    this._http.post("admin/lagreBillett", billett).subscribe((res) => {
+
+    });
 
   }
 }
