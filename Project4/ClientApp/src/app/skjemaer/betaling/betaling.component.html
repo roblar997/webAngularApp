@@ -115,7 +115,7 @@
           Mellom 6 og 15 siffer
         </td>
       </tr>
-    
+
       <tr>
         <td>
           <button type="submit" [disabled]="!Skjema.valid">Register</button>
@@ -126,4 +126,20 @@
       </tr>
     </table>
   </form>
+  <table>
+
+    <tr *ngFor="let betaling of beatalinger">
+      <td>{{betaling.betalingsId}}</td>
+      <td>{{betaling.kortnummer}}</td>
+      <td>{{betaling.utloper}}</td>
+      <td>{{betaling.postnr}}</td>
+      <td>{{betaling.poststed}}</td>
+      <td>{{betaling.telefon}}</td>
+      <td>{{betaling.adresse}}</td>
+      <td>{{betaling.email}}</td>
+      <td>{{betaling.csv}}</td>
+      <td>{{betaling.pris}}</td>
+
+    </tr>
+  </table>
 </div>
