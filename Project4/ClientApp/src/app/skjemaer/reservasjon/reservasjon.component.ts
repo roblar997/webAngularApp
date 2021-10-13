@@ -9,7 +9,7 @@ export class ReservasjonComponent {
 
   Skjema: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       billettId: ["", Validators.required],
       ruteId: ["", Validators.required],

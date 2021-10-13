@@ -53,7 +53,11 @@ export class BillettComponent {
        this._http.post("admin/endreBillett", billett).subscribe((res) => {
 
       });
-     }
+  }
+
+  onInit() {
+    
+  }
 
 
 }
