@@ -1,49 +1,149 @@
 <div>
-    <h2>Modellbasert Skjema </h2>
-    <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
-      <table>
-        <tr>
-          <td>
-            <label>Brukernavn:</label>
-          </td>
-          <td>
-            <input type="text" formControlName="fornavn">
-          </td>
-          <td *ngIf="this.Skjema.controls.fornavn.status=='INVALID'">
-            Obligatorisk
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Passord:</label>
-          </td>
-          <td>
-            <input type="text" formControlName="etternavn">
-          </td>
-          <td *ngIf="this.Skjema.controls.etternavn.status=='INVALID'">
-            Mellom 6 og 15 siffer
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Passord:</label>
-          </td>
-          <td>
-            <input type="text" formControlName="telefon">
-          </td>
-          <td *ngIf="this.Skjema.controls.telefon.status=='INVALID'">
-            Mellom 6 og 15 siffer
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button type="submit" [disabled]="!Skjema.valid">Register</button>
-          </td>
-          <td>
-          </td>
-        </tr>
-      </table>
-    </form>
+
+
+
+  tittel: string;
+  romNr: string;
+  pris: number;
+  harWc: boolean;
+  harDysj: boolean;
+  hawrWifi: boolean;
+
+  
+
+  <h2>Modellbasert Skjema </h2>
+  <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>
+          <label>lugarId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="lugarId">
+        </td>
+        <td *ngIf="this.Skjema.controls.lugarId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>bildeUrl:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="bildeUrl">
+        </td>
+        <td *ngIf="this.Skjema.controls.bildeUrl.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>beskrivelse:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="beskrivelse">
+        </td>
+        <td *ngIf="this.Skjema.controls.beskrivelse.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>antall:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="antall">
+        </td>
+        <td *ngIf="this.Skjema.controls.antall.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>lugarType:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="lugarType">
+        </td>
+        <td *ngIf="this.Skjema.controls.lugarType.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>tittel:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="tittel">
+        </td>
+        <td *ngIf="this.Skjema.controls.tittel.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>romNr:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="romNr">
+        </td>
+        <td *ngIf="this.Skjema.controls.romNr.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>pris:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="pris">
+        </td>
+        <td *ngIf="this.Skjema.controls.pris.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>harWc:</label>
+        </td>
+        <td>
+          <input type="checkbox" formControlName="harWc">
+        </td>
+        <td *ngIf="this.Skjema.controls.harWc.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>harDysj:</label>
+        </td>
+        <td>
+          <input type="checkbox" formControlName="harDysj">
+        </td>
+        <td *ngIf="this.Skjema.controls.harDysj.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>harWifi:</label>
+        </td>
+        <td>
+          <input type="checkbox" formControlName="harWifi">
+        </td>
+        <td *ngIf="this.Skjema.controls.harWifi.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+            <tr>
+        <td>
+          <button type="submit" [disabled]="!Skjema.valid">Register</button>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </form>
 </div>
 
 
