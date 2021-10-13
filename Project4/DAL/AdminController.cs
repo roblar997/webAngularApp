@@ -25,7 +25,14 @@ namespace webAppBillett.Controllers
 
         }
 
-        public Task<List>
+        public async Task<List<Person>> hentAllePersoner()
+        {
+
+
+            return await _lugDb.hentAllePersoner();
+
+        }
+
 
     }
 }
