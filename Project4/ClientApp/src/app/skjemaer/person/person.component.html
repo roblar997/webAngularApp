@@ -1,5 +1,5 @@
 <div>
-    <h2>Modellbasert Skjema </h2>
+    <h2>Person Skjema </h2>
     <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
       <table>
         <tr>
@@ -40,6 +40,7 @@
             <button type="submit" [disabled]="!Skjema.valid">Register</button>
           </td>
           <td>
+            <button type="submit" [disabled]="!Skjema.valid">Endre</button>
           </td>
         </tr>
       </table>

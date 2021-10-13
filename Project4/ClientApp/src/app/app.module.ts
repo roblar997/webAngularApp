@@ -18,6 +18,7 @@ import { HavnComponent } from './skjemaer/Havn/havn.component';
 import { Rute } from './Models-typescript/Rute';
 import { RuteComponent } from './skjemaer/rute/rute.component';
 import { BillettpersonComponent } from './skjemaer/billettPerson/billettperson.component';
+import { ReservasjonComponent } from './skjemaer/reservasjon/reservasjon.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BillettpersonComponent } from './skjemaer/billettPerson/billettperson.c
     RuteforekomstdatotidComponent,
     BillettpersonComponent,
     BetalingComponent,
-    HavnComponent
+    HavnComponent,
+    ReservasjonComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -48,6 +50,7 @@ import { BillettpersonComponent } from './skjemaer/billettPerson/billettperson.c
       { path: 'billettperson', component: BillettpersonComponent, pathMatch: 'full' },
       { path: 'ruteforekomstdato', component: RuteforekomstdatoComponent, pathMatch: 'full' },
       { path: 'ruteforekomstdatotid', component: RuteforekomstdatotidComponent, pathMatch: 'full' },
+      { path: 'reservering', component: ReservasjonComponent, pathMatch: 'full' },
       { path: 'betaling', component: BetalingComponent, pathMatch: 'full' }
     ])
   ],
