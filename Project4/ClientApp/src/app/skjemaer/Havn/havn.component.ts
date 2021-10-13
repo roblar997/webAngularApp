@@ -10,7 +10,9 @@ import { Havn } from "../../Models-typescript/Havn";
 export class HavnComponent {
 
   Skjema: FormGroup;
+  public havner: Array<Havn>;
 
+  public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       havnId: ["", Validators.required],
@@ -42,5 +44,12 @@ export class HavnComponent {
     this._http.post("admin/endreHavn", havn).subscribe((res) => {
 
     });
+  }
+  hentAlleHavner() {
+    this.laster = "Laster inn...";
+    this._http.get<Havn[]>("admin/hentHavner").subscribe((res) => {
+      this.havner = res;
+      this.laster = "";
+    }, err => { }, () => { });
   }
 }

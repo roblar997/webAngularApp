@@ -10,7 +10,9 @@ import { Rute } from "../../Models-typescript/Rute";
 export class RuteComponent {
 
   Skjema: FormGroup;
+  public ruter: Array<Rute>;
 
+  public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       ruteId: ["", Validators.required],
@@ -48,6 +50,13 @@ export class RuteComponent {
     this._http.post("admin/endreRute", rute).subscribe((res) => {
 
     });
+  }
+  hentAlleRuter() {
+    this.laster = "Laster inn...";
+    this._http.get<Rute[]>("admin/hentRuter").subscribe((res) => {
+      this.ruter = res;
+      this.laster = "";
+    }, err => { }, () => { });
   }
 }
 

@@ -10,6 +10,9 @@ import { RuteForekomstDatoTid } from "../../Models-typescript/ruteforekomstdatot
 export class RuteforekomstdatotidComponent {
 
   Skjema: FormGroup;
+  public ruteforekomstdatotider: Array<RuteForekomstDatoTid>;
+
+  public laster: string;
 
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
@@ -54,6 +57,13 @@ export class RuteforekomstdatotidComponent {
 
     });
 
+  }
+  hentAlleRuteforekomstdatotider() {
+    this.laster = "Laster inn...";
+    this._http.get<RuteForekomstDatoTid[]>("admin/ruteforekomstdatotider").subscribe((res) => {
+      this.ruteforekomstdatotider = res;
+      this.laster = "";
+    }, err => { }, () => { });
   }
 }
 

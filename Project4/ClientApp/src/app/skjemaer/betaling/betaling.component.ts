@@ -10,7 +10,9 @@ import { Betaling } from "../../Models-typescript/Betaling";
 export class BetalingComponent {
 
   Skjema: FormGroup;
+  public betalinger: Array<Betaling>;
 
+  public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       betalingsId: ["", Validators.required],
@@ -63,5 +65,12 @@ export class BetalingComponent {
 
     });
 
+  }
+  hentAlleBetalinger() {
+    this.laster = "Laster inn...";
+    this._http.get<Betaling[]>("admin/hentBetalinger").subscribe((res) => {
+      this.betalinger = res;
+      this.laster = "";
+    }, err => { }, () => { });
   }
 }

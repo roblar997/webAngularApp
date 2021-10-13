@@ -10,7 +10,9 @@ import { Reservasjon } from "../../Models-typescript/Reservasjon";
 export class ReservasjonComponent {
 
   Skjema: FormGroup;
+  public reservasjoner: Array<Reservasjon>;
 
+  public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       billettId: ["", Validators.required],
@@ -46,6 +48,13 @@ export class ReservasjonComponent {
     this._http.post("admin/endreReservasjon", reservasjon).subscribe((res) => {
 
     });
+  }
+  hentAlleReservasjoner() {
+    this.laster = "Laster inn...";
+    this._http.get<Reservasjon[]>("admin/hentReservasjoner").subscribe((res) => {
+      this.reservasjoner = res;
+      this.laster = "";
+    }, err => { }, () => { });
   }
 }
 

@@ -10,7 +10,9 @@ import { RuteforekomstDato } from "../../Models-typescript/ruteforekomstdato";
 export class RuteforekomstdatoComponent {
 
   Skjema: FormGroup;
+  public ruteforekomstdatoer: Array<RuteforekomstDato>;
 
+  public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       forekomstDatoId: ["", Validators.required],
@@ -45,6 +47,13 @@ export class RuteforekomstdatoComponent {
     this._http.post("admin/endreRuteforekomstdato", ruteforekomstdato).subscribe((res) => {
 
     });
+  }
+  hentAlleRuteforekomstdatoer() {
+    this.laster = "Laster inn...";
+    this._http.get<RuteforekomstDato[]>("admin/hentBetalinger").subscribe((res) => {
+      this.ruteforekomstdatoer = res;
+      this.laster = "";
+    }, err => { }, () => { });
   }
 }
 

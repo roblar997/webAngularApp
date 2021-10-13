@@ -10,7 +10,9 @@ import { BillettPerson } from "../../Models-typescript/BillettPerson";
 export class BillettpersonComponent {
 
   Skjema: FormGroup;
+  public billettpersoner: Array<BillettPerson>;
 
+  public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       billettId: ["", Validators.required],
@@ -39,6 +41,13 @@ export class BillettpersonComponent {
     this._http.post("admin/endrebillettperson", billettperson).subscribe((res) => {
 
     });
+  }
+  hentAlleBetalinger() {
+    this.laster = "Laster inn...";
+    this._http.get<BillettPerson[]>("admin/hentBillettpersoner").subscribe((res) => {
+      this.billettpersoner = res;
+      this.laster = "";
+    }, err => { }, () => { });
   }
 }
 
