@@ -1,0 +1,62 @@
+<div>
+
+
+
+  <h2>RuteforekomstDato Skjema </h2>
+  <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>
+          <label>forekomstDatoId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="forekomstDatoId">
+        </td>
+        <td *ngIf="this.Skjema.controls.forekomstDatoId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>avgangsDato:</label>
+        </td>
+        <td>
+          <input type="date" formControlName="avgangsDato">
+        </td>
+        <td *ngIf="this.Skjema.controls.avgangsDato.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>ruteId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="ruteId">
+        </td>
+        <td *ngIf="this.Skjema.controls.ruteId.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>erUtsolgt:</label>
+        </td>
+        <td>
+          <input type="checkbox" formControlName="erUtsolgt">
+        </td>
+        <td *ngIf="this.Skjema.controls.erUtsolgt.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <button type="submit" [disabled]="!Skjema.valid">Register</button>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
