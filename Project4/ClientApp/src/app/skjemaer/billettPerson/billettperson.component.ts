@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { BillettPerson } from "../../Models-typescript/BillettPerson";
 
 @Component({
   selector: "app-skjemaer-billettperson",
@@ -17,8 +18,16 @@ export class BillettpersonComponent {
     });
   }
 
-  onSubmit() {
+  lagreBillettPerson() {
 
+    const billettperson = new BillettPerson();
+    billettperson.billettId = this.Skjema.value.billettId;
+    billettperson.personId = this.Skjema.value.personId;
+
+
+    this._http.post("admin/lagrebillettperson", billettperson).subscribe((res) => {
+
+    });
   }
 }
 
