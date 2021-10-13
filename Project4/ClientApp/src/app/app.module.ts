@@ -41,7 +41,7 @@ import { ReservasjonComponent } from './skjemaer/reservasjon/reservasjon.compone
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: LugarComponent, pathMatch: 'full' },
+      { path: '', redirectTo: 'lugar', pathMatch: 'full' },
       { path: 'lugar', component: LugarComponent, pathMatch: 'full' },
       { path: 'person', component: PersonComponent, pathMatch: 'full' },
       { path: 'billett', component: BillettComponent, pathMatch: 'full' },
