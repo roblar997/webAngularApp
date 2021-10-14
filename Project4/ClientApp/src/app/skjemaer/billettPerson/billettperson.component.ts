@@ -42,7 +42,7 @@ export class BillettpersonComponent {
 
     });
   }
-  hentAlleBetalinger() {
+  hentAlleBillettpersoner() {
     this.laster = "Laster inn...";
     this._http.get<BillettPerson[]>("admin/hentBillettpersoner").subscribe((res) => {
       this.billettpersoner = res;

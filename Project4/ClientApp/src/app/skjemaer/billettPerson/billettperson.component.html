@@ -35,4 +35,12 @@
       </tr>
     </table>
   </form>
+  <table>
+
+    <tr *ngFor="let billettperson of billettpersoner">
+      <td>{{billettperson.billettId}}</td>
+      <td>{{billettperson.personId}}</td>
+
+    </tr>
+  </table>
 </div>

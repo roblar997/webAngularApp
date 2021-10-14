@@ -59,4 +59,12 @@
       </tr>
     </table>
   </form>
+  <table>
+    <tr *ngFor="let reservasjon of reservasjoner">
+      <td>{{reservasjon.billettId}}</td>
+      <td>{{reservasjon.ruteId}}</td>
+      <td>{{reservasjon.avgangsDato}}</td>
+      <td>{{reservasjon.avgangsTid}}</td>
+    </tr>
+  </table>
 </div>

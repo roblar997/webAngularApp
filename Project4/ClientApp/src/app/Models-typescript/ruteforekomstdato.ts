@@ -5,4 +5,4 @@ export class RuteforekomstDato {
   erUtsolgt: boolean;
 
 }
-RuteforekomstDato
+

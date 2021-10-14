@@ -90,4 +90,15 @@
       </tr>
     </table>
   </form>
+  <table>
+    <tr *ngFor="let billett of billetter">
+      <td>{{billett.pris}}</td>
+      <td>{{billett.fra}}</td>
+      <td>{{betaling.til}}</td>
+      <td>{{betaling.avgangsDato}}</td>
+      <td>{{betaling.avgangsTid}}</td>
+      <td>{{betaling.antVoksen}}</td>
+      <td>{{betaling.antBarn}}</td>
+    </tr>
+  </table>
 </div>

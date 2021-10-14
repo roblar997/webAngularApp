@@ -94,4 +94,17 @@
       </tr>
     </table>
   </form>
+  <table>
+    <tr *ngFor="let ruteforekomstdatotid of ruteforekomstdatotider">
+      <td>{{ruteforekomstdatotid.ruteId}}</td>
+      <td>{{ruteforekomstdatotid.avgangsDato}}</td>
+      <td>{{ruteforekomstdatotid.avgangsTid}}</td>
+      <td>{{ruteforekomstdatotid.ankomstDato}}</td>
+      <td>{{ruteforekomstdatotid.ankomstTid}}</td>
+      <td>{{ruteforekomstdatotid.forekomstDatoId}}</td>
+      <td>{{ruteforekomstdatotid.erUtsolgt}}</td>
+
+
+    </tr>
+  </table>
 </div>

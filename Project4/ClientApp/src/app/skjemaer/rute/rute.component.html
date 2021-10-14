@@ -49,12 +49,12 @@
       </tr>
       <tr>
         <td>
-          <label>Brukernavn:</label>
+          <label>prisBarn:</label>
         </td>
         <td>
           <input type="text" formControlName="prisBarn">
         </td>
-        <td *ngIf="this.Skjema.controls.fornavn.status=='INVALID'">
+        <td *ngIf="this.Skjema.controls.prisBarn.status=='INVALID'">
           Obligatorisk
         </td>
       </tr>
@@ -68,4 +68,14 @@
       </tr>
     </table>
   </form>
+  <table>
+   
+    <tr *ngFor="let rute of ruter">
+      <td>{{rute.ruteId}}</td>
+      <td>{{rute.fra}}</td>
+      <td>{{rute.til}}</td>
+      <td>{{rute.prisVoksen}}</td>
+      <td>{{rute.prisBarn}}</td>
+    </tr>
+  </table>
 </div>

@@ -60,4 +60,12 @@
       </tr>
     </table>
   </form>
+  <table>
+    <tr *ngFor="let ruteforekomstdato of ruteforekomstdatoer">
+      <td>{{ruteforekomstdato.forekomstDatoId}}</td>
+      <td>{{ruteforekomstdato.avgangsDato}}</td>
+      <td>{{ruteforekomstdato.ruteId}}</td>
+      <td>{{ruteforekomstdato.erUtsolgt}}</td>
+    </tr>
+  </table>
 </div>
