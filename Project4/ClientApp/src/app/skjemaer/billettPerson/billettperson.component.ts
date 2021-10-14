@@ -42,6 +42,13 @@ export class BillettpersonComponent {
 
     });
   }
+
+  visEndre(index: number) {
+    this.Skjema.setValue({
+
+    });
+
+  }
   hentAlleBillettpersoner() {
     this.laster = "Laster inn...";
     this._http.get<BillettPerson[]>("admin/hentBillettpersoner").subscribe((res) => {

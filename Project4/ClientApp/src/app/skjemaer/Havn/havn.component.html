@@ -43,11 +43,11 @@
     <table class="table table-striped">
       havnId: number;
       navn: string;
-      <tr *ngFor="let havn of havner">
+      <tr *ngFor="let havn of havner; let indexVal = index;">
         <td>{{havn.havnId}}</td>
         <td>{{havn.navn}}</td>
         <td>
-          <button type="submit">Endre</button>
+          <button type="submit" (click)="visEndre(indexVal)">Endre</button>
         </td>
         <td>
           <button type="submit">Slette</button>

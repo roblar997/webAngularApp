@@ -72,6 +72,12 @@ export class LugarComponent {
     });
   }
 
+  visEndre(index: number) {
+    this.Skjema.setValue({
+
+    });
+
+  }
 
   hentAlleLugarer() {
     this.laster = "Laster inn...";

@@ -39,11 +39,11 @@
   <div class="container bg-white " style="width: 100vw; ">
     <table class="table table-striped">
 
-      <tr *ngFor="let billettperson of billettpersoner">
+      <tr *ngFor="let billettperson of billettpersoner; let indexVal = index;">
         <td>{{billettperson.billettId}}</td>
         <td>{{billettperson.personId}}</td>
         <td>
-          <button type="submit">Endre</button>
+          <button type="submit" (click)="visEndre(indexVal)">Endre</button>
         </td>
         <td>
           <button type="submit">Slette</button>

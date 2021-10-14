@@ -63,13 +63,13 @@
   </form>
   <div class="container bg-white " style="width: 100vw; ">
     <table class="table table-striped">
-      <tr *ngFor="let ruteforekomstdato of ruteforekomstdatoer">
+      <tr *ngFor="let ruteforekomstdato of ruteforekomstdatoer; let indexVal = index;">
         <td>{{ruteforekomstdato.forekomstDatoId}}</td>
         <td>{{ruteforekomstdato.avgangsDato}}</td>
         <td>{{ruteforekomstdato.ruteId}}</td>
         <td>{{ruteforekomstdato.erUtsolgt}}</td>
         <td>
-          <button type="submit">Endre</button>
+          <button type="submit" (click)="visEndre(indexVal)">Endre</button>
         </td>
         <td>
           <button type="submit">Slette</button>

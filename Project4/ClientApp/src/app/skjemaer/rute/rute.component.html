@@ -72,14 +72,14 @@
   <div class="container bg-white " style="width: 100vw; ">
     <table class="table table-striped">
 
-      <tr *ngFor="let rute of ruter">
+      <tr *ngFor="let rute of ruter; let indexVal = index;">
         <td>{{rute.ruteId}}</td>
         <td>{{rute.fra}}</td>
         <td>{{rute.til}}</td>
         <td>{{rute.prisVoksen}}</td>
         <td>{{rute.prisBarn}}</td>
         <td>
-          <button type="submit">Endre</button>
+          <button type="submit" (click)="visEndre(indexVal)">Endre</button>
         </td>
         <td>
           <button type="submit">Slette</button>

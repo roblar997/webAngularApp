@@ -49,6 +49,12 @@ export class ReservasjonComponent {
 
     });
   }
+  visEndre(index: number) {
+    this.Skjema.setValue({
+
+    });
+
+  }
   hentAlleReservasjoner() {
     this.laster = "Laster inn...";
     this._http.get<Reservasjon[]>("admin/hentReservasjoner").subscribe((res) => {

@@ -45,6 +45,12 @@ export class HavnComponent {
 
     });
   }
+  visEndre(index: number) {
+    this.Skjema.setValue({
+
+    });
+
+  }
   hentAlleHavner() {
     this.laster = "Laster inn...";
     this._http.get<Havn[]>("admin/hentHavner").subscribe((res) => {

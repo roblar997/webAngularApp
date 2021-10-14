@@ -28,7 +28,12 @@ export class BetalingComponent {
 
     });
   }
+  visEndre(index: number) {
+    this.Skjema.setValue({
 
+    });
+
+  }
   lagreBetaling() {
     const betaling = new Betaling();
     betaling.betalingsId = this.Skjema.value.betalingsId;

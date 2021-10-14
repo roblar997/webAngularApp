@@ -35,6 +35,12 @@ export class RuteforekomstdatoComponent {
 
     });
   }
+  visEndre(index: number) {
+    this.Skjema.setValue({
+
+    });
+
+  }
   endreForekomstDato() {
 
     const ruteforekomstdato = new RuteforekomstDato();

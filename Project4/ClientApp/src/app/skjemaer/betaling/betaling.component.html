@@ -132,7 +132,7 @@
   <div class="container bg-white " style="width: 100vw; " >
     <table class="table table-striped">
 
-      <tr *ngFor="let betaling of betalinger">
+      <tr *ngFor="let betaling of betalinger; let indexVal = index;">
         <td>{{betaling.betalingsId}}</td>
         <td>{{betaling.kortnummer}}</td>
         <td>{{betaling.utloper}}</td>
@@ -144,7 +144,7 @@
         <td>{{betaling.csv}}</td>
         <td>{{betaling.pris}}</td>
         <td>
-          <button type="submit">Endre</button>
+          <button type="submit" (click)="visEndre(indexVal)">Endre</button>
         </td>
         <td>
           <button type="submit">Slette</button>

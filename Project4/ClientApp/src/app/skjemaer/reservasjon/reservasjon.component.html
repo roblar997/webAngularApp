@@ -62,13 +62,13 @@
   </form>
   <div class="container bg-white " style="width: 100vw; ">
     <table class="table table-striped">
-      <tr *ngFor="let reservasjon of reservasjoner">
+      <tr *ngFor="let reservasjon of reservasjoner; let indexVal = index;">
         <td>{{reservasjon.billettId}}</td>
         <td>{{reservasjon.ruteId}}</td>
         <td>{{reservasjon.avgangsDato}}</td>
         <td>{{reservasjon.avgangsTid}}</td>
         <td>
-          <button type="submit">Endre</button>
+          <button type="submit" (click)="visEndre(indexVal)">Endre</button>
         </td>
         <td>
           <button type="submit">Slette</button>

@@ -51,6 +51,12 @@ export class RuteComponent {
 
     });
   }
+  visEndre(index: number) {
+    this.Skjema.setValue({
+
+    });
+
+  }
   hentAlleRuter() {
     this.laster = "Laster inn...";
     this._http.get<Rute[]>("admin/hentRutere").subscribe((res) => {

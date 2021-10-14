@@ -58,6 +58,12 @@ export class RuteforekomstdatotidComponent {
     });
 
   }
+  visEndre(index: number) {
+    this.Skjema.setValue({
+
+    });
+
+  }
   hentAlleRuteforekomstdatotider() {
     this.laster = "Laster inn...";
     this._http.get<RuteForekomstDatoTid[]>("admin/hentRuteforekomstdatotider").subscribe((res) => {
