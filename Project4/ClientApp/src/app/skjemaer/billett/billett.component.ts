@@ -15,6 +15,8 @@ export class BillettComponent {
   public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
+
+      billettId: ["", Validators.required],
       pris: ["", Validators.required],
       fra: ["", Validators.required],
       til: ["", Validators.required],
@@ -28,6 +30,7 @@ export class BillettComponent {
 
   lagreBillett() {
     const billett = new Billett();
+    billett.billettId = this.Skjema.value.billettId;
     billett.pris = this.Skjema.value.pris;
     billett.fra = this.Skjema.value.fra;
     billett.til = this.Skjema.value.til;
@@ -44,6 +47,7 @@ export class BillettComponent {
 
     endreBillett() {
       const billett = new Billett();
+      billett.billettId = this.Skjema.value.billettId;
       billett.pris = this.Skjema.value.pris;
       billett.fra = this.Skjema.value.fra;
       billett.til = this.Skjema.value.til;
@@ -57,7 +61,16 @@ export class BillettComponent {
       });
   }
   visEndre(index: number) {
-   
+    this.Skjema.setValue({
+      billettId: this.billetter[index].billettId,
+      pris: this.billetter[index].pris,
+      fra: this.billetter[index].fra,
+      til: this.billetter[index].til,
+      avgangsDato: this.billetter[index].avgangsDato,
+      avgangsTid: this.billetter[index].avgangsTid,
+      antVoksen: this.billetter[index].antVoksen,
+      antBarn: this.billetter[index].antBarn
+    });
 
   }
   ngOnInit() {

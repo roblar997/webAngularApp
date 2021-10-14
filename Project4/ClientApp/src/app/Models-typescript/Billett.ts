@@ -1,5 +1,5 @@
 export class Billett {
-
+  billettId: number;
   pris: number;
   fra: number;
   til: number;

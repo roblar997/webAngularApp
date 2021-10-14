@@ -6,6 +6,17 @@
     <table>
       <tr>
         <td>
+          <label>billettId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="billettId">
+        </td>
+        <td *ngIf="this.Skjema.controls.billettId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
           <label>pris:</label>
         </td>
         <td>
