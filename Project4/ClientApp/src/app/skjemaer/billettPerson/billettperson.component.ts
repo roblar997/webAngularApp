@@ -44,10 +44,12 @@ export class BillettpersonComponent {
   }
 
   visEndre(index: number) {
-    this.Skjema.setValue({
 
-    });
 
+  }
+
+  ngOnInit() {
+    this.hentAlleBillettpersoner();
   }
   hentAlleBillettpersoner() {
     this.laster = "Laster inn...";

@@ -52,9 +52,7 @@ export class RuteComponent {
     });
   }
   visEndre(index: number) {
-    this.Skjema.setValue({
-
-    });
+   
 
   }
   hentAlleRuter() {

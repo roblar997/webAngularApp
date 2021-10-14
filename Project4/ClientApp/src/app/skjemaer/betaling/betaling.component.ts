@@ -29,10 +29,11 @@ export class BetalingComponent {
     });
   }
   visEndre(index: number) {
-    this.Skjema.setValue({
+ 
 
-    });
-
+  }
+  ngOnInit() {
+    this.hentAlleBetalinger();
   }
   lagreBetaling() {
     const betaling = new Betaling();

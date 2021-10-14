@@ -46,10 +46,11 @@ export class HavnComponent {
     });
   }
   visEndre(index: number) {
-    this.Skjema.setValue({
+  
 
-    });
-
+  }
+  ngOnInit() {
+    this.hentAlleHavner();
   }
   hentAlleHavner() {
     this.laster = "Laster inn...";

@@ -73,9 +73,7 @@ export class LugarComponent {
   }
 
   visEndre(index: number) {
-    this.Skjema.setValue({
-
-    });
+ 
 
   }
 

@@ -59,9 +59,7 @@ export class RuteforekomstdatotidComponent {
 
   }
   visEndre(index: number) {
-    this.Skjema.setValue({
-
-    });
+ 
 
   }
   hentAlleRuteforekomstdatotider() {

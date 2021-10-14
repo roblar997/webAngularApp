@@ -57,10 +57,11 @@ export class BillettComponent {
       });
   }
   visEndre(index: number) {
-    this.Skjema.setValue({
+   
 
-    });
-
+  }
+  ngOnInit() {
+    this.hentAlleBilletter();
   }
   hentAlleBilletter() {
     this.laster = "Laster inn...";
