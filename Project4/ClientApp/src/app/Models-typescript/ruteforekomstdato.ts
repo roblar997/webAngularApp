@@ -1,6 +1,6 @@
 export class RuteforekomstDato {
   forekomstDatoId: number;
-  avgangsDato: Date;
+  avgangsDato:Date;
   ruteId: number;
   erUtsolgt: boolean;
 
