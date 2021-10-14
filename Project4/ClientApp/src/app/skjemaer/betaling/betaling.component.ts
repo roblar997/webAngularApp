@@ -29,7 +29,19 @@ export class BetalingComponent {
     });
   }
   visEndre(index: number) {
- 
+    this.Skjema.setValue({
+      betalingsId: this.betalinger[index].betalingsId,
+      kortnummer: this.betalinger[index].kortnummer,
+      utloper: this.betalinger[index].utloper,
+      postnr: this.betalinger[index].postnr,
+      poststed: this.betalinger[index].poststed,
+      telefon: this.betalinger[index].telefon,
+      adresse: this.betalinger[index].adresse,
+      email: this.betalinger[index].email,
+      csv: this.betalinger[index].csv,
+      pris: this.betalinger[index].pris,
+
+    });
 
   }
   ngOnInit() {
