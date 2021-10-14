@@ -46,7 +46,7 @@ export class RuteforekomstdatoComponent {
 
   }
   ngOnInit() {
-    this.endreForekomstDato();
+    this.hentAlleRuteforekomstdatoer();
   }
   endreForekomstDato() {
 
