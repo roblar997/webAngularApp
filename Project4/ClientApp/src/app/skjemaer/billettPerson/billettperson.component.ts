@@ -44,7 +44,11 @@ export class BillettpersonComponent {
   }
 
   visEndre(index: number) {
+    this.Skjema.setValue({
+      billettId: this.billettpersoner[index].billettId,
+      personId: this.billettpersoner[index].personId,
 
+    });
 
   }
 

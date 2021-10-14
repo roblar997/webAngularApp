@@ -46,7 +46,12 @@ export class HavnComponent {
     });
   }
   visEndre(index: number) {
-  
+    this.Skjema.setValue({
+      havnId: this.havner[index].havnId,
+      navn: this.havner[index].navn,
+
+    });
+
 
   }
   ngOnInit() {
