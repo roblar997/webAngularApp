@@ -1,6 +1,7 @@
 <div>
 
   <h2>Lugar Skjema </h2>
+  <button (click)="hentAlleLugarer()"> Hent lugarer</button> {{laster}}
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
       <tr>
@@ -134,21 +135,23 @@
       </tr>
     </table>
   </form>
-  <table>
-    <tr *ngFor="let lugar of lugarer">
-      <td>{{lugar.lugarId}}</td>
-      <td>{{lugar.bildeUrl}}</td>
-      <td>{{lugar.beskrivelse}}</td>
-      <td>{{lugar.antall}}</td>
-      <td>{{lugar.lugarType}}</td>
-      <td>{{lugar.tittel}}</td>
-      <td>{{lugar.romNr}}</td>
-      <td>{{lugar.pris}}</td>
-      <td>{{lugar.harWc}}</td>
-      <td>{{lugar.harDysj}}</td>
-      <td>{{lugar.hawrWifi}}</td>
-    </tr>
-  </table>
+  <div class="container bg-white " style="width: 100vw; ">
+    <table class="table table-striped">
+      <tr *ngFor="let lugar of lugarer">
+        <td>{{lugar.lugarId}}</td>
+        <td>{{lugar.bildeUrl}}</td>
+        <td>{{lugar.beskrivelse}}</td>
+        <td>{{lugar.antall}}</td>
+        <td>{{lugar.lugarType}}</td>
+        <td>{{lugar.tittel}}</td>
+        <td>{{lugar.romNr}}</td>
+        <td>{{lugar.pris}}</td>
+        <td>{{lugar.harWc}}</td>
+        <td>{{lugar.harDysj}}</td>
+        <td>{{lugar.hawrWifi}}</td>
+      </tr>
+    </table>
+  </div>
 
 </div>
 

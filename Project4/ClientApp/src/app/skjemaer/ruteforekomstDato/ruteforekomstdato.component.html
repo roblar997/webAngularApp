@@ -3,6 +3,7 @@
 
 
   <h2>RuteforekomstDato Skjema </h2>
+  <button (click)="hentAlleRuteforekomstdatoer()"> Hent ruteforekomstdatoer</button> {{laster}}
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
       <tr>
@@ -60,12 +61,14 @@
       </tr>
     </table>
   </form>
-  <table>
-    <tr *ngFor="let ruteforekomstdato of ruteforekomstdatoer">
-      <td>{{ruteforekomstdato.forekomstDatoId}}</td>
-      <td>{{ruteforekomstdato.avgangsDato}}</td>
-      <td>{{ruteforekomstdato.ruteId}}</td>
-      <td>{{ruteforekomstdato.erUtsolgt}}</td>
-    </tr>
-  </table>
+  <div class="container bg-white " style="width: 100vw; ">
+    <table class="table table-striped">
+      <tr *ngFor="let ruteforekomstdato of ruteforekomstdatoer">
+        <td>{{ruteforekomstdato.forekomstDatoId}}</td>
+        <td>{{ruteforekomstdato.avgangsDato}}</td>
+        <td>{{ruteforekomstdato.ruteId}}</td>
+        <td>{{ruteforekomstdato.erUtsolgt}}</td>
+      </tr>
+    </table>
+  </div>
 </div>

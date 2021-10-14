@@ -1,6 +1,7 @@
 
 <div>
   <h2>Rute Skjema </h2>
+  <button (click)="hentAlleRuter()"> Hent ruter</button> {{laster}}
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
       <tr>
@@ -68,14 +69,16 @@
       </tr>
     </table>
   </form>
-  <table>
-   
-    <tr *ngFor="let rute of ruter">
-      <td>{{rute.ruteId}}</td>
-      <td>{{rute.fra}}</td>
-      <td>{{rute.til}}</td>
-      <td>{{rute.prisVoksen}}</td>
-      <td>{{rute.prisBarn}}</td>
-    </tr>
-  </table>
+  <div class="container bg-white " style="width: 100vw; ">
+    <table class="table table-striped">
+
+      <tr *ngFor="let rute of ruter">
+        <td>{{rute.ruteId}}</td>
+        <td>{{rute.fra}}</td>
+        <td>{{rute.til}}</td>
+        <td>{{rute.prisVoksen}}</td>
+        <td>{{rute.prisBarn}}</td>
+      </tr>
+    </table>
+  </div>
 </div>

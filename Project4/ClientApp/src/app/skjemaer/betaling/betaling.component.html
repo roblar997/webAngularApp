@@ -3,7 +3,7 @@
 
 
   <h2>Betalings Skjema </h2>
-  <button click="hentAlleBetalinger()"> Hent betalinger</button> {{laster}}
+  <button (click)="hentAlleBetalinger()"> Hent betalinger</button> {{laster}}
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
       <tr>
@@ -127,20 +127,24 @@
       </tr>
     </table>
   </form>
-  <table>
 
-    <tr *ngFor="let betaling of beatalinger">
-      <td>{{betaling.betalingsId}}</td>
-      <td>{{betaling.kortnummer}}</td>
-      <td>{{betaling.utloper}}</td>
-      <td>{{betaling.postnr}}</td>
-      <td>{{betaling.poststed}}</td>
-      <td>{{betaling.telefon}}</td>
-      <td>{{betaling.adresse}}</td>
-      <td>{{betaling.email}}</td>
-      <td>{{betaling.csv}}</td>
-      <td>{{betaling.pris}}</td>
 
-    </tr>
-  </table>
+  <div class="container bg-white " style="width: 100vw; " >
+    <table class="table table-striped">
+
+      <tr *ngFor="let betaling of betalinger">
+        <td>{{betaling.betalingsId}}</td>
+        <td>{{betaling.kortnummer}}</td>
+        <td>{{betaling.utloper}}</td>
+        <td>{{betaling.postnr}}</td>
+        <td>{{betaling.poststed}}</td>
+        <td>{{betaling.telefon}}</td>
+        <td>{{betaling.adresse}}</td>
+        <td>{{betaling.email}}</td>
+        <td>{{betaling.csv}}</td>
+        <td>{{betaling.pris}}</td>
+
+      </tr>
+    </table>
+  </div>
 </div>

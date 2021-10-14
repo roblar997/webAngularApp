@@ -1,68 +1,71 @@
 <div>
-    <h2>Person Skjema </h2>
-    <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
-      <table>
-        <tr>
-          <td>
-            <label>personId:</label>
-          </td>
-          <td>
-            <input type="number" formControlName="personId" [(ngModel)]="personId">
-          </td>
-          <td *ngIf="this.Skjema.controls.personId.status=='INVALID'">
-            Obligatorisk
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Fornavn:</label>
-          </td>
-          <td>
-            <input type="text" formControlName="fornavn" [(ngModel)]="fornavn">
-          </td>
-          <td *ngIf="this.Skjema.controls.fornavn.status=='INVALID'">
-            Obligatorisk
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Etternavn:</label>
-          </td>
-          <td>
-            <input type="text" formControlName="etternavn" [(ngModel)]="etternavn">
-          </td>
-          <td *ngIf="this.Skjema.controls.etternavn.status=='INVALID'">
-            Mellom 6 og 15 siffer
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Telefon:</label>
-          </td>
-          <td>
-            <input type="text" formControlName="telefon" [(ngModel)]="telefon">
-          </td>
-          <td *ngIf="this.Skjema.controls.telefon.status=='INVALID'">
-            Mellom 6 og 15 siffer
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button type="submit" [disabled]="!Skjema.valid">Register</button>
-          </td>
-          <td>
-            <button type="submit" [disabled]="!Skjema.valid">Endre</button>
-          </td>
-        </tr>
-      </table>
-    </form>
+  <h2>Person Skjema </h2>
+  <button (click)="hentAllePersoner()"> Hent personer</button> {{laster}}
+  <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>
+          <label>personId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="personId" [(ngModel)]="personId">
+        </td>
+        <td *ngIf="this.Skjema.controls.personId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Fornavn:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="fornavn" [(ngModel)]="fornavn">
+        </td>
+        <td *ngIf="this.Skjema.controls.fornavn.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Etternavn:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="etternavn" [(ngModel)]="etternavn">
+        </td>
+        <td *ngIf="this.Skjema.controls.etternavn.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Telefon:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="telefon" [(ngModel)]="telefon">
+        </td>
+        <td *ngIf="this.Skjema.controls.telefon.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="submit" [disabled]="!Skjema.valid">Register</button>
+        </td>
+        <td>
+          <button type="submit" [disabled]="!Skjema.valid">Endre</button>
+        </td>
+      </tr>
+    </table>
+  </form>
 
-     <table>
-       <tr *ngFor="let person of personer">
-         <td>{{person.personId}}</td>
-         <td>{{person.fornavn}}</td>
-         <td>{{person.etternavn}}</td>
-         <td>{{person.telefon}}</td>
-       </tr>
-     </table>
+  <div class="container bg-white " style="width: 100vw; ">
+    <table class="table table-striped">
+      <tr *ngFor="let person of personer">
+        <td>{{person.personId}}</td>
+        <td>{{person.fornavn}}</td>
+        <td>{{person.etternavn}}</td>
+        <td>{{person.telefon}}</td>
+      </tr>
+    </table>
+  </div>
 </div>

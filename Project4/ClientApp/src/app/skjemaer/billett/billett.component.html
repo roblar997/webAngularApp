@@ -1,6 +1,7 @@
 <div>
 
   <h2>Billett Skjema </h2>
+  <button (click)="hentAlleBilletter()"> Hent billetter</button> {{laster}}
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
       <tr>
@@ -90,15 +91,18 @@
       </tr>
     </table>
   </form>
-  <table>
-    <tr *ngFor="let billett of billetter">
-      <td>{{billett.pris}}</td>
-      <td>{{billett.fra}}</td>
-      <td>{{betaling.til}}</td>
-      <td>{{betaling.avgangsDato}}</td>
-      <td>{{betaling.avgangsTid}}</td>
-      <td>{{betaling.antVoksen}}</td>
-      <td>{{betaling.antBarn}}</td>
-    </tr>
-  </table>
+
+  <div class="container bg-white " style="width: 100vw; ">
+    <table class="table table-striped">
+      <tr *ngFor="let billett of billetter">
+        <td>{{billett.pris}}</td>
+        <td>{{billett.fra}}</td>
+        <td>{{betaling.til}}</td>
+        <td>{{betaling.avgangsDato}}</td>
+        <td>{{betaling.avgangsTid}}</td>
+        <td>{{betaling.antVoksen}}</td>
+        <td>{{betaling.antBarn}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
