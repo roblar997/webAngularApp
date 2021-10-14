@@ -19,7 +19,7 @@ export class LugarComponent {
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       lugarId: ["", Validators.required],
-      bildeUrl: ["", Validators.required],
+      bildeURL: ["", Validators.required],
       beskrivelse: ["", Validators.required],
       antall: ["", Validators.required],
       lugarType: ["", Validators.required],
@@ -36,7 +36,7 @@ export class LugarComponent {
 
     const lugar = new Lugar();
     lugar.lugarId = this.Skjema.value.lugarId;
-    lugar.bildeUrl = this.Skjema.value.bildeUrl;
+    lugar.bildeURL = this.Skjema.value.bildeURL;
     lugar.beskrivelse = this.Skjema.value.beskrivelse;
     lugar.antall = this.Skjema.value.antall;
     lugar.lugarType = this.Skjema.value.lugarType;
@@ -56,7 +56,7 @@ export class LugarComponent {
 
     const lugar = new Lugar();
     lugar.lugarId = this.Skjema.value.lugarId;
-    lugar.bildeUrl = this.Skjema.value.bildeUrl;
+    lugar.bildeURL = this.Skjema.value.bildeURL;
     lugar.beskrivelse = this.Skjema.value.beskrivelse;
     lugar.antall = this.Skjema.value.antall;
     lugar.lugarType = this.Skjema.value.lugarType;
@@ -75,7 +75,7 @@ export class LugarComponent {
   visEndre(index: number) {
     this.Skjema.setValue({
       lugarId: this.lugarer[index].lugarId,
-      bildeUrl: this.lugarer[index].bildeUrl,
+      bildeURL: this.lugarer[index].bildeURL,
       beskrivelse: this.lugarer[index].beskrivelse,
       antall: this.lugarer[index].antall,
       lugarType: this.lugarer[index].lugarType,
