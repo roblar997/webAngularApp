@@ -38,6 +38,13 @@ namespace webAppBillett.Controllers
             return await _lugDb.hentBetalinger();
 
         }
+        public async Task<List<Rute>> hentRutere()
+        {
+
+
+            return await _lugDb.hentRutere();
+
+        }
 
         public async Task<List<Billett>> hentBilletter()
         {

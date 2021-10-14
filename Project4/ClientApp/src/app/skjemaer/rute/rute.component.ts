@@ -53,7 +53,7 @@ export class RuteComponent {
   }
   hentAlleRuter() {
     this.laster = "Laster inn...";
-    this._http.get<Rute[]>("admin/hentRuter").subscribe((res) => {
+    this._http.get<Rute[]>("admin/hentRutere").subscribe((res) => {
       this.ruter = res;
       this.laster = "";
     }, err => { }, () => { });

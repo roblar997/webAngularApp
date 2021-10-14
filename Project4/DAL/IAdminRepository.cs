@@ -17,6 +17,7 @@ namespace webAppBillett.DAL
         public Task<List<Person>> hentPersoner();
         public Task<List<Betaling>> hentBetalinger();
         public Task<List<Havn>> hentHavner();
+        public Task<List<Rute>> hentRutere();
         public Task<List<RuteForekomstDatoTid>> hentRuteforekomstdatotider();
         public Task<List<RuteForekomstDato>> hentRuteforekomstdatoer();
         public Task<List<Lugar>> hentLugarer();
