@@ -73,7 +73,19 @@ export class LugarComponent {
   }
 
   visEndre(index: number) {
- 
+    this.Skjema.setValue({
+      lugarId: this.lugarer[index].lugarId,
+      bildeUrl: this.lugarer[index].bildeUrl,
+      beskrivelse: this.lugarer[index].beskrivelse,
+      antall: this.lugarer[index].antall,
+      lugarType: this.lugarer[index].lugarType,
+      tittel: this.lugarer[index].tittel,
+      romNr: this.lugarer[index].romNr,
+      pris: this.lugarer[index].pris,
+      harWc: this.lugarer[index].harWc,
+      harDysj: this.lugarer[index].harDysj,
+      harWifi: this.lugarer[index].harWifi
+    });
 
   }
   ngOnInit() {
