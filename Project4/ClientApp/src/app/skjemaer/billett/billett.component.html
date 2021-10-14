@@ -108,11 +108,11 @@
       <tr *ngFor="let billett of billetter; let indexVal = index;">
         <td>{{billett.pris}}</td>
         <td>{{billett.fra}}</td>
-        <td>{{betaling.til}}</td>
-        <td>{{betaling.avgangsDato}}</td>
-        <td>{{betaling.avgangsTid}}</td>
-        <td>{{betaling.antVoksen}}</td>
-        <td>{{betaling.antBarn}}</td>
+        <td>{{billett.til}}</td>
+        <td>{{billett.avgangsDato}}</td>
+        <td>{{billett.avgangsTid}}</td>
+        <td>{{billett.antVoksen}}</td>
+        <td>{{billett.antBarn}}</td>
         <td>
           <button type="submit" (click)="visEndre(indexVal)">Endre</button>
         </td>
