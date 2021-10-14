@@ -39,6 +39,9 @@ export class RuteforekomstdatoComponent {
 
 
   }
+  ngOnInit() {
+    this.endreForekomstDato();
+  }
   endreForekomstDato() {
 
     const ruteforekomstdato = new RuteforekomstDato();

@@ -55,6 +55,9 @@ export class RuteComponent {
    
 
   }
+  ngOnInit() {
+    this.hentAlleRuter();
+  }
   hentAlleRuter() {
     this.laster = "Laster inn...";
     this._http.get<Rute[]>("admin/hentRutere").subscribe((res) => {

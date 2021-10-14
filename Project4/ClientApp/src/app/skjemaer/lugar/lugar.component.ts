@@ -76,7 +76,9 @@ export class LugarComponent {
  
 
   }
-
+  ngOnInit() {
+    this.hentAlleLugarer();
+  }
   hentAlleLugarer() {
     this.laster = "Laster inn...";
     this._http.get<Lugar[]>("admin/hentLugarer").subscribe((res) => {

@@ -52,6 +52,9 @@ export class ReservasjonComponent {
   visEndre(index: number) {
   
   }
+  ngOnInit() {
+    this.hentAlleReservasjoner();
+  }
   hentAlleReservasjoner() {
     this.laster = "Laster inn...";
     this._http.get<Reservasjon[]>("admin/hentReservasjoner").subscribe((res) => {

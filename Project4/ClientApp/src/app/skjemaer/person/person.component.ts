@@ -66,7 +66,9 @@ export class PersonComponent {
   }
 
 
-
+  ngOnInit() {
+    this.hentAllePersoner();
+  }
   hentAllePersoner() {
     this.laster = "Laster inn...";
     this._http.get<Person[]>("admin/hentPersoner").subscribe((res) => {

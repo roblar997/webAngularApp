@@ -62,6 +62,9 @@ export class RuteforekomstdatotidComponent {
  
 
   }
+  ngOnInit() {
+    this.hentAlleRuteforekomstdatotider();
+  }
   hentAlleRuteforekomstdatotider() {
     this.laster = "Laster inn...";
     this._http.get<RuteForekomstDatoTid[]>("admin/hentRuteforekomstdatotider").subscribe((res) => {
