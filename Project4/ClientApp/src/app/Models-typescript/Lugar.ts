@@ -1,6 +1,6 @@
 export class Lugar {
   lugarId: number;
-  bildeUrl: string;
+  bildeURL: string;
   beskrivelse: string;
   antall: number;
   lugarType: number;
