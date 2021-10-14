@@ -24,13 +24,51 @@ namespace webAppBillett.Controllers
             _log = log;
 
         }
-
-        public async Task<List<Person>> hentAllePersoner()
+        public async Task<List<Person>> hentPersoner()
         {
 
 
-            return await _lugDb.hentAllePersoner();
+            return await _lugDb.hentPersoner();
 
+        }
+        public async Task<List<Betaling>> hentBetalinger()
+        {
+
+
+            return await _lugDb.hentBetalinger();
+
+        }
+
+        public async Task<List<Billett>> hentBilletter()
+        {
+            return await _lugDb.hentBilletter();
+        }
+
+        public async Task<List<BillettPerson>> hentBillettpersoner()
+        {
+            return await _lugDb.hentBillettpersoner();
+        }
+
+        public async Task<List<Havn>> hentHavner()
+        {
+            return await _lugDb.hentHavner();
+        }
+
+        public async Task<List<Lugar>> hentLugarer()
+        {
+            return await _lugDb.hentLugarer();
+        }
+
+
+
+        public async Task<List<RuteForekomstDato>> hentRuteforekomstdatoer()
+        {
+            return await _lugDb.hentRuteforekomstdatoer();
+        }
+
+        public async Task<List<RuteForekomstDatoTid>> hentRuteforekomstdatotider()
+        {
+            return await _lugDb.hentRuteforekomstdatotider();
         }
 
 

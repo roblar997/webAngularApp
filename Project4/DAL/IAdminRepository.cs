@@ -14,9 +14,14 @@ namespace webAppBillett.DAL
     public interface IAdminRepository
     {
 
-        public Task<List<Person>> hentAllePersoner();
-
-
+        public Task<List<Person>> hentPersoner();
+        public Task<List<Betaling>> hentBetalinger();
+        public Task<List<Havn>> hentHavner();
+        public Task<List<RuteForekomstDatoTid>> hentRuteforekomstdatotider();
+        public Task<List<RuteForekomstDato>> hentRuteforekomstdatoer();
+        public Task<List<Lugar>> hentLugarer();
+        public Task<List<BillettPerson>> hentBillettpersoner();
+        public Task<List<Billett>> hentBilletter();
     }
 }
 
