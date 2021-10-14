@@ -54,6 +54,13 @@ export class PersonComponent {
     });
   }
 
+  visEndre(index) {
+    this.Skjema.value.personId = this.personer[index].personId;
+    this.Skjema.value.fornavn = this.personer[index].fornavn;
+    this.Skjema.value.etternavn = this.personer[index].etternavn;
+    this.Skjema.value.telefon = this.personer[index].telefon;
+  }
+
 
 
   hentAllePersoner() {
