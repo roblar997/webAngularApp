@@ -33,7 +33,7 @@
           <label>avgangsDato:</label>
         </td>
         <td>
-          <input type="text" formControlName="avgangsDato">
+          <input type="date" formControlName="avgangsDato">
         </td>
         <td *ngIf="this.Skjema.controls.avgangsDato.status=='INVALID'">
           Obligatorisk
@@ -44,7 +44,7 @@
           <label>avgangsTid:</label>
         </td>
         <td>
-          <input type="text" formControlName="avgangsTid">
+          <input type="time" formControlName="avgangsTid">
         </td>
         <td *ngIf="this.Skjema.controls.avgangsTid.status=='INVALID'">
           Mellom 6 og 15 siffer
