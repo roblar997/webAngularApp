@@ -52,7 +52,13 @@ export class RuteComponent {
     });
   }
   visEndre(index: number) {
-   
+    this.Skjema.setValue({
+      ruteId: this.ruter[index].ruteId,
+      fra: this.ruter[index].fra,
+      til: this.ruter[index].til,
+      prisVoksen: this.ruter[index].prisVoksen,
+      prisBarn: this.ruter[index].prisBarn
+    });
 
   }
   ngOnInit() {

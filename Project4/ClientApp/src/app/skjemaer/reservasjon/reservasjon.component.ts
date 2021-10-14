@@ -50,7 +50,12 @@ export class ReservasjonComponent {
     });
   }
   visEndre(index: number) {
-  
+    this.Skjema.setValue({
+      billettId: this.reservasjoner[index].billettId,
+      ruteId: this.reservasjoner[index].ruteId,
+      avgangsDato: this.reservasjoner[index].avgangsDato,
+      avgangsTid: this.reservasjoner[index].avgangsTid,
+    });
   }
   ngOnInit() {
     this.hentAlleReservasjoner();

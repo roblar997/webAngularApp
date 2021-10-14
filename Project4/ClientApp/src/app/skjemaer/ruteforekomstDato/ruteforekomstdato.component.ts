@@ -36,7 +36,13 @@ export class RuteforekomstdatoComponent {
     });
   }
   visEndre(index: number) {
+    this.Skjema.setValue({
+      forekomstDatoId: this.ruteforekomstdatoer[index].forekomstDatoId,
+      avgangsDato: this.ruteforekomstdatoer[index].avgangsDato,
+      ruteId: this.ruteforekomstdatoer[index].ruteId,
+      erUtsolgt: this.ruteforekomstdatoer[index].erUtsolgt,
 
+    });
 
   }
   ngOnInit() {

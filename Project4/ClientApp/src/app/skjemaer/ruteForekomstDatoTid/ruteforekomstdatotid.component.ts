@@ -59,7 +59,15 @@ export class RuteforekomstdatotidComponent {
 
   }
   visEndre(index: number) {
- 
+    this.Skjema.setValue({
+      ruteId: this.ruteforekomstdatotider[index].ruteId,
+      avgangsDato: this.ruteforekomstdatotider[index].avgangsDato,
+      avgangsTid: this.ruteforekomstdatotider[index].avgangsTid,
+      ankomstDato: this.ruteforekomstdatotider[index].ankomstDato,
+      ankomstTid: this.ruteforekomstdatotider[index].ankomstTid,
+      forekomstDatoId: this.ruteforekomstdatotider[index].forekomstDatoId,
+      erUtsolgt: this.ruteforekomstdatotider[index].erUtsolgt
+    });
 
   }
   ngOnInit() {
