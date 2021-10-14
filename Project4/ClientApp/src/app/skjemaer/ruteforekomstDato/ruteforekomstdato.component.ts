@@ -50,7 +50,7 @@ export class RuteforekomstdatoComponent {
   }
   hentAlleRuteforekomstdatoer() {
     this.laster = "Laster inn...";
-    this._http.get<RuteforekomstDato[]>("admin/hentBetalinger").subscribe((res) => {
+    this._http.get<RuteforekomstDato[]>("admin/hentRuteforekomstdatoer").subscribe((res) => {
       this.ruteforekomstdatoer = res;
       this.laster = "";
     }, err => { }, () => { });

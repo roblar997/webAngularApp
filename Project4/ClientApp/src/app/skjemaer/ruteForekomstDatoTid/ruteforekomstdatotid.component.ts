@@ -60,7 +60,7 @@ export class RuteforekomstdatotidComponent {
   }
   hentAlleRuteforekomstdatotider() {
     this.laster = "Laster inn...";
-    this._http.get<RuteForekomstDatoTid[]>("admin/ruteforekomstdatotider").subscribe((res) => {
+    this._http.get<RuteForekomstDatoTid[]>("admin/hentRuteforekomstdatotider").subscribe((res) => {
       this.ruteforekomstdatotider = res;
       this.laster = "";
     }, err => { }, () => { });
