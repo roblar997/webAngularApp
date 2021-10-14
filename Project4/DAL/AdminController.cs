@@ -50,6 +50,10 @@ namespace webAppBillett.Controllers
         {
             return await _lugDb.hentBilletter();
         }
+        public async Task<List<Reservasjon>> hentReservasjoner()
+        {
+            return await _lugDb.hentReservasjoner();
+        }
 
         public async Task<List<BillettPerson>> hentBillettpersoner()
         {

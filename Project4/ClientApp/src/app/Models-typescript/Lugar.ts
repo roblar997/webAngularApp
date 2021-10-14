@@ -9,6 +9,6 @@ export class Lugar {
   pris: number;
   harWc: boolean;
   harDysj: boolean;
-  hawrWifi: boolean;
+  harWifi: boolean;
 
 }

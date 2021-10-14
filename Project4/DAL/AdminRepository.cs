@@ -33,6 +33,11 @@ namespace webAppBillett.DAL
             return await _lugDb.betaling.ToListAsync();
 
         }
+        public async Task<List<Reservasjon>> hentReservasjoner()
+        {
+            return await _lugDb.reservasjon.ToListAsync();
+        }
+
         public async Task<List<Rute>> hentRutere()
         {
 
