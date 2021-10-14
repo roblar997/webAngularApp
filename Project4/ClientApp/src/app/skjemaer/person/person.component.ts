@@ -43,6 +43,7 @@ export class PersonComponent {
   endrePerson() {
 
     const person = new Person();
+
     person.personId = this.Skjema.value.personId;
     person.fornavn = this.Skjema.value.fornavn;
     person.etternavn = this.Skjema.value.etternavn;
@@ -54,11 +55,14 @@ export class PersonComponent {
     });
   }
 
-  visEndre(index) {
-    this.Skjema.value.personId = this.personer[index].personId;
-    this.Skjema.value.fornavn = this.personer[index].fornavn;
-    this.Skjema.value.etternavn = this.personer[index].etternavn;
-    this.Skjema.value.telefon = this.personer[index].telefon;
+  visEndre(index : number) {
+    this.Skjema.setValue({
+      personId: this.personer[index].personId,
+      fornavn: this.personer[index].fornavn,
+      etternavn: this.personer[index].etternavn,
+      telefon: this.personer[index].telefon
+    });
+
   }
 
 

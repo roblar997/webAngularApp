@@ -60,13 +60,13 @@
 
   <div class="container bg-white " style="width: 100vw; ">
     <table class="table table-striped">
-      <tr *ngFor="let person of personer">
-        <td>{{person.personId}}</td>
+      <tr *ngFor="let person of personer; let indexVal = index;">
+        <td>{{person.personId}}  </td>
         <td>{{person.fornavn}}</td>
         <td>{{person.etternavn}}</td>
         <td>{{person.telefon}}</td>
         <td>
-          <button type="submit" (click)="visEndre($index)">Endre</button>
+          <button type="submit" (click)="visEndre(indexVal)">Endre</button>
         </td>
         <td>
           <button type="submit">Slette</button>
