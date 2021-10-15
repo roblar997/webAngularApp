@@ -21,7 +21,17 @@ export class HavnComponent {
 
     });
   }
+  multipleSubmit(state: string) {
+    if (this.Skjema.valid) {
+      if (state.localeCompare("endre") == 0) {
+        this.endreHavn();
+      }
+      else if (state.localeCompare("lagre") == 0) {
+        this.lagreHavn();
+      }
+    }
 
+  }
 
   lagreHavn() {
 
