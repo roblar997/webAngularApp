@@ -6,7 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using webAppBillett.Contexts;
 using webAppBillett.Models;
-
+using System.Security.Cryptography;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 namespace webAppBillett.DAL
 {
 
@@ -18,6 +19,24 @@ namespace webAppBillett.DAL
         {
             _lugDb = db;
 
+        }
+
+        public static byte[] lagHash(string passord, byte[] salt)
+        {
+            return KeyDerivation.Pbkdf2(
+                                password: passord,
+                                salt: salt,
+                                prf: KeyDerivationPrf.HMACSHA512,
+                                iterationCount: 1000,
+                                numBytesRequested: 32);
+        }
+
+        public static byte[] lagSalt()
+        {
+            var csp = new RNGCryptoServiceProvider();
+            var salt = new byte[24];
+            csp.GetBytes(salt);
+            return salt;
         }
         public async Task<List<Person>> hentPersoner()
         {
