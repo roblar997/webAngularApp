@@ -209,51 +209,53 @@ namespace webAppBillett.Controllers
 
         public void slettPerson(int id)
         {
+            _lugDb.slettPerson(id);
  
         }
 
         public void slettBetaling(int id)
         {
-    
+            _lugDb.slettBetaling(id);
         }
 
         public void slettHavn(int id)
         {
-     
+            _lugDb.slettHavn(id);
         }
 
         public void slettReservasjon(Reservasjon reservasjon)
-        { 
+        {
+            _lugDb.slettReservasjon(reservasjon);
         }
 
         public void slettRute(int id)
         {
-          
+            _lugDb.slettRute(id);
         }
 
         public void slettRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatoTid)
         {
-         
+            _lugDb.slettRuteforekomstdatotid(ruteForekomstDatoTid);
         }
 
         public void slettRuteforekomstdato(int id)
         {
-         
+            _lugDb.slettRuteforekomstdato(id);
         }
 
         public void slettLugar(int id)
         {
-      
+            _lugDb.slettLugar(id);
         }
 
         public void slettBillettperson(BillettPerson billettperson)
         {
-     
+            _lugDb.slettBillettperson(billettperson);
         }
 
         public void sletteBillett(int id)
         {
-        
+            _lugDb.sletteBillett(id);
         }
     }
 }
