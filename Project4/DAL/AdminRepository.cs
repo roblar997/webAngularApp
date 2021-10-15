@@ -243,6 +243,63 @@ namespace webAppBillett.DAL
         {
             throw new NotImplementedException();
         }
+
+
+
+
+
+
+        public void slettPerson(int id)
+        {
+            Person person = _lugDb.personer.Find(id);
+            _lugDb.personer.Remove(person);
+            _lugDb.SaveChanges();
+        }
+
+        public void slettBetaling(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void slettHavn(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void slettReservasjon(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void slettRute(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void slettRuteforekomstdatotid(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void slettRuteforekomstdato(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void slettLugar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void slettBillettperson(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void sletteBillett(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
