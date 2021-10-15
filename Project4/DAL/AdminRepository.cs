@@ -9,6 +9,7 @@ using webAppBillett.Models;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System.Text;
+using Microsoft.AspNetCore.Http;
 
 namespace webAppBillett.DAL
 {
@@ -61,8 +62,10 @@ namespace webAppBillett.DAL
                 bool ok = hash.SequenceEqual(Encoding.ASCII.GetBytes(brukeren.passord));
                 if (ok)
                 {
+                    HttpContext.Session.SetString("loggin", "erOk");
                     return true;
                 }
+                HttpContext.Session.SetString("loggin", "");
                 return false;
             }
             catch (Exception e)

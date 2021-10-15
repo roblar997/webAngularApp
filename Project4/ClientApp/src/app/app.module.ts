@@ -19,6 +19,7 @@ import { Rute } from './Models-typescript/Rute';
 import { RuteComponent } from './skjemaer/rute/rute.component';
 import { BillettpersonComponent } from './skjemaer/billettPerson/billettperson.component';
 import { ReservasjonComponent } from './skjemaer/reservasjon/reservasjon.component';
+import { LoginComponent } from './skjemaer/login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ReservasjonComponent } from './skjemaer/reservasjon/reservasjon.compone
     BillettpersonComponent,
     BetalingComponent,
     HavnComponent,
-    ReservasjonComponent
+    LoginComponent,
+    ReservasjonComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,7 +43,7 @@ import { ReservasjonComponent } from './skjemaer/reservasjon/reservasjon.compone
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: 'lugar', pathMatch: 'full' },
+      { path: '', component: LoginComponent, pathMatch: 'full' },
       { path: 'lugar', component: LugarComponent, pathMatch: 'full' },
       { path: 'person', component: PersonComponent, pathMatch: 'full' },
       { path: 'billett', component: BillettComponent, pathMatch: 'full' },

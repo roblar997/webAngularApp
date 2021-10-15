@@ -1,0 +1,41 @@
+<div>
+
+
+
+  <h2>Innlogging </h2>
+  <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>
+          <label>Brukernavn:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="brukernavn">
+        </td>
+        <td *ngIf="this.Skjema.controls.brukernavn.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Passord:</label>
+        </td>
+        <td>
+          <input type="password" formControlName="passord">
+        </td>
+        <td *ngIf="this.Skjema.controls.passord.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="submit" [disabled]="!Skjema.valid">Login</button>
+        </td>
+
+      </tr>
+    </table>
+  </form>
+
+
+
+</div>

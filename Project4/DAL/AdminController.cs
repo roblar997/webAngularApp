@@ -53,15 +53,21 @@ namespace webAppBillett.Controllers
 
             if (!ok)
             {
+                HttpContext.Session.SetString("loggin", "");
                 return Ok(false);
             }
+            HttpContext.Session.SetString("loggin", "erInnlogget");
+         
             return Ok(true);
         }
-        public async Task<List<Rute>> hentRutere()
+        public async Task<ActionResult> hentRutere()
         {
 
-
-            return await _lugDb.hentRutere();
+          //  if (string.IsNullOrEmpty(HttpContext.Session.GetString("loggin")))
+           // {
+           //     return Unauthorized();
+          //  }
+            return Ok(await _lugDb.hentRutere());
 
         }
 
