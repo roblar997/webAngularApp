@@ -107,154 +107,157 @@ namespace webAppBillett.Controllers
             return await _lugDb.hentRuteforekomstdatotider();
         }
 
-        public void lagrePerson(Person person)
+        [HttpPost]
+        public void lagrePerson([FromBody] Person person)
         {
             _lugDb.lagrePerson(person);
         }
 
-        public void lagreBetaling(Betaling betaling)
+        [HttpPost]
+        public void lagreBetaling([FromBody] Betaling betaling)
         {
             _lugDb.lagreBetaling(betaling);
         }
 
-        public ActionResult lagreHavn(Havn havn)
+        [HttpPost]
+        public ActionResult lagreHavn([FromBody] Havn havn)
         {
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreHavn(havn);
             return Ok();
         }
-
-        public void lagreReservasjon(Reservasjon reservasjon)
+        [HttpPost]
+        public void lagreReservasjon([FromBody] Reservasjon reservasjon)
         {
             _lugDb.lagreReservasjon(reservasjon);
         }
-
-        public void lagreRuter(Rute rute)
+        [HttpPost]
+        public void lagreRuter([FromBody] Rute rute)
         {
             _lugDb.lagreRuter(rute);
         }
-
-        public void lagreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid)
+        [HttpPost]
+        public void lagreRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatotid)
         {
             _lugDb.lagreRuteforekomstdatotid(ruteForekomstDatotid);
         }
 
-        public void lagreRuteforekomstdato(RuteForekomstDato ruteForekomstDato)
+        public void lagreRuteforekomstdato([FromBody] RuteForekomstDato ruteForekomstDato)
         {
             _lugDb.lagreRuteforekomstdato(ruteForekomstDato);
         }
-
-        public void lagreLugar(Lugar lugar)
+        [HttpPost]
+        public void lagreLugar([FromBody] Lugar lugar)
         {
             _lugDb.lagreLugar(lugar);
         }
-
-        public void lagreBillettperson(BillettPerson billettPerson)
+        [HttpPost]
+        public void lagreBillettperson([FromBody] BillettPerson billettPerson)
         {
             _lugDb.lagreBillettperson(billettPerson);
         }
-
-        public void lagreBillett(Billett billett)
+        [HttpPost]
+        public void lagreBillett([FromBody] Billett billett)
         {
             _lugDb.lagreBillett(billett);
         }
-
-        public void endrePerson(Person person)
+        [HttpPost]
+        public void endrePerson([FromBody] Person person)
         {
             _lugDb.endrePerson(person);
         }
-
-        public void endreBetaling(Betaling betaling)
+        [HttpPost]
+        public void endreBetaling([FromBody] Betaling betaling)
         {
             _lugDb.endreBetaling(betaling);
         }
-
-        public void endreHavn(Havn havn)
+        [HttpPost]
+        public void endreHavn([FromBody] Havn havn)
         {
             _lugDb.endreHavn(havn);
         }
-
-        public void endreReservasjon(Reservasjon reservasjon)
+        [HttpPost]
+        public void endreReservasjon([FromBody] Reservasjon reservasjon)
         {
             _lugDb.endreReservasjon(reservasjon);
         }
-
-        public void endreRute(Rute rute)
+        [HttpPost]
+        public void endreRute([FromBody] Rute rute)
         {
             _lugDb.endreRute(rute);
         }
-
-        public void endreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid)
+        [HttpPost]
+        public void endreRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatotid)
         {
             _lugDb.endreRuteforekomstdatotid(ruteForekomstDatotid);
         }
-
-        public void endreRuteforekomstdato(RuteForekomstDato ruteForekomstDato)
+        [HttpPost]
+        public void endreRuteforekomstdato([FromBody] RuteForekomstDato ruteForekomstDato)
         {
             _lugDb.endreRuteforekomstdato(ruteForekomstDato);
         }
-
-        public void endreLugar(Lugar lugar)
+        [HttpPost]
+        public void endreLugar([FromBody] Lugar lugar)
         {
             _lugDb.endreLugar(lugar);
         }
-
-        public void endreBillettperson(BillettPerson billettPerson)
+        [HttpPost]
+        public void endreBillettperson([FromBody] BillettPerson billettPerson)
         {
             _lugDb.endreBillettperson(billettPerson);
         }
-
-        public void endreBillett(Billett billett)
+        [HttpPost]
+        public void endreBillett([FromBody] Billett billett)
         {
             _lugDb.endreBillett(billett);
         }
-
+        [HttpPost]
         public void slettPerson(int id)
         {
             _lugDb.slettPerson(id);
  
         }
-
+        [HttpPost]
         public void slettBetaling(int id)
         {
             _lugDb.slettBetaling(id);
         }
-
+        [HttpPost]
         public void slettHavn(int id)
         {
             _lugDb.slettHavn(id);
         }
-
-        public void slettReservasjon(Reservasjon reservasjon)
+        [HttpPost]
+        public void slettReservasjon([FromBody] Reservasjon reservasjon)
         {
             _lugDb.slettReservasjon(reservasjon);
         }
-
+        [HttpPost]
         public void slettRute(int id)
         {
             _lugDb.slettRute(id);
         }
-
-        public void slettRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatoTid)
+        [HttpPost]
+        public void slettRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatoTid)
         {
             _lugDb.slettRuteforekomstdatotid(ruteForekomstDatoTid);
         }
-
+        [HttpPost]
         public void slettRuteforekomstdato(int id)
         {
             _lugDb.slettRuteforekomstdato(id);
         }
-
+        [HttpPost]
         public void slettLugar(int id)
         {
             _lugDb.slettLugar(id);
         }
-
-        public void slettBillettperson(BillettPerson billettperson)
+        [HttpPost]
+        public void slettBillettperson([FromBody] BillettPerson billettperson)
         {
             _lugDb.slettBillettperson(billettperson);
         }
-
+        [HttpPost]
         public void sletteBillett(int id)
         {
             _lugDb.sletteBillett(id);

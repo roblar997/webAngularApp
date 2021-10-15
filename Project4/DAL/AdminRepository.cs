@@ -146,7 +146,7 @@ namespace webAppBillett.DAL
             _lugDb.SaveChanges();
         }
 
-        public void lagreHavn(Havn havn)
+        public void lagreHavn( Havn havn)
         {
             _lugDb.havn.Add(havn);
             _lugDb.SaveChanges();
