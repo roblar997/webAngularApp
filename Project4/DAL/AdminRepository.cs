@@ -280,6 +280,14 @@ namespace webAppBillett.DAL
             lugaren.antall = lugar.antall;
             lugaren.pris = lugar.pris;
             lugaren.beskrivelse = lugar.beskrivelse;
+            lugaren.bildeURL = lugar.bildeURL;
+            lugaren.harDysj = lugar.harDysj;
+            lugaren.harWc = lugar.harWc;
+            lugaren.harWifi = lugar.harWifi;
+            lugaren.romNr = lugar.romNr;
+            lugaren.tittel = lugar.tittel;
+            lugaren.lugarType = lugar.lugarType;
+            _lugDb.SaveChanges();
 
         }
 
