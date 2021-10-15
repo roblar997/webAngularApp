@@ -227,17 +227,27 @@ namespace webAppBillett.DAL
             havnen.ruteFra = havn.ruteFra;
             havnen.ruteTil = havn.ruteTil;
             _lugDb.SaveChanges();
-            throw new NotImplementedException();
+
         }
 
         public void endreReservasjon(Reservasjon reservasjon)
         {
-            throw new NotImplementedException();
+            Reservasjon reservasjonen = _lugDb.reservasjon.First((x) => x.billettId == reservasjon.billettId && x.lugarId == reservasjon.lugarId);
+            reservasjonen.avgangsDato = reservasjon.avgangsDato;
+            reservasjonen.avgangsTid = reservasjon.avgangsTid;
+            reservasjonen.ruteId = reservasjon.ruteId;
+            _lugDb.SaveChanges();
         }
 
         public void endreRute(Rute rute)
         {
-            throw new NotImplementedException();
+            Rute ruten = _lugDb.ruter.Find(rute.ruteId);
+            ruten.fra = rute.fra;
+            ruten.til = rute.til;
+            ruten.prisBarn = rute.prisBarn;
+            ruten.prisVoksen = rute.prisVoksen;
+            ruten.ruteId = rute.ruteId;
+            _lugDb.SaveChanges();
         }
 
         public void endreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid)
@@ -275,7 +285,9 @@ namespace webAppBillett.DAL
 
         public void endreBillettperson(BillettPerson billettPerson)
         {
-            throw new NotImplementedException();
+            //Kan ikke endres.
+            BillettPerson billettperson = _lugDb.billettPerson.First((x) => x.billettId == billettPerson.billettId && x.personId == billettPerson.personId);
+            return;
         }
 
         public void endreBillett(Billett billett)
