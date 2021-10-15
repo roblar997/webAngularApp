@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using webAppBillett.DAL;
 using webAppBillett.Models;
 
 namespace webAppBillett.Contexts
@@ -21,7 +22,7 @@ namespace webAppBillett.Contexts
         public DbSet<Billett> billetter { get; set; }
         public DbSet<Rute> ruter { get; set; }
         public DbSet<Havn> havn { get; set; }
-
+        public DbSet<Bruker> brukere { get; set; }
         public DbSet<RuteForekomstDato> ruteForekomstDato { get; set; }
         public DbSet<RuteForekomstDatoTid> ruteForekomstDatoTid { get; set; }
         public DbSet<Person> personer { get; set; }

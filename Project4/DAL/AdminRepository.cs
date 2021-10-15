@@ -8,6 +8,8 @@ using webAppBillett.Contexts;
 using webAppBillett.Models;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using System.Text;
+
 namespace webAppBillett.DAL
 {
 
@@ -37,6 +39,27 @@ namespace webAppBillett.DAL
             var salt = new byte[24];
             csp.GetBytes(salt);
             return salt;
+        }
+
+        public async Task<bool> loggInn(Bruker bruker)
+        {
+            try
+            {
+                Bruker brukeren = await _lugDb.brukere.FirstOrDefaultAsync(x =>x.brukernavn == bruker.brukernavn);
+  
+                byte[] hash = lagHash(bruker.passord, brukeren.salt);
+                bool ok = hash.SequenceEqual(Encoding.ASCII.GetBytes(brukeren.passord));
+                if (ok)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+    
+                return false;
+            }
         }
         public async Task<List<Person>> hentPersoner()
         {
