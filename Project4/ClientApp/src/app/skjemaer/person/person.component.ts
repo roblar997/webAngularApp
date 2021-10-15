@@ -40,6 +40,18 @@ export class PersonComponent {
 
     });
   }
+
+  multipleSubmit(state: string) {
+    if (this.Skjema.valid) {
+      if (state.localeCompare("endre") == 0) {
+        this.endrePerson();
+      }
+      else if (state.localeCompare("lagre") == 0) {
+        this.lagrePerson();
+      }
+    }
+
+  }
   endrePerson() {
 
     const person = new Person();

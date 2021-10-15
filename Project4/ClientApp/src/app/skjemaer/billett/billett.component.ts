@@ -60,6 +60,17 @@ export class BillettComponent {
 
       });
   }
+  multipleSubmit(state: string) {
+    if (this.Skjema.valid) {
+      if (state.localeCompare("endre") == 0) {
+        this.endreBillett();
+      }
+      else if (state.localeCompare("lagre") == 0) {
+        this.lagreBillett();
+      }
+    }
+
+  }
   visEndre(index: number) {
     this.Skjema.setValue({
       billettId: this.billetter[index].billettId,

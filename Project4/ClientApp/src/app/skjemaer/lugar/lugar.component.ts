@@ -91,6 +91,18 @@ export class LugarComponent {
   ngOnInit() {
     this.hentAlleLugarer();
   }
+
+  multipleSubmit(state: string) {
+    if (this.Skjema.valid) {
+      if (state.localeCompare("endre") == 0) {
+        this.endreLugar();
+      }
+      else if (state.localeCompare("lagre") == 0) {
+        this.lagreLugar();
+      }
+    }
+
+  }
   hentAlleLugarer() {
     this.laster = "Laster inn...";
     this._http.get<Lugar[]>("admin/hentLugarer").subscribe((res) => {

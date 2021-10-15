@@ -51,7 +51,17 @@ export class BillettpersonComponent {
     });
 
   }
+  multipleSubmit(state: string) {
+    if (this.Skjema.valid) {
+      if (state.localeCompare("endre") == 0) {
+        this.endreBillettPerson();
+      }
+      else if (state.localeCompare("lagre") == 0) {
+        this.lagreBillettPerson();
+      }
+    }
 
+  }
   ngOnInit() {
     this.hentAlleBillettpersoner();
   }

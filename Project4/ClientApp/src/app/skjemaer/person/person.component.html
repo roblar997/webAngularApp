@@ -49,10 +49,10 @@
       </tr>
       <tr>
         <td>
-          <button type="submit" [disabled]="!Skjema.valid">Register</button>
+          <button type="submit" (click)='multipleSubmit("lagre")' [disabled]="!Skjema.valid">Register</button>
         </td>
         <td>
-          <button type="submit" [disabled]="!Skjema.valid">Endre</button>
+          <button type="submit" (click)='multipleSubmit("endre")' [disabled]="!Skjema.valid">Endre</button>
         </td>
       </tr>
     </table>
