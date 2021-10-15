@@ -136,52 +136,62 @@ namespace webAppBillett.DAL
 
         public void lagrePerson(Person person)
         {
-            throw new NotImplementedException();
+            _lugDb.personer.Add(person);
+            _lugDb.SaveChanges();
         }
 
         public void lagreBetaling(Betaling betaling)
         {
-            throw new NotImplementedException();
+            _lugDb.betaling.Add(betaling);
+            _lugDb.SaveChanges();
         }
 
         public void lagreHavn(Havn havn)
         {
-            throw new NotImplementedException();
+            _lugDb.havn.Add(havn);
+            _lugDb.SaveChanges();
         }
 
         public void lagreReservasjon(Reservasjon reservasjon)
         {
-            throw new NotImplementedException();
+            _lugDb.reservasjon.Add(reservasjon);
+            _lugDb.SaveChanges();
         }
 
         public void lagreRuter(Rute rute)
         {
-            throw new NotImplementedException();
+            _lugDb.ruter.Add(rute);
+            _lugDb.SaveChanges();
         }
 
         public void lagreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid)
         {
-            throw new NotImplementedException();
+            _lugDb.ruteForekomstDatoTid.Add(ruteForekomstDatotid);
+            _lugDb.SaveChanges();
         }
 
         public void lagreRuteforekomstdato(RuteForekomstDato ruteForekomstDato)
         {
-            throw new NotImplementedException();
+            _lugDb.ruteForekomstDato.Add(ruteForekomstDato);
+            _lugDb.SaveChanges();
         }
 
         public void lagreLugar(Lugar lugar)
         {
-            throw new NotImplementedException();
+            _lugDb.lugarer.Add(lugar);
+            _lugDb.SaveChanges();
         }
 
         public void lagreBillettperson(BillettPerson billettPerson)
         {
-            throw new NotImplementedException();
+            _lugDb.billettPerson.Add(billettPerson);
+            _lugDb.SaveChanges();
         }
 
         public void lagreBillett(Billett billett)
         {
-            throw new NotImplementedException();
+            _lugDb.billetter.Add(billett);
+            _lugDb.SaveChanges();
         }
 
         public void endrePerson(Person person)
