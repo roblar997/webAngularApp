@@ -117,9 +117,11 @@ namespace webAppBillett.Controllers
             _lugDb.lagreBetaling(betaling);
         }
 
-        public void lagreHavn(Havn havn)
+        public ActionResult lagreHavn(Havn havn)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreHavn(havn);
+            return Ok();
         }
 
         public void lagreReservasjon(Reservasjon reservasjon)

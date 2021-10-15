@@ -35,7 +35,17 @@ export class ReservasjonComponent {
 
     });
   }
+  multipleSubmit(state: string) {
+    if (this.Skjema.valid) {
+      if (state.localeCompare("endre") == 0) {
+        this.endreReservasjon();
+      }
+      else if (state.localeCompare("lagre") == 0) {
+        this.lagreReservasjon();
+      }
+    }
 
+  }
   endreReservasjon() {
 
     const reservasjon = new Reservasjon();

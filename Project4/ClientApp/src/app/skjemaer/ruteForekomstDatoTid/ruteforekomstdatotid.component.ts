@@ -58,6 +58,18 @@ export class RuteforekomstdatotidComponent {
     });
 
   }
+
+  multipleSubmit(state: string) {
+    if (this.Skjema.valid) {
+      if (state.localeCompare("endre") == 0) {
+        this.endreForekomstDatoTid();
+      }
+      else if (state.localeCompare("lagre") == 0) {
+        this.lagreForekomstDatoTid();
+      }
+    }
+
+  }
   visEndre(index: number) {
     this.Skjema.setValue({
       ruteId: this.ruteforekomstdatotider[index].ruteId,

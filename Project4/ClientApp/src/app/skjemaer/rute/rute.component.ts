@@ -61,6 +61,18 @@ export class RuteComponent {
     });
 
   }
+
+  multipleSubmit(state: string) {
+    if (this.Skjema.valid) {
+      if (state.localeCompare("endre") == 0) {
+        this.endreRute();
+      }
+      else if (state.localeCompare("lagre") == 0) {
+        this.lagreRute();
+      }
+    }
+
+  }
   ngOnInit() {
     this.hentAlleRuter();
   }
