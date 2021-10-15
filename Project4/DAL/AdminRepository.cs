@@ -196,16 +196,37 @@ namespace webAppBillett.DAL
 
         public void endrePerson(Person person)
         {
-            throw new NotImplementedException();
+            Person personen = _lugDb.personer.Find(person.personId);
+            personen.fornavn = person.fornavn;
+            personen.etternavn = person.etternavn;
+            personen.telefon = person.telefon;
+            _lugDb.SaveChanges();
+      
         }
 
         public void endreBetaling(Betaling betaling)
         {
-            throw new NotImplementedException();
+            Betaling betalingen = _lugDb.betaling.Find(betaling.betalingsId);
+            betalingen.pris = betaling.pris;
+            betalingen.adresse = betaling.adresse;
+            betalingen.csv = betaling.csv;
+            betalingen.email = betaling.email;
+            betalingen.kortholderNavn = betaling.kortholderNavn;
+            betalingen.kortnummer = betaling.kortnummer;
+            betalingen.postnr = betaling.kortnummer;
+            betalingen.poststed = betaling.poststed;
+            betalingen.telefon = betaling.telefon;
+            betalingen.utloper = betaling.utloper;
+            _lugDb.SaveChanges();
         }
 
         public void endreHavn(Havn havn)
         {
+            Havn havnen = _lugDb.havn.Find(havn.havnId);
+            havnen.navn = havn.navn;
+            havnen.ruteFra = havn.ruteFra;
+            havnen.ruteTil = havn.ruteTil;
+            _lugDb.SaveChanges();
             throw new NotImplementedException();
         }
 
@@ -258,7 +279,8 @@ namespace webAppBillett.DAL
 
         public void slettBetaling(int id)
         {
-            throw new NotImplementedException();
+           
+            
         }
 
         public void slettHavn(int id)
