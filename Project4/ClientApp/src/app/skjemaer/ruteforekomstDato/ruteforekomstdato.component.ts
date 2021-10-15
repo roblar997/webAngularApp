@@ -11,6 +11,7 @@ export class RuteforekomstdatoComponent {
 
   Skjema: FormGroup;
   public ruteforekomstdatoer: Array<RuteforekomstDato>;
+  submitState: string;
 
   public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient) {
@@ -45,8 +46,24 @@ export class RuteforekomstdatoComponent {
     });
 
   }
+
+
   ngOnInit() {
     this.hentAlleRuteforekomstdatoer();
+  }
+
+  changeState(state : string) {
+    if (this.Skjema.valid) {
+      if (state.localeCompare("endre") == 0) {
+        this.endreForekomstDato();
+      }
+      else if (state.localeCompare("lagre") == 0) {
+        this.lagreForekomstDato();
+      }
+    }
+
+   
+
   }
   endreForekomstDato() {
 
