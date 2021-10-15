@@ -17,6 +17,7 @@ namespace webAppBillett.DAL
         public Task<List<Person>> hentPersoner();
         public Task<List<Betaling>> hentBetalinger();
         public Task<List<Havn>> hentHavner();
+        public void registrerBruker(Bruker bruker);
         public  Task<bool> loggInn(Bruker bruker);
         public  Task<List<Reservasjon>> hentReservasjoner();
         public Task<List<Rute>> hentRutere();

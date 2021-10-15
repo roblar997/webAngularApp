@@ -39,6 +39,13 @@ namespace webAppBillett.Controllers
 
         }
 
+        public async Task<ActionResult> registrerBruker(Bruker bruker)
+        {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
+
+            _lugDb.registrerBruker(bruker);
+            return Ok();
+        }
         public async Task<ActionResult> loggInn(Bruker bruker)
         {
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");

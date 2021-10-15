@@ -41,6 +41,16 @@ namespace webAppBillett.DAL
             return salt;
         }
 
+        public async void registrerBruker(Bruker bruker)
+        {
+            byte[] salt = lagSalt();
+            byte[] hash = lagHash(bruker.passord, salt);
+            bruker.passord = Encoding.Default.GetString(hash);
+            bruker.salt = salt;
+            _lugDb.Add(bruker);
+            _lugDb.SaveChanges();
+        }
+
         public async Task<bool> loggInn(Bruker bruker)
         {
             try
