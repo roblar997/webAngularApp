@@ -63,7 +63,11 @@ export class RuteforekomstdatoComponent {
     }
 
   }
+  slettForekomstdato(id) {
+    this._http.post("admin/slettForekomstdato", id).subscribe((res) => {
 
+    });
+  }
   endreForekomstDato() {
 
     const ruteforekomstdato = new RuteforekomstDato();

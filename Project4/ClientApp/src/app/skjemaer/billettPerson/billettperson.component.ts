@@ -51,6 +51,12 @@ export class BillettpersonComponent {
     });
 
   }
+  slettBilllettPerson(id) {
+    this._http.post("admin/slettBillettPerson", id).subscribe((res) => {
+
+    });
+  }
+
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {

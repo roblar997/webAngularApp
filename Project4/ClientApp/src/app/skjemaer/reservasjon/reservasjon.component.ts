@@ -35,6 +35,12 @@ export class ReservasjonComponent {
 
     });
   }
+
+  slettReservasjon(id) {
+    this._http.post("admin/slettReservasjon", id).subscribe((res) => {
+
+    });
+  }
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {

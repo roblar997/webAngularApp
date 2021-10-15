@@ -60,6 +60,13 @@ export class BillettComponent {
 
       });
   }
+
+  slettBilllett(id) {
+    this._http.post("admin/slettBillett", id).subscribe((res) => {
+
+    });
+  }
+
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {

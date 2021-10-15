@@ -51,6 +51,11 @@ export class RuteComponent {
 
     });
   }
+  slettRute(id) {
+    this._http.post("admin/slettRute", id).subscribe((res) => {
+
+    });
+  }
   visEndre(index: number) {
     this.Skjema.setValue({
       ruteId: this.ruter[index].ruteId,

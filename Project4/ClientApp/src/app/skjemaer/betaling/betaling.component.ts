@@ -77,6 +77,12 @@ export class BetalingComponent {
 
   }
 
+  slettBetaling(id) {
+    this._http.post("admin/slettBetaling", id).subscribe((res) => {
+
+    });
+  }
+
   endreBetaling() {
     const betaling = new Betaling();
     betaling.betalingsId = this.Skjema.value.betalingsId;

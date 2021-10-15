@@ -91,7 +91,11 @@ export class LugarComponent {
   ngOnInit() {
     this.hentAlleLugarer();
   }
+  slettLugar(id) {
+    this._http.post("admin/slettLugar", id).subscribe((res) => {
 
+    });
+  }
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {

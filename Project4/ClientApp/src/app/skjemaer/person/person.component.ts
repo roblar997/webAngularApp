@@ -40,7 +40,11 @@ export class PersonComponent {
 
     });
   }
+  slettPerson(id) {
+    this._http.post("admin/slettPerson", id).subscribe((res) => {
 
+    });
+  }
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {

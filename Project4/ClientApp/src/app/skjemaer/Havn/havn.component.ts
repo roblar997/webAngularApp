@@ -64,6 +64,13 @@ export class HavnComponent {
 
 
   }
+
+  slettHavn(id) {
+    this._http.post("admin/slettHavn", id).subscribe((res) => {
+
+    });
+  }
+
   ngOnInit() {
     this.hentAlleHavner();
   }
