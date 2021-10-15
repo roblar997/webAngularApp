@@ -77,8 +77,8 @@ export class BetalingComponent {
 
   }
 
-  slettBetaling(id) {
-    this._http.post("admin/slettBetaling", id).subscribe((res) => {
+  slett(index) {
+    this._http.post("admin/slettBetaling", this.betalinger[index].betalingsId).subscribe((res) => {
 
     });
   }

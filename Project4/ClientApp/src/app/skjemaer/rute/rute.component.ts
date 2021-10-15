@@ -51,8 +51,8 @@ export class RuteComponent {
 
     });
   }
-  slettRute(id) {
-    this._http.post("admin/slettRute", id).subscribe((res) => {
+  slett(index) {
+    this._http.post("admin/slettRute", this.ruter[index].ruteId).subscribe((res) => {
 
     });
   }

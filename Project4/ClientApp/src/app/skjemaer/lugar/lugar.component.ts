@@ -91,8 +91,8 @@ export class LugarComponent {
   ngOnInit() {
     this.hentAlleLugarer();
   }
-  slettLugar(id) {
-    this._http.post("admin/slettLugar", id).subscribe((res) => {
+  slett(index) {
+    this._http.post("admin/slettLugar", this.lugarer[index].lugarId).subscribe((res) => {
 
     });
   }

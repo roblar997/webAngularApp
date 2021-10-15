@@ -40,8 +40,8 @@ export class PersonComponent {
 
     });
   }
-  slettPerson(id) {
-    this._http.post("admin/slettPerson", id).subscribe((res) => {
+  slett(index) {
+    this._http.post("admin/slettPerson", this.personer[index].personId).subscribe((res) => {
 
     });
   }

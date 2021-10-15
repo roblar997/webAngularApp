@@ -70,10 +70,8 @@ export class RuteforekomstdatotidComponent {
     }
 
   }
-  slettForekomstdatotid(id) {
-    this._http.post("admin/slettForekomstdatotid", id).subscribe((res) => {
-
-    });
+  slett(index) {
+    //TODO
   }
   visEndre(index: number) {
     this.Skjema.setValue({

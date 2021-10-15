@@ -61,8 +61,8 @@ export class BillettComponent {
       });
   }
 
-  slettBilllett(id) {
-    this._http.post("admin/slettBillett", id).subscribe((res) => {
+  slett(index) {
+    this._http.post("admin/slettBillett", this.billetter[index].billettId).subscribe((res) => {
 
     });
   }

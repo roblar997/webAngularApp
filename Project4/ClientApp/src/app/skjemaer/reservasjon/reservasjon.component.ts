@@ -36,10 +36,8 @@ export class ReservasjonComponent {
     });
   }
 
-  slettReservasjon(id) {
-    this._http.post("admin/slettReservasjon", id).subscribe((res) => {
-
-    });
+  slett(index) {
+    //TODO
   }
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {

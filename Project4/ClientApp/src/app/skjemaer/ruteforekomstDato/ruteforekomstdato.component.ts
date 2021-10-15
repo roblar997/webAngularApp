@@ -63,8 +63,8 @@ export class RuteforekomstdatoComponent {
     }
 
   }
-  slettForekomstdato(id) {
-    this._http.post("admin/slettForekomstdato", id).subscribe((res) => {
+  slett(index) {
+    this._http.post("admin/slettForekomstdato", this.ruteforekomstdatoer[index].forekomstDatoId).subscribe((res) => {
 
     });
   }

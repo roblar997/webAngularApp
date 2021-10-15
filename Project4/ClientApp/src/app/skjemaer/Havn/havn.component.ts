@@ -65,8 +65,8 @@ export class HavnComponent {
 
   }
 
-  slettHavn(id) {
-    this._http.post("admin/slettHavn", id).subscribe((res) => {
+  slett(index) {
+    this._http.post("admin/slettHavn", this.havner[index].havnId).subscribe((res) => {
 
     });
   }
