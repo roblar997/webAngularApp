@@ -52,7 +52,7 @@ export class RuteforekomstdatoComponent {
     this.hentAlleRuteforekomstdatoer();
   }
 
-  changeState(state : string) {
+  multipleSubmit(state : string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.endreForekomstDato();
@@ -62,9 +62,8 @@ export class RuteforekomstdatoComponent {
       }
     }
 
-   
-
   }
+
   endreForekomstDato() {
 
     const ruteforekomstdato = new RuteforekomstDato();
