@@ -107,6 +107,104 @@ namespace webAppBillett.Controllers
             return await _lugDb.hentRuteforekomstdatotider();
         }
 
+        public void lagrePerson(Person person)
+        {
+            _lugDb.lagrePerson(person);
+        }
 
+        public void lagreBetaling(Betaling betaling)
+        {
+            _lugDb.lagreBetaling(betaling);
+        }
+
+        public void lagreHavn(Havn havn)
+        {
+            _lugDb.lagreHavn(havn);
+        }
+
+        public void lagreReservasjon(Reservasjon reservasjon)
+        {
+            _lugDb.lagreReservasjon(reservasjon);
+        }
+
+        public void lagreRuter(Rute rute)
+        {
+            _lugDb.lagreRuter(rute);
+        }
+
+        public void lagreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid)
+        {
+            _lugDb.lagreRuteforekomstdatotid(ruteForekomstDatotid);
+        }
+
+        public void lagreRuteforekomstdato(RuteForekomstDato ruteForekomstDato)
+        {
+            _lugDb.lagreRuteforekomstdato(ruteForekomstDato);
+        }
+
+        public void lagreLugar(Lugar lugar)
+        {
+            _lugDb.lagreLugar(lugar);
+        }
+
+        public void lagreBillettperson(BillettPerson billettPerson)
+        {
+            _lugDb.lagreBillettperson(billettPerson);
+        }
+
+        public void lagreBillett(Billett billett)
+        {
+            _lugDb.lagreBillett(billett);
+        }
+
+        public void endrePerson(Person person)
+        {
+            _lugDb.endrePerson(person);
+        }
+
+        public void endreBetaling(Betaling betaling)
+        {
+            _lugDb.endreBetaling(betaling);
+        }
+
+        public void endreHavn(Havn havn)
+        {
+            _lugDb.endreHavn(havn);
+        }
+
+        public void endreReservasjon(Reservasjon reservasjon)
+        {
+            _lugDb.endreReservasjon(reservasjon);
+        }
+
+        public void endreRute(Rute rute)
+        {
+            _lugDb.endreRute(rute);
+        }
+
+        public void endreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid)
+        {
+            _lugDb.endreRuteforekomstdatotid(ruteForekomstDatotid);
+        }
+
+        public void endreRuteforekomstdato(RuteForekomstDato ruteForekomstDato)
+        {
+            _lugDb.endreRuteforekomstdato(ruteForekomstDato);
+        }
+
+        public void endreLugar(Lugar lugar)
+        {
+            _lugDb.endreLugar(lugar);
+        }
+
+        public void endreBillettperson(BillettPerson billettPerson)
+        {
+            _lugDb.endreBillettperson(billettPerson);
+        }
+
+        public void endreBillett(Billett billett)
+        {
+            _lugDb.endreBillett(billett);
+        }
     }
 }

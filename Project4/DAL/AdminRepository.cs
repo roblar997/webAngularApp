@@ -133,6 +133,106 @@ namespace webAppBillett.DAL
         {
             return await _lugDb.ruteForekomstDatoTid.ToListAsync();
         }
+
+        public void lagrePerson(Person person)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void lagreBetaling(Betaling betaling)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void lagreHavn(Havn havn)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void lagreReservasjon(Reservasjon reservasjon)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void lagreRuter(Rute rute)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void lagreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void lagreRuteforekomstdato(RuteForekomstDato ruteForekomstDato)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void lagreLugar(Lugar lugar)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void lagreBillettperson(BillettPerson billettPerson)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void lagreBillett(Billett billett)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void endrePerson(Person person)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void endreBetaling(Betaling betaling)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void endreHavn(Havn havn)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void endreReservasjon(Reservasjon reservasjon)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void endreRute(Rute rute)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void endreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void endreRuteforekomstdato(RuteForekomstDato ruteForekomstDato)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void endreLugar(Lugar lugar)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void endreBillettperson(BillettPerson billettPerson)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void endreBillett(Billett billett)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
