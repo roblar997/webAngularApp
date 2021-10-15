@@ -262,7 +262,15 @@ namespace webAppBillett.DAL
 
         public void endreBillett(Billett billett)
         {
-            throw new NotImplementedException();
+            Billett billetten = _lugDb.billetter.Find(billett.billettId);
+            billetten.antBarn = billett.antBarn;
+            billetten.antVoksen = billett.antVoksen;
+            billetten.avgangsDato = billett.avgangsDato;
+            billetten.avgangsTid = billett.avgangsTid;
+            billetten.fra = billett.fra;
+            billetten.til = billett.til;
+            billetten.pris = billett.pris;
+            _lugDb.SaveChanges();
         }
 
 
