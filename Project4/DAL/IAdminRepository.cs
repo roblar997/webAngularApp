@@ -43,22 +43,20 @@ namespace webAppBillett.DAL
         public void endreHavn(Havn havn);
         public void endreReservasjon(Reservasjon reservasjon);
         public void endreRute(Rute rute);
-        public void endreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid);
+        public void slettRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid);
         public void endreRuteforekomstdato(RuteForekomstDato ruteForekomstDato);
         public void endreLugar(Lugar lugar);
         public void endreBillettperson(BillettPerson billettPerson);
         public void endreBillett(Billett billett);
-
-
+        public void endreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid);
+        public void slettBillettperson(BillettPerson billettperson);
         public void slettPerson(int id);
         public void slettBetaling(int id);
         public void slettHavn(int id);
-        public void slettReservasjon(int id);
+        public void slettReservasjon(Reservasjon reservasjon);
         public void slettRute(int id);
-        public void slettRuteforekomstdatotid(int id);
         public void slettRuteforekomstdato(int id);
         public void slettLugar(int id);
-        public void slettBillettperson(int id);
         public void sletteBillett(int id);
     }
 }

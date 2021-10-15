@@ -330,10 +330,10 @@ namespace webAppBillett.DAL
             _lugDb.SaveChanges();
         }
 
-        public void slettReservasjon(int id)
-        {
-            Reservasjon reservasjon = _lugDb.reservasjon.Find(id);
-            _lugDb.reservasjon.Remove(reservasjon);
+        public void slettReservasjon(Reservasjon reservasjon) { 
+
+            Reservasjon reservasjonenen = _lugDb.reservasjon.First((x) => x.billettId == reservasjon.billettId && x.lugarId == reservasjon.lugarId);
+            _lugDb.reservasjon.Remove(reservasjonenen);
             _lugDb.SaveChanges();
         }
 
@@ -344,10 +344,10 @@ namespace webAppBillett.DAL
             _lugDb.SaveChanges();
         }
 
-        public void slettRuteforekomstdatotid(int id)
+        public void slettRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid)
         {
-            RuteForekomstDatoTid ruteForekomstDatoTid = _lugDb.ruteForekomstDatoTid.Find(id);
-            _lugDb.ruteForekomstDatoTid.Remove(ruteForekomstDatoTid);
+            RuteForekomstDatoTid ruteforekomstdatotiden = _lugDb.ruteForekomstDatoTid.First((x) => x.ruteId == ruteForekomstDatotid.ruteId && x.avgangsDato == ruteForekomstDatotid.avgangsDato && x.avgangsTid == ruteForekomstDatotid.avgangsTid);
+            _lugDb.ruteForekomstDatoTid.Remove(ruteforekomstdatotiden);
             _lugDb.SaveChanges();
         }
 
@@ -365,9 +365,9 @@ namespace webAppBillett.DAL
             _lugDb.SaveChanges();
         }
 
-        public void slettBillettperson(int id)
+        public void slettBillettperson(BillettPerson billettperson)
         {
-            BillettPerson billettperson = _lugDb.billettPerson.Find(id);
+            BillettPerson billettpersonen = _lugDb.billettPerson.First((x) => x.billettId == billettperson.billettId && x.personId == billettperson.personId);
             _lugDb.billettPerson.Remove(billettperson);
             _lugDb.SaveChanges();
         }
