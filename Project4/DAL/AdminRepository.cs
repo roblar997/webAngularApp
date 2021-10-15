@@ -242,12 +242,26 @@ namespace webAppBillett.DAL
 
         public void endreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid)
         {
-            throw new NotImplementedException();
+            RuteForekomstDatoTid ruteforekomstdatotiden = _lugDb.ruteForekomstDatoTid.First((x) => x.ruteId == ruteForekomstDatotid.ruteId && x.avgangsDato == ruteForekomstDatotid.avgangsDato && x.avgangsTid == ruteForekomstDatotid.avgangsTid);
+
+            ruteforekomstdatotiden.ruteId = ruteForekomstDatotid.ruteId;
+            ruteforekomstdatotiden.ankomstDato = ruteForekomstDatotid.ankomstDato;
+            ruteforekomstdatotiden.ankomstTid = ruteForekomstDatotid.ankomstTid;
+            ruteforekomstdatotiden.avgangsDato = ruteForekomstDatotid.avgangsDato;
+            ruteforekomstdatotiden.avgangsTid = ruteForekomstDatotid.avgangsTid;
+            ruteforekomstdatotiden.erUtsolgt = ruteForekomstDatotid.erUtsolgt;
+            _lugDb.SaveChanges();
+        
         }
 
         public void endreRuteforekomstdato(RuteForekomstDato ruteForekomstDato)
         {
-            throw new NotImplementedException();
+            RuteForekomstDato ruteforekomstdatoen = _lugDb.ruteForekomstDato.Find(ruteForekomstDato.forekomstDatoId);
+            ruteforekomstdatoen.ruteId = ruteForekomstDato.ruteId;
+            ruteforekomstdatoen.avgangsDato = ruteForekomstDato.avgangsDato;
+            ruteforekomstdatoen.erUtsolgt = ruteForekomstDato.erUtsolgt;
+            _lugDb.SaveChanges();
+      
         }
 
         public void endreLugar(Lugar lugar)
