@@ -252,7 +252,11 @@ namespace webAppBillett.DAL
 
         public void endreLugar(Lugar lugar)
         {
-            throw new NotImplementedException();
+            Lugar lugaren = _lugDb.lugarer.Find(lugar.lugarId);
+            lugaren.antall = lugar.antall;
+            lugaren.pris = lugar.pris;
+            lugaren.beskrivelse = lugar.beskrivelse;
+
         }
 
         public void endreBillettperson(BillettPerson billettPerson)
@@ -287,48 +291,66 @@ namespace webAppBillett.DAL
 
         public void slettBetaling(int id)
         {
-           
-            
+            Betaling betaling = _lugDb.betaling.Find(id);
+            _lugDb.betaling.Remove(betaling);
+            _lugDb.SaveChanges();
+
         }
 
         public void slettHavn(int id)
         {
-            throw new NotImplementedException();
+            Havn havn = _lugDb.havn.Find(id);
+            _lugDb.havn.Remove(havn);
+            _lugDb.SaveChanges();
         }
 
         public void slettReservasjon(int id)
         {
-            throw new NotImplementedException();
+            Reservasjon reservasjon = _lugDb.reservasjon.Find(id);
+            _lugDb.reservasjon.Remove(reservasjon);
+            _lugDb.SaveChanges();
         }
 
         public void slettRute(int id)
         {
-            throw new NotImplementedException();
+            Rute rute = _lugDb.ruter.Find(id);
+            _lugDb.ruter.Remove(rute);
+            _lugDb.SaveChanges();
         }
 
         public void slettRuteforekomstdatotid(int id)
         {
-            throw new NotImplementedException();
+            RuteForekomstDatoTid ruteForekomstDatoTid = _lugDb.ruteForekomstDatoTid.Find(id);
+            _lugDb.ruteForekomstDatoTid.Remove(ruteForekomstDatoTid);
+            _lugDb.SaveChanges();
         }
 
         public void slettRuteforekomstdato(int id)
         {
-            throw new NotImplementedException();
+            RuteForekomstDato ruteForekomstDato = _lugDb.ruteForekomstDato.Find(id);
+            _lugDb.ruteForekomstDato.Remove(ruteForekomstDato);
+            _lugDb.SaveChanges();
         }
 
         public void slettLugar(int id)
         {
-            throw new NotImplementedException();
+            Lugar lugar = _lugDb.lugarer.Find(id);
+            _lugDb.lugarer.Remove(lugar);
+            _lugDb.SaveChanges();
         }
 
         public void slettBillettperson(int id)
         {
-            throw new NotImplementedException();
+            BillettPerson billettperson = _lugDb.billettPerson.Find(id);
+            _lugDb.billettPerson.Remove(billettperson);
+            _lugDb.SaveChanges();
         }
 
         public void sletteBillett(int id)
         {
-            throw new NotImplementedException();
+            Billett billett = _lugDb.billetter.Find(id);
+            _lugDb.billetter.Remove(billett);
+            _lugDb.SaveChanges();
         }
     }
 
