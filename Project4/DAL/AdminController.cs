@@ -38,6 +38,18 @@ namespace webAppBillett.Controllers
             return await _lugDb.hentBetalinger();
 
         }
+
+        public async Task<ActionResult> loggInn(Bruker bruker)
+        {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
+            bool ok = await _lugDb.loggInn(bruker);
+
+            if (!ok)
+            {
+                return Ok(false);
+            }
+            return Ok(true);
+        }
         public async Task<List<Rute>> hentRutere()
         {
 
