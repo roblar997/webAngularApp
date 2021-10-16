@@ -99,6 +99,7 @@ export class BillettComponent {
 
   }
 
+
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
@@ -106,7 +107,7 @@ export class BillettComponent {
 
       }
       else if (state.localeCompare("lagre") == 0) {
-     
+        this.visModal("Ja", "Nei", "lagre", "Vil du lagre?", null);
       }
     }
 

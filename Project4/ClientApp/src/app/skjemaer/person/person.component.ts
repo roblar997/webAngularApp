@@ -45,14 +45,15 @@ export class PersonComponent {
     this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
 
   }
+
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
-      
+
       }
       else if (state.localeCompare("lagre") == 0) {
-   
+        this.visModal("Ja", "Nei", "lagre", "Vil du lagre?", null);
       }
     }
 
@@ -100,7 +101,7 @@ export class PersonComponent {
     modalRef.result.then(retur => {
       if (retur == 'ja') {
         if (infoTitle == "slett") {
-          this._http.post("admin/slettPerson", this.personer[index].personId).subscribe((res) => {
+          this._http.post("admin/slettPerson", this.personer[toSend].personId).subscribe((res) => {
             this.hentAllePersoner();
           });
         }

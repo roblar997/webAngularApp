@@ -103,15 +103,15 @@ export class RuteforekomstdatotidComponent {
 
   }
 
+
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
-        this.visModal("Ja", "Nei", "endre", "Vil du endre?",null);
- 
+        this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
+
       }
       else if (state.localeCompare("lagre") == 0) {
-        this.visModal("Ja", "Nei", "lagre", "Vil du lagre?",null);
-      
+        this.visModal("Ja", "Nei", "lagre", "Vil du lagre?", null);
       }
     }
 

@@ -43,6 +43,7 @@ export class ReservasjonComponent {
     this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
 
   }
+
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
@@ -50,7 +51,7 @@ export class ReservasjonComponent {
 
       }
       else if (state.localeCompare("lagre") == 0) {
-    
+        this.visModal("Ja", "Nei", "lagre", "Vil du lagre?", null);
       }
     }
 
