@@ -42,27 +42,18 @@ namespace webAppBillett.DAL
             return salt;
         }
 
-        public async void registrerBruker(Bruker bruker)
-        {
-            byte[] salt = lagSalt();
-            byte[] hash = lagHash(bruker.passord, salt);
-            bruker.passord = Encoding.Default.GetString(hash);
-            bruker.salt = salt;
-            _lugDb.Add(bruker);
-            _lugDb.SaveChanges();
-        }
 
         public async Task<bool> loggInn(Bruker bruker)
         {
             try
             {
-                Bruker brukeren = await _lugDb.brukere.FirstOrDefaultAsync(x =>x.brukernavn == bruker.brukernavn);
-  
+                Bruker brukeren = await _lugDb.brukere.FirstOrDefaultAsync(x => x.brukernavn == bruker.brukernavn);
+
                 byte[] hash = lagHash(bruker.passord, brukeren.salt);
                 bool ok = hash.SequenceEqual(Encoding.ASCII.GetBytes(brukeren.passord));
                 if (ok)
                 {
-    
+
                     return true;
                 }
 
@@ -70,7 +61,7 @@ namespace webAppBillett.DAL
             }
             catch (Exception e)
             {
-    
+
                 return false;
             }
         }
@@ -146,7 +137,7 @@ namespace webAppBillett.DAL
             _lugDb.SaveChanges();
         }
 
-        public void lagreHavn( Havn havn)
+        public void lagreHavn(Havn havn)
         {
             _lugDb.havn.Add(havn);
             _lugDb.SaveChanges();
@@ -201,7 +192,7 @@ namespace webAppBillett.DAL
             personen.etternavn = person.etternavn;
             personen.telefon = person.telefon;
             _lugDb.SaveChanges();
-      
+
         }
 
         public void endreBetaling(Betaling betaling)
@@ -261,7 +252,7 @@ namespace webAppBillett.DAL
             ruteforekomstdatotiden.avgangsTid = ruteForekomstDatotid.avgangsTid;
             ruteforekomstdatotiden.erUtsolgt = ruteForekomstDatotid.erUtsolgt;
             _lugDb.SaveChanges();
-        
+
         }
 
         public void endreRuteforekomstdato(RuteForekomstDato ruteForekomstDato)
@@ -271,7 +262,7 @@ namespace webAppBillett.DAL
             ruteforekomstdatoen.avgangsDato = ruteForekomstDato.avgangsDato;
             ruteforekomstdatoen.erUtsolgt = ruteForekomstDato.erUtsolgt;
             _lugDb.SaveChanges();
-      
+
         }
 
         public void endreLugar(Lugar lugar)
@@ -338,7 +329,8 @@ namespace webAppBillett.DAL
             _lugDb.SaveChanges();
         }
 
-        public void slettReservasjon(Reservasjon reservasjon) { 
+        public void slettReservasjon(Reservasjon reservasjon)
+        {
 
             Reservasjon reservasjonenen = _lugDb.reservasjon.First((x) => x.billettId == reservasjon.billettId && x.lugarId == reservasjon.lugarId);
             _lugDb.reservasjon.Remove(reservasjonenen);
@@ -386,6 +378,39 @@ namespace webAppBillett.DAL
             _lugDb.billetter.Remove(billett);
             _lugDb.SaveChanges();
         }
-    }
 
+        public async Task<List<Bruker>> hentBrukere()
+        {
+            return await _lugDb.brukere.ToListAsync();
+        }
+
+        public void lagreBruker(Bruker bruker)
+        {
+            byte[] salt = lagSalt();
+            byte[] hash = lagHash(bruker.passord, salt);
+            bruker.passord = Encoding.Default.GetString(hash);
+            bruker.salt = salt;
+            _lugDb.Add(bruker);
+            _lugDb.SaveChanges();
+        }
+
+        public void endreBruker(Bruker bruker)
+        {
+            Bruker brukeren = _lugDb.brukere.First((x) => x.brukernavn == bruker.brukernavn);
+            brukeren.brukernavn = bruker.brukernavn;
+            brukeren.passord = bruker.passord;
+            brukeren.salt = bruker.salt;
+            _lugDb.Add(bruker);
+            _lugDb.SaveChanges();
+        }
+
+        public void slettBruker(string brukernavn)
+        {
+            {
+                Bruker brukeren = _lugDb.brukere.First((x) => x.brukernavn == brukernavn);
+                _lugDb.brukere.Remove(brukeren);
+                _lugDb.SaveChanges();
+            }
+        }
+    }
 }

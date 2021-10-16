@@ -13,7 +13,7 @@ namespace webAppBillett.DAL
 
     public interface IAdminRepository
     {
-        public void registrerBruker(Bruker bruker);
+
         public Task<bool> loggInn(Bruker bruker);
         public Task<List<Person>> hentPersoner();
         public Task<List<Betaling>> hentBetalinger();
@@ -25,6 +25,13 @@ namespace webAppBillett.DAL
         public Task<List<RuteForekomstDato>> hentRuteforekomstdatoer();
         public Task<List<Lugar>> hentLugarer();
         public Task<List<BillettPerson>> hentBillettpersoner();
+
+
+        public Task<List<Bruker>> hentBrukere();
+        public void lagreBruker(Bruker bruker);
+        public void endreBruker(Bruker bruker);
+        public void slettBruker(string brukernavn);
+
         public Task<List<Billett>> hentBilletter();
 
         public void lagrePerson(Person person);
