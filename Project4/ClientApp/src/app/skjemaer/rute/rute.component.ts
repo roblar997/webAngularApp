@@ -53,7 +53,7 @@ export class RuteComponent {
   }
   slett(index) {
     this._http.post("admin/slettRute", this.ruter[index].ruteId).subscribe((res) => {
-
+      this.hentAlleRuter();
     });
   }
   visEndre(index: number) {

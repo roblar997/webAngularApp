@@ -42,7 +42,7 @@ export class PersonComponent {
   }
   slett(index) {
     this._http.post("admin/slettPerson", this.personer[index].personId).subscribe((res) => {
-
+      this.hentAllePersoner();
     });
   }
   multipleSubmit(state: string) {

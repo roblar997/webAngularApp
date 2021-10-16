@@ -93,7 +93,7 @@ export class LugarComponent {
   }
   slett(index) {
     this._http.post("admin/slettLugar", this.lugarer[index].lugarId).subscribe((res) => {
-
+      this.hentAlleLugarer();
     });
   }
   multipleSubmit(state: string) {

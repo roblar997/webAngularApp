@@ -65,7 +65,7 @@ export class RuteforekomstdatoComponent {
   }
   slett(index) {
     this._http.post("admin/slettForekomstdato", this.ruteforekomstdatoer[index].forekomstDatoId).subscribe((res) => {
-
+      this.hentAlleRuteforekomstdatoer();
     });
   }
   endreForekomstDato() {

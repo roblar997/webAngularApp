@@ -63,7 +63,7 @@ export class BillettComponent {
 
   slett(index) {
     this._http.post("admin/slettBillett", this.billetter[index].billettId).subscribe((res) => {
-
+      this.hentAlleBilletter();
     });
   }
 
