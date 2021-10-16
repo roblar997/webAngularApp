@@ -26,10 +26,10 @@ export class HavnComponent {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
-        this.endreHavn();
+
       }
       else if (state.localeCompare("lagre") == 0) {
-        this.lagreHavn();
+  
       }
     }
 
@@ -64,13 +64,15 @@ export class HavnComponent {
     modalRef.result.then(retur => {
       if (retur == 'ja') {
         if (infoTitle == "slett") {
-
+          this._http.post("admin/slettHavn", this.havner[toSend].havnId).subscribe((res) => {
+            this.hentAlleHavner();
+          });
         }
         else if (infoTitle == "lagre") {
-
+          this.lagreHavn();
         }
         else if (infoTitle == "endre") {
-
+          this.endreHavn();
         }
       }
       else {
@@ -101,9 +103,7 @@ export class HavnComponent {
 
   slett(index) {
     this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
-    this._http.post("admin/slettHavn", this.havner[index].havnId).subscribe((res) => {
-      this.hentAlleHavner();
-    });
+
   }
 
   ngOnInit() {

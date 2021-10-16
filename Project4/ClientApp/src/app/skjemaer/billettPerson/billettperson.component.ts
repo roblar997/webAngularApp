@@ -50,13 +50,19 @@ export class BillettpersonComponent {
     modalRef.result.then(retur => {
       if (retur == 'ja') {
         if (infoTitle == "slett") {
+          const billettperson = new BillettPerson();
+          billettperson.billettId = this.billettpersoner[toSend].billettId;
+          billettperson.personId = this.billettpersoner[toSend].personId;
 
+          this._http.post("admin/slettBillettperson", billettperson).subscribe((res) => {
+            this.hentAlleBillettpersoner();
+          });
         }
         else if (infoTitle == "lagre") {
-
+          this.lagreBillettPerson();
         }
         else if (infoTitle == "endre") {
-
+          this.endreBillettPerson();
         }
       }
       else {
@@ -86,22 +92,16 @@ export class BillettpersonComponent {
   }
   slett(index) {
     this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
-    const billettperson = new BillettPerson();
-    billettperson.billettId = this.billettpersoner[index].billettId;
-    billettperson.personId = this.billettpersoner[index].personId;
 
-    this._http.post("admin/slettBillettperson", billettperson).subscribe((res) => {
-      this.hentAlleBillettpersoner();
-    });
   }
 
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
-        this.endreBillettPerson();
+  
       }
       else if (state.localeCompare("lagre") == 0) {
-        this.lagreBillettPerson();
+      
       }
     }
 

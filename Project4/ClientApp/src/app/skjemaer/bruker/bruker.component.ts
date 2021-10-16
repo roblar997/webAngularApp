@@ -40,13 +40,15 @@ export class BrukerComponent {
     modalRef.result.then(retur => {
       if (retur == 'ja') {
         if (infoTitle == "slett") {
-
+          this._http.post("admin/slettBruker", this.brukere[toSend].brukernavn).subscribe((res) => {
+            this.hentAlleBrukere();
+          });
         }
         else if (infoTitle == "lagre") {
-
+          this.lagreBruker();
         }
         else if (infoTitle == "endre") {
-
+          this.endreBruker();
         }
       }
       else {
@@ -79,9 +81,7 @@ export class BrukerComponent {
   }
   slett(index) {
     this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
-    this._http.post("admin/slettBruker", this.brukere[index].brukernavn).subscribe((res) => {
-      this.hentAlleBrukere();
-    });
+ 
   }
   visEndre(index: number) {
     this.Skjema.setValue({
@@ -96,10 +96,10 @@ export class BrukerComponent {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
-        this.endreBruker();
+ 
       }
       else if (state.localeCompare("lagre") == 0) {
-        this.lagreBruker();
+   
       }
     }
 

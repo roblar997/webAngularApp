@@ -43,18 +43,16 @@ export class PersonComponent {
   }
   slett(index) {
     this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
-    this._http.post("admin/slettPerson", this.personer[index].personId).subscribe((res) => {
-      this.hentAllePersoner();
-    });
+
   }
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
-        this.endrePerson();
+      
       }
       else if (state.localeCompare("lagre") == 0) {
-        this.lagrePerson();
+   
       }
     }
 
@@ -102,13 +100,15 @@ export class PersonComponent {
     modalRef.result.then(retur => {
       if (retur == 'ja') {
         if (infoTitle == "slett") {
-
+          this._http.post("admin/slettPerson", this.personer[index].personId).subscribe((res) => {
+            this.hentAllePersoner();
+          });
         }
         else if (infoTitle == "lagre") {
-
+          this.lagrePerson();
         }
         else if (infoTitle == "endre") {
-
+          this.endrePerson();
         }
       }
       else {

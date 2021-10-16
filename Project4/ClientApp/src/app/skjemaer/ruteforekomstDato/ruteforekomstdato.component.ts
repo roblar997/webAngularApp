@@ -57,10 +57,10 @@ export class RuteforekomstdatoComponent {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
-        this.endreForekomstDato();
+
       }
       else if (state.localeCompare("lagre") == 0) {
-        this.lagreForekomstDato();
+      
       }
     }
 
@@ -86,10 +86,10 @@ export class RuteforekomstdatoComponent {
 
         }
         else if (infoTitle == "lagre") {
-
+          this.lagreForekomstDato();
         }
         else if (infoTitle == "endre") {
-
+          this.endreForekomstDato();
         }
       }
       else {

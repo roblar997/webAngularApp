@@ -45,13 +45,24 @@ export class RuteforekomstdatotidComponent {
     modalRef.result.then(retur => {
       if (retur == 'ja') {
         if (infoTitle == "slett") {
+          const ruteforekomstdatotid = new RuteForekomstDatoTid();
+          ruteforekomstdatotid.ruteId = this.ruteforekomstdatotider[toSend].ruteId;
+          ruteforekomstdatotid.avgangsDato = this.ruteforekomstdatotider[toSend].avgangsDato;
+          ruteforekomstdatotid.avgangsTid = this.ruteforekomstdatotider[toSend].avgangsTid;
+          ruteforekomstdatotid.ankomstDato = this.ruteforekomstdatotider[toSend].ankomstDato;
+          ruteforekomstdatotid.ankomstTid = this.ruteforekomstdatotider[toSend].ankomstTid;
+          ruteforekomstdatotid.forekomstDatoId = this.ruteforekomstdatotider[toSend].forekomstDatoId;
+          ruteforekomstdatotid.erUtsolgt = this.ruteforekomstdatotider[toSend].erUtsolgt;
 
+          this._http.post("admin/slettRuteforekomstdatotid", ruteforekomstdatotid).subscribe((res) => {
+            this.hentAlleRuteforekomstdatotider();
+          });
         }
         else if (infoTitle == "lagre") {
-
+          this.lagreForekomstDatoTid();
         }
         else if (infoTitle == "endre") {
-
+          this.endreForekomstDatoTid();
         }
       }
       else {
@@ -96,29 +107,18 @@ export class RuteforekomstdatotidComponent {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.visModal("Ja", "Nei", "endre", "Vil du endre?",null);
-        this.endreForekomstDatoTid();
+ 
       }
       else if (state.localeCompare("lagre") == 0) {
         this.visModal("Ja", "Nei", "lagre", "Vil du lagre?",null);
-        this.lagreForekomstDatoTid();
+      
       }
     }
 
   }
   slett(index) {
     this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
-    const ruteforekomstdatotid = new RuteForekomstDatoTid();
-    ruteforekomstdatotid.ruteId = this.ruteforekomstdatotider[index].ruteId;
-    ruteforekomstdatotid.avgangsDato = this.ruteforekomstdatotider[index].avgangsDato;
-    ruteforekomstdatotid.avgangsTid = this.ruteforekomstdatotider[index].avgangsTid;
-    ruteforekomstdatotid.ankomstDato = this.ruteforekomstdatotider[index].ankomstDato;
-    ruteforekomstdatotid.ankomstTid = this.ruteforekomstdatotider[index].ankomstTid;
-    ruteforekomstdatotid.forekomstDatoId = this.ruteforekomstdatotider[index].forekomstDatoId;
-    ruteforekomstdatotid.erUtsolgt = this.ruteforekomstdatotider[index].erUtsolgt;
-  
-    this._http.post("admin/slettRuteforekomstdatotid", ruteforekomstdatotid).subscribe((res) => {
-      this.hentAlleRuteforekomstdatotider();
-    });
+ 
   }
   visEndre(index: number) {
     this.Skjema.setValue({

@@ -90,13 +90,15 @@ export class LugarComponent {
     modalRef.result.then(retur => {
       if (retur == 'ja') {
         if (infoTitle == "slett") {
-
+          this._http.post("admin/slettLugar", this.lugarer[toSend].lugarId).subscribe((res) => {
+            this.hentAlleLugarer();
+          });
         }
         else if (infoTitle == "lagre") {
-
+          this.lagreLugar();
         }
         else if (infoTitle == "endre") {
-
+          this.endreLugar();
         }
       }
       else {
@@ -125,18 +127,16 @@ export class LugarComponent {
   }
   slett(index) {
     this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
-    this._http.post("admin/slettLugar", this.lugarer[index].lugarId).subscribe((res) => {
-      this.hentAlleLugarer();
-    });
+
   }
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
-        this.endreLugar();
+ 
       }
       else if (state.localeCompare("lagre") == 0) {
-        this.lagreLugar();
+
       }
     }
 

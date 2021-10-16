@@ -41,26 +41,16 @@ export class ReservasjonComponent {
 
   slett(index) {
     this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
-      const reservasjon = new Reservasjon();
-    reservasjon.billettId = this.reservasjoner[index].billettId,
-      reservasjon.lugarId = this.reservasjoner[index].lugarId,
-      reservasjon.ruteId = this.reservasjoner[index].ruteId,
-      reservasjon.avgangsDato = this.reservasjoner[index].avgangsDato,
-      reservasjon.avgangsTid = this.reservasjoner[index].avgangsTid,
-  
 
-        this._http.post("admin/slettReservasjon", reservasjon).subscribe((res) => {
-          this.hentAlleReservasjoner();
-      });
   }
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
-        this.endreReservasjon();
+
       }
       else if (state.localeCompare("lagre") == 0) {
-        this.lagreReservasjon();
+    
       }
     }
 
@@ -97,13 +87,23 @@ export class ReservasjonComponent {
     modalRef.result.then(retur => {
       if (retur == 'ja') {
         if (infoTitle == "slett") {
+          const reservasjon = new Reservasjon();
+          reservasjon.billettId = this.reservasjoner[toSend].billettId,
+            reservasjon.lugarId = this.reservasjoner[toSend].lugarId,
+            reservasjon.ruteId = this.reservasjoner[toSend].ruteId,
+            reservasjon.avgangsDato = this.reservasjoner[toSend].avgangsDato,
+            reservasjon.avgangsTid = this.reservasjoner[toSend].avgangsTid,
 
+
+            this._http.post("admin/slettReservasjon", reservasjon).subscribe((res) => {
+              this.hentAlleReservasjoner();
+            });
         }
         else if (infoTitle == "lagre") {
-
+          this.lagreReservasjon();
         }
         else if (infoTitle == "endre") {
-
+          this.endreReservasjon();
         }
       }
       else {

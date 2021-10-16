@@ -54,9 +54,7 @@ export class RuteComponent {
   }
   slett(index) {
     this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
-    this._http.post("admin/slettRute", this.ruter[index].ruteId).subscribe((res) => {
-      this.hentAlleRuter();
-    });
+  
   }
   visEndre(index: number) {
     this.Skjema.setValue({
@@ -86,13 +84,15 @@ export class RuteComponent {
     modalRef.result.then(retur => {
       if (retur == 'ja') {
         if (infoTitle == "slett") {
-
+          this._http.post("admin/slettRute", this.ruter[toSend].ruteId).subscribe((res) => {
+            this.hentAlleRuter();
+          });
         }
         else if (infoTitle == "lagre") {
-
+          this.lagreRute();
         }
         else if (infoTitle == "endre") {
-
+          this.endreRute();
         }
       }
       else {
@@ -104,10 +104,10 @@ export class RuteComponent {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
-        this.endreRute();
+
       }
       else if (state.localeCompare("lagre") == 0) {
-        this.lagreRute();
+  
       }
     }
 
