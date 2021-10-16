@@ -24,58 +24,91 @@ namespace webAppBillett.Controllers
             _log = log;
 
         }
-        public async Task<List<Person>> hentPersoner()
+        public async Task<ActionResult> hentPersoner()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
 
-
-            return await _lugDb.hentPersoner();
+            return Ok(await _lugDb.hentPersoner());
 
         }
-        public async Task<List<Betaling>> hentBetalinger()
+        public async Task<ActionResult> hentBetalinger()
         {
 
-
-            return await _lugDb.hentBetalinger();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
+            return Ok(await _lugDb.hentBetalinger());
 
         }
 
-        public async Task<List<Bruker>> hentBrukere()
+        public async Task<ActionResult> hentBrukere()
         {
-            return await _lugDb.hentBrukere();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
+            return Ok(await _lugDb.hentBrukere());
         }
         [HttpPost]
-        public void slettBruker([FromBody] string brukernavn)
+        public ActionResult slettBruker([FromBody] string brukernavn)
         {
-             _lugDb.slettBruker(brukernavn);
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
+            _lugDb.slettBruker(brukernavn);
+            return Ok();
         }
         [HttpPost]
-        public void lagreBruker([FromBody] Bruker bruker)
+        public ActionResult lagreBruker([FromBody] Bruker bruker)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             _lugDb.lagreBruker(bruker);
+            return Ok();
         }
         [HttpPost]
-        public void endreBruker([FromBody] Bruker bruker)
+        public ActionResult endreBruker([FromBody] Bruker bruker)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             _lugDb.endreBruker(bruker);
+            return Ok();
         }
         [HttpPost]
         public async Task<ActionResult> loggInn([FromBody] Bruker bruker)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             bool ok = await _lugDb.loggInn(bruker);
 
             if (!ok)
             {
-                HttpContext.Session.SetString("loggin", "");
+                HttpContext.Session.SetString("logginn", "");
                 return Ok(false);
             }
-            HttpContext.Session.SetString("loggin", "erInnlogget");
+            HttpContext.Session.SetString("logginn", "erInnlogget");
          
             return Ok(true);
         }
         public async Task<ActionResult> hentRutere()
         {
 
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
           //  if (string.IsNullOrEmpty(HttpContext.Session.GetString("loggin")))
            // {
            //     return Unauthorized();
@@ -84,45 +117,77 @@ namespace webAppBillett.Controllers
 
         }
 
-        public async Task<List<Billett>> hentBilletter()
+        public async Task<ActionResult> hentBilletter()
         {
-            return await _lugDb.hentBilletter();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
+            return Ok(await _lugDb.hentBilletter());
         }
-        public async Task<List<Reservasjon>> hentReservasjoner()
+        public async Task<ActionResult> hentReservasjoner()
         {
-            return await _lugDb.hentReservasjoner();
-        }
-
-        public async Task<List<BillettPerson>> hentBillettpersoner()
-        {
-            return await _lugDb.hentBillettpersoner();
-        }
-
-        public async Task<List<Havn>> hentHavner()
-        {
-            return await _lugDb.hentHavner();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
+            return Ok(await _lugDb.hentReservasjoner());
         }
 
-        public async Task<List<Lugar>> hentLugarer()
+        public async Task<ActionResult> hentBillettpersoner()
         {
-            return await _lugDb.hentLugarer();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
+            return Ok(await _lugDb.hentBillettpersoner());
+        }
+
+        public async Task<ActionResult> hentHavner()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
+            return Ok(await _lugDb.hentHavner());
+        }
+
+        public async Task<ActionResult> hentLugarer()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
+            return Ok(await _lugDb.hentLugarer());
         }
 
 
 
-        public async Task<List<RuteForekomstDato>> hentRuteforekomstdatoer()
+        public async Task<ActionResult> hentRuteforekomstdatoer()
         {
-            return await _lugDb.hentRuteforekomstdatoer();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
+            return Ok(await _lugDb.hentRuteforekomstdatoer());
         }
 
-        public async Task<List<RuteForekomstDatoTid>> hentRuteforekomstdatotider()
+        public async Task<ActionResult> hentRuteforekomstdatotider()
         {
-            return await _lugDb.hentRuteforekomstdatotider();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
+            return Ok(await _lugDb.hentRuteforekomstdatotider());
         }
 
         [HttpPost]
         public async Task<ActionResult> lagrePerson([FromBody] Person person)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagrePerson(person);
             return Ok();
@@ -131,6 +196,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> lagreBetaling([FromBody] Betaling betaling)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreBetaling(betaling);
             return Ok();
@@ -139,6 +208,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> lagreHavn([FromBody] Havn havn)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreHavn(havn);
             return Ok();
@@ -146,6 +219,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> lagreReservasjon([FromBody] Reservasjon reservasjon)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreReservasjon(reservasjon);
             return Ok();
@@ -153,6 +230,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> lagreRuter([FromBody] Rute rute)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreRuter(rute);
             return Ok();
@@ -160,6 +241,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> lagreRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatotid)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreRuteforekomstdatotid(ruteForekomstDatotid);
             return Ok();
@@ -167,6 +252,10 @@ namespace webAppBillett.Controllers
 
         public async Task<ActionResult> lagreRuteforekomstdato([FromBody] RuteForekomstDato ruteForekomstDato)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreRuteforekomstdato(ruteForekomstDato);
             return Ok();
@@ -174,6 +263,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> lagreLugar([FromBody] Lugar lugar)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreLugar(lugar);
             return Ok();
@@ -181,6 +274,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> lagreBillettperson([FromBody] BillettPerson billettPerson)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreBillettperson(billettPerson);
             return Ok();
@@ -188,6 +285,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> lagreBillett([FromBody] Billett billett)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreBillett(billett);
             return Ok();
@@ -195,6 +296,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> endrePerson([FromBody] Person person)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endrePerson(person);
             return Ok();
@@ -202,6 +307,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> endreBetaling([FromBody] Betaling betaling)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreBetaling(betaling);
             return Ok();
@@ -209,6 +318,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> endreHavn([FromBody] Havn havn)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreHavn(havn);
             return Ok();
@@ -216,6 +329,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> endreReservasjon([FromBody] Reservasjon reservasjon)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreReservasjon(reservasjon);
             return Ok();
@@ -223,6 +340,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> endreRute([FromBody] Rute rute)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreRute(rute);
             return Ok();
@@ -230,6 +351,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> endreRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatotid)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreRuteforekomstdatotid(ruteForekomstDatotid);
             return Ok();
@@ -237,6 +362,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> endreRuteforekomstdato([FromBody] RuteForekomstDato ruteForekomstDato)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreRuteforekomstdato(ruteForekomstDato);
             return Ok();
@@ -244,6 +373,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> endreLugar([FromBody] Lugar lugar)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreLugar(lugar);
             return Ok();
@@ -251,6 +384,10 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> endreBillettperson([FromBody] BillettPerson billettPerson)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreBillettperson(billettPerson);
             return Ok();
@@ -258,66 +395,117 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> endreBillett([FromBody] Billett billett)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreBillett(billett);
             return Ok();
         }
         [HttpPost]
-        public void slettPerson([FromBody] int id)
+        public ActionResult slettPerson([FromBody] int id)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             _lugDb.slettPerson(id);
- 
+            return Ok();
+
         }
         [HttpPost]
-        public void slettBetaling([FromBody] int id)
+        public ActionResult slettBetaling([FromBody] int id)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             _lugDb.slettBetaling(id);
+            return Ok();
         }
         [HttpPost]
-        public void slettHavn([FromBody] int id)
+        public ActionResult slettHavn([FromBody] int id)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             _lugDb.slettHavn(id);
+            return Ok();
         }
         [HttpPost]
-        public async Task<ActionResult> slettReservasjon([FromBody] Reservasjon reservasjon)
+        public ActionResult  slettReservasjon([FromBody] Reservasjon reservasjon)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.slettReservasjon(reservasjon);
             return Ok();
         }
         [HttpPost]
-        public void slettRute([FromBody] int id)
+        public ActionResult slettRute([FromBody] int id)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             _lugDb.slettRute(id);
+            return Ok();
         }
         [HttpPost]
         public async Task<ActionResult> slettRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatoTid)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.slettRuteforekomstdatotid(ruteForekomstDatoTid);
             return Ok();
         }
         [HttpPost]
-        public void slettRuteforekomstdato([FromBody] int id)
+        public ActionResult slettRuteforekomstdato([FromBody] int id)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             _lugDb.slettRuteforekomstdato(id);
+            return Ok();
         }
         [HttpPost]
-        public void slettLugar([FromBody] int id)
+        public ActionResult slettLugar([FromBody] int id)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             _lugDb.slettLugar(id);
+            return Ok();
         }
         [HttpPost]
         public async Task<ActionResult> slettBillettperson([FromBody] BillettPerson billettperson)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.slettBillettperson(billettperson);
             return Ok();
         }
         [HttpPost]
-        public void slettBillett([FromBody] int id)
+        public ActionResult slettBillett([FromBody] int id)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return Unauthorized();
+            }
             _lugDb.slettBillett(id);
+            return Ok();
         }
     }
 }
