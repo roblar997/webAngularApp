@@ -27,7 +27,7 @@ export class RuteforekomstdatotidComponent {
       erUtsolgt: ["", Validators.required]
     });
   }
-  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string) {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 
@@ -82,15 +82,18 @@ export class RuteforekomstdatotidComponent {
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
+        this.visModal("Ja", "Nei", "endre", "Vil du endre?",null);
         this.endreForekomstDatoTid();
       }
       else if (state.localeCompare("lagre") == 0) {
+        this.visModal("Ja", "Nei", "lagre", "Vil du lagre?",null);
         this.lagreForekomstDatoTid();
       }
     }
 
   }
   slett(index) {
+    this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
     const ruteforekomstdatotid = new RuteForekomstDatoTid();
     ruteforekomstdatotid.ruteId = this.ruteforekomstdatotider[index].ruteId;
     ruteforekomstdatotid.avgangsDato = this.ruteforekomstdatotider[index].avgangsDato;

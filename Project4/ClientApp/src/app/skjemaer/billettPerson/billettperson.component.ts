@@ -32,7 +32,7 @@ export class BillettpersonComponent {
       this.hentAlleBillettpersoner();
     });
   }
-  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string) {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 
@@ -72,7 +72,7 @@ export class BillettpersonComponent {
 
   }
   slett(index) {
-
+    this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
     const billettperson = new BillettPerson();
     billettperson.billettId = this.billettpersoner[index].billettId;
     billettperson.personId = this.billettpersoner[index].personId;

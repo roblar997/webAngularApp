@@ -72,7 +72,7 @@ export class LugarComponent {
       this.hentAlleLugarer();
     });
   }
-  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string) {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 
@@ -111,6 +111,7 @@ export class LugarComponent {
     this.hentAlleLugarer();
   }
   slett(index) {
+    this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
     this._http.post("admin/slettLugar", this.lugarer[index].lugarId).subscribe((res) => {
       this.hentAlleLugarer();
     });

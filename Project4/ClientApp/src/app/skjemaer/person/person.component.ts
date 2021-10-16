@@ -42,6 +42,7 @@ export class PersonComponent {
     });
   }
   slett(index) {
+    this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
     this._http.post("admin/slettPerson", this.personer[index].personId).subscribe((res) => {
       this.hentAllePersoner();
     });
@@ -82,7 +83,7 @@ export class PersonComponent {
 
   }
 
-  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string) {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 

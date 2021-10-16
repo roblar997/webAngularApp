@@ -53,6 +53,7 @@ export class RuteComponent {
     });
   }
   slett(index) {
+    this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
     this._http.post("admin/slettRute", this.ruter[index].ruteId).subscribe((res) => {
       this.hentAlleRuter();
     });
@@ -67,7 +68,7 @@ export class RuteComponent {
     });
 
   }
-  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string) {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 

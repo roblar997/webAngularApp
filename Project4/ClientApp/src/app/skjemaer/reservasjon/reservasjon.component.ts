@@ -40,7 +40,7 @@ export class ReservasjonComponent {
   }
 
   slett(index) {
-
+    this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
       const reservasjon = new Reservasjon();
     reservasjon.billettId = this.reservasjoner[index].billettId,
       reservasjon.lugarId = this.reservasjoner[index].lugarId,
@@ -78,7 +78,7 @@ export class ReservasjonComponent {
       this.hentAlleReservasjoner();
     });
   }
-  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string) {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 

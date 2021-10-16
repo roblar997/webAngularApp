@@ -45,7 +45,7 @@ export class HavnComponent {
       this.hentAlleHavner();
     });
   }
-  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string) {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 
@@ -86,6 +86,7 @@ export class HavnComponent {
   }
 
   slett(index) {
+    this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
     this._http.post("admin/slettHavn", this.havner[index].havnId).subscribe((res) => {
       this.hentAlleHavner();
     });

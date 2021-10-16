@@ -22,7 +22,7 @@ export class BrukerComponent {
 
     });
   }
-  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string) {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 
@@ -65,6 +65,7 @@ export class BrukerComponent {
     });
   }
   slett(index) {
+    this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
     this._http.post("admin/slettBruker", this.brukere[index].brukernavn).subscribe((res) => {
       this.hentAlleBrukere();
     });

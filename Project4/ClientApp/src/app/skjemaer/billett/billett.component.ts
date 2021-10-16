@@ -44,7 +44,7 @@ export class BillettComponent {
       this.hentAlleBilletter();
     });
   }
-  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string) {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 
@@ -81,6 +81,7 @@ export class BillettComponent {
   }
 
   slett(index) {
+    this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
     this._http.post("admin/slettBillett", this.billetter[index].billettId).subscribe((res) => {
       this.hentAlleBilletter();
     });
