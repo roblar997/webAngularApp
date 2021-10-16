@@ -1,0 +1,67 @@
+
+<div>
+  <h2>Bruker Skjema </h2>
+  <button (click)="hentAlleBrukere()"> Hent brukere</button> {{laster}}
+  <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>
+          <label>brukernavn:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="brukernavn">
+        </td>
+        <td *ngIf="this.Skjema.controls.brukernavn.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>passord:</label>
+        </td>
+        <td>
+          <input type="password" formControlName="passord">
+        </td>
+        <td *ngIf="this.Skjema.controls.passord.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>salt:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="salt">
+        </td>
+        <td *ngIf="this.Skjema.controls.salt.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="submit" (click)='multipleSubmit("lagre")' [disabled]="!Skjema.valid">Register</button>
+        </td>
+        <td>
+          <button type="submit" (click)='multipleSubmit("endre")' [disabled]="!Skjema.valid">Endre</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <div class="container bg-white " style="width: 100vw; ">
+    <table class="table table-striped">
+
+      <tr *ngFor="let bruker of brukere; let indexVal = index;">
+        <td>{{bruker.brukernavn}}</td>
+        <td>{{bruker.passord}}</td>
+        <td>{{bruker.salt}}</td>
+
+        <td>
+          <button type="submit" (click)="visEndre(indexVal)">Endre</button>
+        </td>
+        <td>
+          <button type="submit">Slette</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

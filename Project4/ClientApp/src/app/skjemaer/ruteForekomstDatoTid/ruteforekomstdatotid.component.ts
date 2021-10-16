@@ -2,7 +2,6 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { RuteForekomstDatoTid } from "../../Models-typescript/ruteforekomstdatotid";
-
 @Component({
   selector: "app-skjemaer-ruteforekomstdatotid",
   templateUrl: "ruteforekomstdatotid.component.html"
