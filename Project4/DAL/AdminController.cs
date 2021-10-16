@@ -83,6 +83,11 @@ namespace webAppBillett.Controllers
             _lugDb.endreBruker(bruker);
             return Ok();
         }
+
+        public void loggUt()
+        {
+            HttpContext.Session.SetString("logginn", "");
+        }
         [HttpPost]
         public async Task<ActionResult> loggInn([FromBody] Bruker bruker)
         {
