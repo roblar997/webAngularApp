@@ -212,18 +212,18 @@ namespace webAppBillett.Controllers
             _lugDb.endreBillett(billett);
         }
         [HttpPost]
-        public void slettPerson(int id)
+        public void slettPerson([FromBody] int id)
         {
             _lugDb.slettPerson(id);
  
         }
         [HttpPost]
-        public void slettBetaling(int id)
+        public void slettBetaling([FromBody] int id)
         {
             _lugDb.slettBetaling(id);
         }
         [HttpPost]
-        public void slettHavn(int id)
+        public void slettHavn([FromBody] int id)
         {
             _lugDb.slettHavn(id);
         }
@@ -233,7 +233,7 @@ namespace webAppBillett.Controllers
             _lugDb.slettReservasjon(reservasjon);
         }
         [HttpPost]
-        public void slettRute(int id)
+        public void slettRute([FromBody] int id)
         {
             _lugDb.slettRute(id);
         }
@@ -243,12 +243,12 @@ namespace webAppBillett.Controllers
             _lugDb.slettRuteforekomstdatotid(ruteForekomstDatoTid);
         }
         [HttpPost]
-        public void slettRuteforekomstdato(int id)
+        public void slettRuteforekomstdato([FromBody] int id)
         {
             _lugDb.slettRuteforekomstdato(id);
         }
         [HttpPost]
-        public void slettLugar(int id)
+        public void slettLugar([FromBody] int id)
         {
             _lugDb.slettLugar(id);
         }
@@ -258,7 +258,7 @@ namespace webAppBillett.Controllers
             _lugDb.slettBillettperson(billettperson);
         }
         [HttpPost]
-        public void sletteBillett(int id)
+        public void sletteBillett([FromBody] int id)
         {
             _lugDb.sletteBillett(id);
         }
