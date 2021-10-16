@@ -390,8 +390,8 @@ namespace webAppBillett.DAL
             byte[] salt = lagSalt();
             byte[] hash = lagHash(bruker.passord, salt);
             brukeren.brukernavn = bruker.brukernavn;
-            brukeren.passord = Encoding.Default.GetString(hash);
-            brukeren.salt = Encoding.Default.GetString(salt);
+            brukeren.passord = Encoding.ASCII.GetString(hash);
+            brukeren.salt = Encoding.ASCII.GetString(salt);
             _lugDb.Add(brukeren);
             _lugDb.SaveChanges();
         }
