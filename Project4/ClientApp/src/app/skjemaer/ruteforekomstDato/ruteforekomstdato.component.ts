@@ -2,8 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { RuteforekomstDato } from "../../Models-typescript/ruteforekomstdato";
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { Modal } from "../../modal/modal";
+
 @Component({
   selector: "app-skjemaer-ruteforekomstdato",
   templateUrl: "ruteforekomstdato.component.html"
@@ -15,7 +14,7 @@ export class RuteforekomstdatoComponent {
   submitState: string;
 
   public laster: string;
-  constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
+  constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       forekomstDatoId: ["", Validators.required],
       avgangsDato: ["", Validators.required],
@@ -63,21 +62,6 @@ export class RuteforekomstdatoComponent {
       }
     }
 
-  }
-  visModal() {
-    const modalRef = this.modalService.open(Modal, {
-      backdrop: 'static',
-
-
-      keyboard: false
-
-    });
-
-    modalRef.componentInstance.navn = "";
-
-    modalRef.result.then(retur => {
-
-    });
   }
   slett(index) {
     this._http.post("admin/slettForekomstdato", this.ruteforekomstdatoer[index].forekomstDatoId).subscribe((res) => {

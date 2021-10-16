@@ -22,7 +22,6 @@ import { ReservasjonComponent } from './skjemaer/reservasjon/reservasjon.compone
 import { LoginComponent } from './skjemaer/login/login.component';
 import { BrukerComponent } from './skjemaer/bruker/bruker.component';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { Modal } from './modal/modal';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,14 +37,12 @@ import { Modal } from './modal/modal';
     HavnComponent,
     LoginComponent,
     ReservasjonComponent,
-    BrukerComponent,
-    Modal
+    BrukerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    NgbModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent, pathMatch: 'full' },
@@ -63,7 +60,6 @@ import { Modal } from './modal/modal';
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [Modal]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

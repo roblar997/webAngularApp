@@ -2,8 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Havn } from "../../Models-typescript/Havn";
-import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { Modal } from "../../modal/modal";
+
 @Component({
   selector: "app-skjemaer-havn",
   templateUrl: "havn.component.html"
@@ -14,7 +13,7 @@ export class HavnComponent {
   public havner: Array<Havn>;
 
   public laster: string;
-  constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
+  constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       havnId: ["", Validators.required],
       navn: ["", Validators.required]
@@ -43,21 +42,6 @@ export class HavnComponent {
 
     this._http.post("admin/lagreHavn", havn).subscribe((res) => {
       this.hentAlleHavner();
-    });
-  }
-  visModal() {
-    const modalRef = this.modalService.open(Modal, {
-      backdrop: 'static',
-
-
-      keyboard: false
-
-    });
-
-    modalRef.componentInstance.navn = "";
-
-    modalRef.result.then(retur => {
-
     });
   }
   endreHavn() {
