@@ -2,7 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Reservasjon } from "../../Models-typescript/Reservasjon";
-
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Modal } from "../../../modal/modal";
 @Component({
   selector: "app-skjemaer-reservasjon",
   templateUrl: "reservasjon.component.html"
@@ -13,7 +14,7 @@ export class ReservasjonComponent {
   public reservasjoner: Array<Reservasjon>;
 
   public laster: string;
-  constructor(private fb: FormBuilder, private _http: HttpClient) {
+  constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
       billettId: ["", Validators.required],
       lugarId: ["", Validators.required],
@@ -75,6 +76,21 @@ export class ReservasjonComponent {
 
     this._http.post("admin/endreReservasjon", reservasjon).subscribe((res) => {
       this.hentAlleReservasjoner();
+    });
+  }
+  visModal() {
+    const modalRef = this.modalService.open(Modal, {
+      backdrop: 'static',
+
+
+      keyboard: false
+
+    });
+
+    modalRef.componentInstance.navn = "";
+
+    modalRef.result.then(retur => {
+
     });
   }
   visEndre(index: number) {

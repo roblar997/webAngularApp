@@ -21,7 +21,8 @@ import { BillettpersonComponent } from './skjemaer/billettPerson/billettperson.c
 import { ReservasjonComponent } from './skjemaer/reservasjon/reservasjon.component';
 import { LoginComponent } from './skjemaer/login/login.component';
 import { BrukerComponent } from './skjemaer/bruker/bruker.component';
-
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { Modal } from '../modal/modal';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,12 +38,14 @@ import { BrukerComponent } from './skjemaer/bruker/bruker.component';
     HavnComponent,
     LoginComponent,
     ReservasjonComponent,
-    BrukerComponent
+    BrukerComponent,
+    Modal
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    NgbModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent, pathMatch: 'full' },
@@ -60,6 +63,7 @@ import { BrukerComponent } from './skjemaer/bruker/bruker.component';
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [Modal]
 })
 export class AppModule { }

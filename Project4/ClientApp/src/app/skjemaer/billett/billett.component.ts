@@ -2,7 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Billett } from "../../Models-typescript/Billett";
-
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Modal } from "../../../modal/modal";
 @Component({
   selector: "app-skjemaer-billett",
   templateUrl: "billett.component.html"
@@ -13,7 +14,7 @@ export class BillettComponent {
   public billetter: Array<Billett>;
 
   public laster: string;
-  constructor(private fb: FormBuilder, private _http: HttpClient) {
+  constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
 
       billettId: ["", Validators.required],
@@ -43,7 +44,21 @@ export class BillettComponent {
       this.hentAlleBilletter();
     });
   }
+  visModal() {
+    const modalRef = this.modalService.open(Modal, {
+      backdrop: 'static',
 
+
+      keyboard: false
+
+    });
+
+    modalRef.componentInstance.navn = "";
+
+    modalRef.result.then(retur => {
+
+    });
+  }
 
     endreBillett() {
       const billett = new Billett();

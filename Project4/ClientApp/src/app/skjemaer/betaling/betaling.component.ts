@@ -2,7 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Betaling } from "../../Models-typescript/Betaling";
-
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Modal } from "../../../modal/modal";
 @Component({
   selector: "app-skjemaer-betaling",
   templateUrl: "betaling.component.html"
@@ -13,7 +14,7 @@ export class BetalingComponent {
   public betalinger: Array<Betaling>;
 
   public laster: string;
-  constructor(private fb: FormBuilder, private _http: HttpClient) {
+  constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
       betalingsId: ["", Validators.required],
       kortnummer: ["", Validators.required],
@@ -25,6 +26,21 @@ export class BetalingComponent {
       email: ["", Validators.required],
       csv: ["", Validators.required],
       pris: ["", Validators.required]
+
+    });
+  }
+  visModal() {
+    const modalRef = this.modalService.open(Modal, {
+      backdrop: 'static',
+
+
+      keyboard: false
+
+    });
+
+    modalRef.componentInstance.navn = "";
+
+    modalRef.result.then(retur => {
 
     });
   }
