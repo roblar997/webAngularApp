@@ -21,7 +21,7 @@ import { BillettpersonComponent } from './skjemaer/billettPerson/billettperson.c
 import { ReservasjonComponent } from './skjemaer/reservasjon/reservasjon.component';
 import { LoginComponent } from './skjemaer/login/login.component';
 import { BrukerComponent } from './skjemaer/bruker/bruker.component';
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
 @NgModule({
   declarations: [
     AppComponent,
