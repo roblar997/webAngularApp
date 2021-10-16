@@ -60,6 +60,7 @@ namespace webAppBillett.Controllers
             {
                 return Unauthorized();
             }
+            _log.LogInformation("slettet " + brukernavn);
             _lugDb.slettBruker(brukernavn);
             return Ok();
         }
@@ -71,6 +72,7 @@ namespace webAppBillett.Controllers
                 return Unauthorized();
             }
             _lugDb.lagreBruker(bruker);
+            _log.LogInformation("Lagret " + bruker.ToString());
             return Ok();
         }
         [HttpPost]
@@ -81,6 +83,7 @@ namespace webAppBillett.Controllers
                 return Unauthorized();
             }
             _lugDb.endreBruker(bruker);
+            _log.LogInformation("Endret en bruker til " + bruker.ToString());
             return Ok();
         }
 
@@ -192,6 +195,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagrePerson(person);
+            _log.LogInformation("Lagret person " + person.ToString());
             return Ok();
         }
 
@@ -204,6 +208,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreBetaling(betaling);
+            _log.LogInformation("Lagret betaling " + betaling.ToString());
             return Ok();
         }
 
@@ -216,6 +221,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreHavn(havn);
+            _log.LogInformation("Lagret havn " + havn.ToString());
             return Ok();
         }
         [HttpPost]
@@ -227,6 +233,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreReservasjon(reservasjon);
+            _log.LogInformation("Lagret reservasjon " + reservasjon.ToString());
             return Ok();
         }
         [HttpPost]
@@ -238,6 +245,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreRuter(rute);
+            _log.LogInformation("Lagret rute " + rute.ToString());
             return Ok();
         }
         [HttpPost]
@@ -249,6 +257,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreRuteforekomstdatotid(ruteForekomstDatotid);
+            _log.LogInformation("Lagret ruteForekomstDatotid " + ruteForekomstDatotid.ToString());
             return Ok();
         }
 
@@ -260,6 +269,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreRuteforekomstdato(ruteForekomstDato);
+            _log.LogInformation("Lagret ruteForekomstDato " + ruteForekomstDato.ToString());
             return Ok();
         }
         [HttpPost]
@@ -271,6 +281,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreLugar(lugar);
+            _log.LogInformation("Lagret lugar " + lugar.ToString());
             return Ok();
         }
         [HttpPost]
@@ -282,6 +293,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreBillettperson(billettPerson);
+            _log.LogInformation("Lagret billettPerson " + billettPerson.ToString());
             return Ok();
         }
         [HttpPost]
@@ -293,6 +305,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreBillett(billett);
+            _log.LogInformation("Lagret billett " + billett.ToString());
             return Ok();
         }
         [HttpPost]
@@ -304,6 +317,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endrePerson(person);
+            _log.LogInformation("Endret en person til " + person.ToString());
             return Ok();
         }
         [HttpPost]
@@ -315,6 +329,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreBetaling(betaling);
+            _log.LogInformation("Endret en betaling til " + betaling.ToString());
             return Ok();
         }
         [HttpPost]
@@ -326,6 +341,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreHavn(havn);
+            _log.LogInformation("Endret en havn til " + havn.ToString());
             return Ok();
         }
         [HttpPost]
@@ -337,6 +353,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreReservasjon(reservasjon);
+            _log.LogInformation("Endret en reservasjon til " + reservasjon.ToString());
             return Ok();
         }
         [HttpPost]
@@ -348,6 +365,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreRute(rute);
+            _log.LogInformation("Endret en rute til " + rute.ToString());
             return Ok();
         }
         [HttpPost]
@@ -359,6 +377,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreRuteforekomstdatotid(ruteForekomstDatotid);
+            _log.LogInformation("Endret en ruteForekomstDatotid til " + ruteForekomstDatotid.ToString());
             return Ok();
         }
         [HttpPost]
@@ -370,6 +389,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreRuteforekomstdato(ruteForekomstDato);
+            _log.LogInformation("Endret en ruteForekomstDato til " + ruteForekomstDato.ToString());
             return Ok();
         }
         [HttpPost]
@@ -381,6 +401,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreLugar(lugar);
+            _log.LogInformation("Endret en lugar til " + lugar.ToString());
             return Ok();
         }
         [HttpPost]
@@ -392,6 +413,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreBillettperson(billettPerson);
+            _log.LogInformation("Endret en billettPerson til " + billettPerson.ToString());
             return Ok();
         }
         [HttpPost]
@@ -403,6 +425,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreBillett(billett);
+            _log.LogInformation("Endret en billett til " + billett.ToString());
             return Ok();
         }
         [HttpPost]
@@ -413,6 +436,7 @@ namespace webAppBillett.Controllers
                 return Unauthorized();
             }
             _lugDb.slettPerson(id);
+            _log.LogInformation("Slettet person med id " + id);
             return Ok();
 
         }
@@ -424,6 +448,7 @@ namespace webAppBillett.Controllers
                 return Unauthorized();
             }
             _lugDb.slettBetaling(id);
+            _log.LogInformation("Slettet betaling med id " + id);
             return Ok();
         }
         [HttpPost]
@@ -434,6 +459,7 @@ namespace webAppBillett.Controllers
                 return Unauthorized();
             }
             _lugDb.slettHavn(id);
+            _log.LogInformation("Slettet havn med id " + id);
             return Ok();
         }
         [HttpPost]
@@ -445,6 +471,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.slettReservasjon(reservasjon);
+            _log.LogInformation("Slettet reservasjon " + reservasjon.ToString());
             return Ok();
         }
         [HttpPost]
@@ -455,6 +482,7 @@ namespace webAppBillett.Controllers
                 return Unauthorized();
             }
             _lugDb.slettRute(id);
+            _log.LogInformation("Slettet rute med id " + id);
             return Ok();
         }
         [HttpPost]
@@ -466,6 +494,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.slettRuteforekomstdatotid(ruteForekomstDatoTid);
+            _log.LogInformation("Slettet ruteForekomstDatoTid " + ruteForekomstDatoTid);
             return Ok();
         }
         [HttpPost]
@@ -476,6 +505,7 @@ namespace webAppBillett.Controllers
                 return Unauthorized();
             }
             _lugDb.slettRuteforekomstdato(id);
+            _log.LogInformation("Slettet slettRuteforekomstdato med id " + id);
             return Ok();
         }
         [HttpPost]
@@ -486,6 +516,7 @@ namespace webAppBillett.Controllers
                 return Unauthorized();
             }
             _lugDb.slettLugar(id);
+            _log.LogInformation("Slettet lugar med id " + id);
             return Ok();
         }
         [HttpPost]
@@ -497,6 +528,7 @@ namespace webAppBillett.Controllers
             }
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.slettBillettperson(billettperson);
+            _log.LogInformation("Slettet billettperson" + billettperson.ToString());
             return Ok();
         }
         [HttpPost]
@@ -507,6 +539,7 @@ namespace webAppBillett.Controllers
                 return Unauthorized();
             }
             _lugDb.slettBillett(id);
+            _log.LogInformation("Slettet billett med id " + id);
             return Ok();
         }
     }
