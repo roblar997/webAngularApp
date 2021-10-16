@@ -376,7 +376,7 @@ namespace webAppBillett.DAL
         public void slettBillettperson(BillettPerson billettperson)
         {
             BillettPerson billettpersonen = _lugDb.billettPerson.First((x) => x.billettId == billettperson.billettId && x.personId == billettperson.personId);
-            _lugDb.billettPerson.Remove(billettperson);
+            _lugDb.billettPerson.Remove(billettpersonen);
             _lugDb.SaveChanges();
         }
 
