@@ -49,8 +49,8 @@ namespace webAppBillett.DAL
             {
                 Bruker brukeren = await _lugDb.brukere.FirstOrDefaultAsync(x => x.brukernavn == bruker.brukernavn);
 
-                byte[] hash = lagHash(bruker.passord, Encoding.ASCII.GetBytes(brukeren.salt));
-                bool ok = hash.SequenceEqual(Encoding.ASCII.GetBytes(brukeren.passord));
+                byte[] hash = lagHash(bruker.passord, Convert.FromBase64String(brukeren.salt));
+                bool ok = hash.SequenceEqual(Convert.FromBase64String(brukeren.passord));
                 if (ok)
                 {
 
@@ -390,8 +390,8 @@ namespace webAppBillett.DAL
             byte[] salt = lagSalt();
             byte[] hash = lagHash(bruker.passord, salt);
             brukeren.brukernavn = bruker.brukernavn;
-            brukeren.passord = Encoding.ASCII.GetString(hash);
-            brukeren.salt = Encoding.ASCII.GetString(salt);
+            brukeren.passord = Convert.ToBase64String(hash);
+            brukeren.salt = Convert.ToBase64String(salt);
             _lugDb.Add(brukeren);
             _lugDb.SaveChanges();
         }
