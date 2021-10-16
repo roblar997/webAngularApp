@@ -45,7 +45,7 @@ export class HavnComponent {
       this.hentAlleHavner();
     });
   }
-  visModal() {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 
@@ -55,10 +55,10 @@ export class HavnComponent {
     });
 
 
-    modalRef.componentInstance.knapp1 = "";
-    modalRef.componentInstance.knapp2 = "";
-    modalRef.componentInstance.infoTitle = "";
-    modalRef.componentInstance.infoBody = "";
+    modalRef.componentInstance.knapp1 = knapp1Tekst;
+    modalRef.componentInstance.knapp2 = knapp2Tekst
+    modalRef.componentInstance.infoTitle = infoTitle;
+    modalRef.componentInstance.infoBody = infoBody;
 
     modalRef.result.then(retur => {
 
