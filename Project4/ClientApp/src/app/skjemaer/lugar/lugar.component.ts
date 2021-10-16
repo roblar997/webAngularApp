@@ -4,7 +4,8 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Lugar } from "../../Models-typescript/Lugar";
-
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Modal } from "../../modal/modal";
 @Component({
   selector: "app-skjemaer-lugar",
   templateUrl: "lugar.component.html"
@@ -16,7 +17,7 @@ export class LugarComponent {
   public lugarer: Array<Lugar>;
   public laster: string;
 
-  constructor(private fb: FormBuilder, private _http: HttpClient) {
+  constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
       lugarId: ["", Validators.required],
       bildeURL: ["", Validators.required],
@@ -71,7 +72,21 @@ export class LugarComponent {
       this.hentAlleLugarer();
     });
   }
+  visModal() {
+    const modalRef = this.modalService.open(Modal, {
+      backdrop: 'static',
 
+
+      keyboard: false
+
+    });
+
+    modalRef.componentInstance.navn = "";
+
+    modalRef.result.then(retur => {
+
+    });
+  }
   visEndre(index: number) {
     this.Skjema.setValue({
       lugarId: this.lugarer[index].lugarId,

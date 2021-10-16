@@ -2,6 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { RuteForekomstDatoTid } from "../../Models-typescript/ruteforekomstdatotid";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Modal } from "../../modal/modal";
 @Component({
   selector: "app-skjemaer-ruteforekomstdatotid",
   templateUrl: "ruteforekomstdatotid.component.html"
@@ -13,7 +15,7 @@ export class RuteforekomstdatotidComponent {
 
   public laster: string;
 
-  constructor(private fb: FormBuilder, private _http: HttpClient) {
+  constructor(private fb: FormBuilder, private _http: HttpClient, private modalService : NgbModal) {
     this.Skjema = fb.group({
       ruteId: ["", Validators.required],
       avgangsDato: ["", Validators.required],
@@ -22,6 +24,21 @@ export class RuteforekomstdatotidComponent {
       ankomstTid: ["", Validators.required],
       forekomstDatoId: ["", Validators.required],
       erUtsolgt: ["", Validators.required]
+    });
+  }
+  visModal() {
+    const modalRef = this.modalService.open(Modal, {
+      backdrop: 'static',
+
+
+      keyboard: false
+
+    });
+
+    modalRef.componentInstance.navn = "";
+
+    modalRef.result.then(retur => {
+
     });
   }
 

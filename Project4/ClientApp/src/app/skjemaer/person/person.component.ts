@@ -2,7 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Person } from "../../Models-typescript/Person";
-
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { Modal } from "../../modal/modal";
 @Component({
   selector: "app-skjemaer-person",
   templateUrl: "./person.component.html"
@@ -18,7 +19,7 @@ export class PersonComponent {
 
   public laster: string;
 
-  constructor(private fb: FormBuilder, private _http: HttpClient) {
+  constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
       personId: ["", Validators.required],
       fornavn: ["", Validators.required],
@@ -81,7 +82,21 @@ export class PersonComponent {
 
   }
 
+  visModal() {
+    const modalRef = this.modalService.open(Modal, {
+      backdrop: 'static',
 
+
+      keyboard: false
+
+    });
+
+    modalRef.componentInstance.navn = "";
+
+    modalRef.result.then(retur => {
+
+    });
+  }
   ngOnInit() {
     this.hentAllePersoner();
   }
