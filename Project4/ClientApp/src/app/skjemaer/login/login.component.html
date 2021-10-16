@@ -29,7 +29,7 @@
       </tr>
       <tr>
         <td>
-          <button type="submit" [disabled]="!Skjema.valid">Login</button>
+          <button type="submit" (click)="login()" [disabled]="!Skjema.valid">Login</button>
         </td>
 
       </tr>
