@@ -17,6 +17,19 @@
       </tr>
       <tr>
       <tr>
+      <tr>
+        <td>
+          <label>lugarId:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="lugarId">
+        </td>
+        <td *ngIf="this.Skjema.controls.lugarId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+      <tr>
         <td>
           <label>ruteId:</label>
         </td>
@@ -64,6 +77,7 @@
     <table class="table table-striped">
       <tr *ngFor="let reservasjon of reservasjoner; let indexVal = index;">
         <td>{{reservasjon.billettId}}</td>
+        <td>{{reservasjon.lugarId}}</td>
         <td>{{reservasjon.ruteId}}</td>
         <td>{{reservasjon.avgangsDato}}</td>
         <td>{{reservasjon.avgangsTid}}</td>

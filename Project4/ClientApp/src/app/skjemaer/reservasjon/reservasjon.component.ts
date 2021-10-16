@@ -16,6 +16,7 @@ export class ReservasjonComponent {
   constructor(private fb: FormBuilder, private _http: HttpClient) {
     this.Skjema = fb.group({
       billettId: ["", Validators.required],
+      lugarId: ["", Validators.required],
       ruteId: ["", Validators.required],
       avgangsDato: ["", Validators.required],
       avgangsTid: ["", Validators.required]
@@ -26,6 +27,7 @@ export class ReservasjonComponent {
 
     const reservasjon = new Reservasjon();
     reservasjon.billettId = this.Skjema.value.billettId;
+    reservasjon.lugarId = this.Skjema.value.lugarId;
     reservasjon.ruteId = this.Skjema.value.ruteId;
     reservasjon.avgangsDato = this.Skjema.value.avgangsDato;
     reservasjon.avgangsTid = this.Skjema.value.avgangsTid;
@@ -39,7 +41,8 @@ export class ReservasjonComponent {
   slett(index) {
 
       const reservasjon = new Reservasjon();
-      reservasjon.billettId = this.reservasjoner[index].billettId,
+    reservasjon.billettId = this.reservasjoner[index].billettId,
+      reservasjon.lugarId = this.reservasjoner[index].lugarId,
       reservasjon.ruteId = this.reservasjoner[index].ruteId,
       reservasjon.avgangsDato = this.reservasjoner[index].avgangsDato,
       reservasjon.avgangsTid = this.reservasjoner[index].avgangsTid,
@@ -64,6 +67,7 @@ export class ReservasjonComponent {
 
     const reservasjon = new Reservasjon();
     reservasjon.billettId = this.Skjema.value.billettId;
+    reservasjon.lugarId = this.Skjema.value.lugarId;
     reservasjon.ruteId = this.Skjema.value.ruteId;
     reservasjon.avgangsDato = this.Skjema.value.avgangsDato;
     reservasjon.avgangsTid = this.Skjema.value.avgangsTid;
@@ -76,6 +80,7 @@ export class ReservasjonComponent {
   visEndre(index: number) {
     this.Skjema.setValue({
       billettId: this.reservasjoner[index].billettId,
+      lugarId:   this.reservasjoner[index].lugarId,
       ruteId: this.reservasjoner[index].ruteId,
       avgangsDato: this.reservasjoner[index].avgangsDato,
       avgangsTid: this.reservasjoner[index].avgangsTid,
