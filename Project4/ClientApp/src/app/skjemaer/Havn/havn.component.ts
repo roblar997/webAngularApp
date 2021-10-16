@@ -23,7 +23,7 @@ export class HavnComponent {
     });
   }
 
-  multipleSubmit(state: string) {
+  multipleSubmit(state: string, toSend) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
@@ -31,6 +31,9 @@ export class HavnComponent {
       }
       else if (state.localeCompare("lagre") == 0) {
         this.visModal("Ja", "Nei", "lagre", "Vil du lagre?", null);
+      }
+      else if (state.localeCompare("slett") == 0) {
+        this.visModal("Ja", "Nei", "slett", "Vil du slette?", toSend);
       }
     }
 
