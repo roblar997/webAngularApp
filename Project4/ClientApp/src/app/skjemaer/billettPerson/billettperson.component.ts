@@ -41,7 +41,11 @@ export class BillettpersonComponent {
 
     });
 
-    modalRef.componentInstance.navn = "";
+
+    modalRef.componentInstance.knapp1 = "";
+    modalRef.componentInstance.knapp2 = "";
+    modalRef.componentInstance.infoTitle = "";
+    modalRef.componentInstance.infoBody = "";
 
     modalRef.result.then(retur => {
 
