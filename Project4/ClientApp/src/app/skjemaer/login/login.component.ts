@@ -22,7 +22,7 @@ export class LoginComponent {
 
     });
   }
-  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string) {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 
@@ -38,7 +38,12 @@ export class LoginComponent {
     modalRef.componentInstance.infoBody = infoBody;
 
     modalRef.result.then(retur => {
+      if (retur == knapp1Tekst) {
 
+      }
+      else {
+
+      }
     });
   }
   login() {

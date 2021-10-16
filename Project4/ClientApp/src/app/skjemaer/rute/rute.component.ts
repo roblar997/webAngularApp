@@ -84,7 +84,12 @@ export class RuteComponent {
     modalRef.componentInstance.infoBody = infoBody;
 
     modalRef.result.then(retur => {
+      if (retur == knapp1Tekst) {
 
+      }
+      else {
+
+      }
     });
   }
   multipleSubmit(state: string) {

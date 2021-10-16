@@ -88,7 +88,12 @@ export class LugarComponent {
     modalRef.componentInstance.infoBody = infoBody;
 
     modalRef.result.then(retur => {
+      if (retur == knapp1Tekst) {
 
+      }
+      else {
+
+      }
     });
   }
   visEndre(index: number) {

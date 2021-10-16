@@ -45,11 +45,16 @@ export class BetalingComponent {
     modalRef.componentInstance.infoBody = infoBody;
 
     modalRef.result.then(retur => {
+      if (retur == knapp1Tekst) {
 
+      }
+      else {
+
+      }
     });
   }
   multipleSubmit(state: string) {
-  
+    
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.endreBetaling();

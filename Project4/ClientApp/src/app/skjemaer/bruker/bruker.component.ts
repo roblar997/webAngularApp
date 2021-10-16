@@ -38,7 +38,12 @@ export class BrukerComponent {
     modalRef.componentInstance.infoBody = infoBody;
 
     modalRef.result.then(retur => {
+      if (retur == knapp1Tekst) {
 
+      }
+      else {
+
+      }
     });
   }
   lagreBruker() {

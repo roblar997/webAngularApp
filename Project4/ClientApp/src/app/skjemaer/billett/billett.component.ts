@@ -60,10 +60,14 @@ export class BillettComponent {
     modalRef.componentInstance.infoBody = infoBody;
 
     modalRef.result.then(retur => {
+      if (retur == knapp1Tekst) {
 
+      }
+      else {
+
+      }
     });
   }
-
     endreBillett() {
       const billett = new Billett();
       billett.billettId = this.Skjema.value.billettId;
