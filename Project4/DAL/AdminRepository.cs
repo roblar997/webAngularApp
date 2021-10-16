@@ -386,11 +386,13 @@ namespace webAppBillett.DAL
 
         public void lagreBruker(Bruker bruker)
         {
+            Bruker brukeren = new Bruker();
             byte[] salt = lagSalt();
             byte[] hash = lagHash(bruker.passord, salt);
-            bruker.passord = Encoding.Default.GetString(hash);
-            bruker.salt = salt;
-            _lugDb.Add(bruker);
+            brukeren.brukernavn = bruker.brukernavn;
+            brukeren.passord = Encoding.Default.GetString(hash);
+            brukeren.salt = salt;
+            _lugDb.Add(brukeren);
             _lugDb.SaveChanges();
         }
 
