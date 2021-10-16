@@ -20,6 +20,7 @@ import { RuteComponent } from './skjemaer/rute/rute.component';
 import { BillettpersonComponent } from './skjemaer/billettPerson/billettperson.component';
 import { ReservasjonComponent } from './skjemaer/reservasjon/reservasjon.component';
 import { LoginComponent } from './skjemaer/login/login.component';
+import { BrukerComponent } from './skjemaer/bruker/bruker.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { LoginComponent } from './skjemaer/login/login.component';
     HavnComponent,
     LoginComponent,
     ReservasjonComponent,
+    BrukerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -45,6 +47,7 @@ import { LoginComponent } from './skjemaer/login/login.component';
     RouterModule.forRoot([
       { path: '', component: LoginComponent, pathMatch: 'full' },
       { path: 'lugar', component: LugarComponent, pathMatch: 'full' },
+      { path: 'bruker', component: BrukerComponent, pathMatch: 'full' },
       { path: 'person', component: PersonComponent, pathMatch: 'full' },
       { path: 'billett', component: BillettComponent, pathMatch: 'full' },
       { path: 'havn', component: HavnComponent, pathMatch: 'full' },
