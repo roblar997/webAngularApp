@@ -29,7 +29,7 @@ export class BetalingComponent {
 
     });
   }
-  visModal(knapp1Tekst : string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
+  visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
 
@@ -46,7 +46,15 @@ export class BetalingComponent {
 
     modalRef.result.then(retur => {
       if (retur == knapp1Tekst) {
+        if (infoTitle == "slett") {
 
+        }
+        else if (infoTitle == "lagre") {
+
+        }
+        else if (infoTitle == "endre") {
+
+        }
       }
       else {
 

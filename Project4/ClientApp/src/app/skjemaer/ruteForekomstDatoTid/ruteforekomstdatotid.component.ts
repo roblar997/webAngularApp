@@ -44,7 +44,15 @@ export class RuteforekomstdatotidComponent {
 
     modalRef.result.then(retur => {
       if (retur == knapp1Tekst) {
+        if (infoTitle == "slett") {
 
+        }
+        else if (infoTitle == "lagre") {
+
+        }
+        else if (infoTitle == "endre") {
+
+        }
       }
       else {
 
