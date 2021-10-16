@@ -81,7 +81,7 @@ export class RuteforekomstdatotidComponent {
     ruteforekomstdatotid.erUtsolgt = this.ruteforekomstdatotider[index].erUtsolgt;
   
     this._http.post("admin/slettRuteforekomstdatotid", ruteforekomstdatotid).subscribe((res) => {
-
+      this.hentAlleRuteforekomstdatotider();
     });
   }
   visEndre(index: number) {

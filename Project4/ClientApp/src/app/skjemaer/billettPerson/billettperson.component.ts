@@ -52,7 +52,12 @@ export class BillettpersonComponent {
 
   }
   slett(index) {
-    this._http.post("admin/slettBillettPerson", this.billettpersoner[index].billettId).subscribe((res) => {
+
+    const billettperson = new BillettPerson();
+    billettperson.billettId = this.billettpersoner[index].billettId;
+    billettperson.personId = this.billettpersoner[index].personId;
+
+    this._http.post("admin/slettBillettperson", billettperson).subscribe((res) => {
       this.hentAlleBillettpersoner();
     });
   }
