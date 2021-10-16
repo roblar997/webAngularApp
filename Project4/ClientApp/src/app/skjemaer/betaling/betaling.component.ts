@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { Modal } from "../../modal/modal";
+
 import { Betaling } from "../../Models-typescript/Betaling";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Modal } from "../../modal/modal";
