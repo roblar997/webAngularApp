@@ -49,6 +49,7 @@ export class BetalingComponent {
     });
   }
   multipleSubmit(state: string) {
+    this.visModal();
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
         this.endreBetaling();
