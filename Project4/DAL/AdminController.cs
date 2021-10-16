@@ -108,108 +108,146 @@ namespace webAppBillett.Controllers
         }
 
         [HttpPost]
-        public void lagrePerson([FromBody] Person person)
+        public async Task<ActionResult> lagrePerson([FromBody] Person person)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagrePerson(person);
+            return Ok();
         }
 
         [HttpPost]
-        public void lagreBetaling([FromBody] Betaling betaling)
+        public async Task<ActionResult> lagreBetaling([FromBody] Betaling betaling)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreBetaling(betaling);
+            return Ok();
         }
 
         [HttpPost]
-        public ActionResult lagreHavn([FromBody] Havn havn)
+        public async Task<ActionResult> lagreHavn([FromBody] Havn havn)
         {
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreHavn(havn);
             return Ok();
         }
         [HttpPost]
-        public void lagreReservasjon([FromBody] Reservasjon reservasjon)
+        public async Task<ActionResult> lagreReservasjon([FromBody] Reservasjon reservasjon)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreReservasjon(reservasjon);
+            return Ok();
         }
         [HttpPost]
-        public void lagreRuter([FromBody] Rute rute)
+        public async Task<ActionResult> lagreRuter([FromBody] Rute rute)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreRuter(rute);
+            return Ok();
         }
         [HttpPost]
-        public void lagreRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatotid)
+        public async Task<ActionResult> lagreRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatotid)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreRuteforekomstdatotid(ruteForekomstDatotid);
+            return Ok();
         }
 
-        public void lagreRuteforekomstdato([FromBody] RuteForekomstDato ruteForekomstDato)
+        public async Task<ActionResult> lagreRuteforekomstdato([FromBody] RuteForekomstDato ruteForekomstDato)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreRuteforekomstdato(ruteForekomstDato);
+            return Ok();
         }
         [HttpPost]
-        public void lagreLugar([FromBody] Lugar lugar)
+        public async Task<ActionResult> lagreLugar([FromBody] Lugar lugar)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreLugar(lugar);
+            return Ok();
         }
         [HttpPost]
-        public void lagreBillettperson([FromBody] BillettPerson billettPerson)
+        public async Task<ActionResult> lagreBillettperson([FromBody] BillettPerson billettPerson)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreBillettperson(billettPerson);
+            return Ok();
         }
         [HttpPost]
-        public void lagreBillett([FromBody] Billett billett)
+        public async Task<ActionResult> lagreBillett([FromBody] Billett billett)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.lagreBillett(billett);
+            return Ok();
         }
         [HttpPost]
-        public void endrePerson([FromBody] Person person)
+        public async Task<ActionResult> endrePerson([FromBody] Person person)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endrePerson(person);
+            return Ok();
         }
         [HttpPost]
-        public void endreBetaling([FromBody] Betaling betaling)
+        public async Task<ActionResult> endreBetaling([FromBody] Betaling betaling)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreBetaling(betaling);
+            return Ok();
         }
         [HttpPost]
-        public void endreHavn([FromBody] Havn havn)
+        public async Task<ActionResult> endreHavn([FromBody] Havn havn)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreHavn(havn);
+            return Ok();
         }
         [HttpPost]
-        public void endreReservasjon([FromBody] Reservasjon reservasjon)
+        public async Task<ActionResult> endreReservasjon([FromBody] Reservasjon reservasjon)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreReservasjon(reservasjon);
+            return Ok();
         }
         [HttpPost]
-        public void endreRute([FromBody] Rute rute)
+        public async Task<ActionResult> endreRute([FromBody] Rute rute)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreRute(rute);
+            return Ok();
         }
         [HttpPost]
-        public void endreRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatotid)
+        public async Task<ActionResult> endreRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatotid)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreRuteforekomstdatotid(ruteForekomstDatotid);
+            return Ok();
         }
         [HttpPost]
-        public void endreRuteforekomstdato([FromBody] RuteForekomstDato ruteForekomstDato)
+        public async Task<ActionResult> endreRuteforekomstdato([FromBody] RuteForekomstDato ruteForekomstDato)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreRuteforekomstdato(ruteForekomstDato);
+            return Ok();
         }
         [HttpPost]
-        public void endreLugar([FromBody] Lugar lugar)
+        public async Task<ActionResult> endreLugar([FromBody] Lugar lugar)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreLugar(lugar);
+            return Ok();
         }
         [HttpPost]
-        public void endreBillettperson([FromBody] BillettPerson billettPerson)
+        public async Task<ActionResult> endreBillettperson([FromBody] BillettPerson billettPerson)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreBillettperson(billettPerson);
+            return Ok();
         }
         [HttpPost]
-        public void endreBillett([FromBody] Billett billett)
+        public async Task<ActionResult> endreBillett([FromBody] Billett billett)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.endreBillett(billett);
+            return Ok();
         }
         [HttpPost]
         public void slettPerson([FromBody] int id)
@@ -228,9 +266,11 @@ namespace webAppBillett.Controllers
             _lugDb.slettHavn(id);
         }
         [HttpPost]
-        public void slettReservasjon([FromBody] Reservasjon reservasjon)
+        public async Task<ActionResult> slettReservasjon([FromBody] Reservasjon reservasjon)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.slettReservasjon(reservasjon);
+            return Ok();
         }
         [HttpPost]
         public void slettRute([FromBody] int id)
@@ -238,9 +278,11 @@ namespace webAppBillett.Controllers
             _lugDb.slettRute(id);
         }
         [HttpPost]
-        public void slettRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatoTid)
+        public async Task<ActionResult> slettRuteforekomstdatotid([FromBody] RuteForekomstDatoTid ruteForekomstDatoTid)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.slettRuteforekomstdatotid(ruteForekomstDatoTid);
+            return Ok();
         }
         [HttpPost]
         public void slettRuteforekomstdato([FromBody] int id)
@@ -253,9 +295,11 @@ namespace webAppBillett.Controllers
             _lugDb.slettLugar(id);
         }
         [HttpPost]
-        public void slettBillettperson([FromBody] BillettPerson billettperson)
+        public async Task<ActionResult> slettBillettperson([FromBody] BillettPerson billettperson)
         {
+            if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             _lugDb.slettBillettperson(billettperson);
+            return Ok();
         }
         [HttpPost]
         public void sletteBillett([FromBody] int id)
