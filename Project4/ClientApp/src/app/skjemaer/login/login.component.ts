@@ -29,7 +29,7 @@ export class LoginComponent {
     bruker.passord = this.Skjema.value.passord;
 
 
-    this._http.post("admin/login", bruker).subscribe((res) => {
+    this._http.post("admin/loggInn", bruker).subscribe((res) => {
 
     });
   }
