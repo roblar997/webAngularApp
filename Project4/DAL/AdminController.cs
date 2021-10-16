@@ -43,17 +43,23 @@ namespace webAppBillett.Controllers
         {
             return await _lugDb.hentBrukere();
         }
-
-        public void lagreBruker(Bruker bruker)
+        [HttpPost]
+        public void slettBruker([FromBody] string brukernavn)
+        {
+             _lugDb.slettBruker(brukernavn);
+        }
+        [HttpPost]
+        public void lagreBruker([FromBody] Bruker bruker)
         {
             _lugDb.lagreBruker(bruker);
         }
-
-        public void endreBruker(Bruker bruker)
+        [HttpPost]
+        public void endreBruker([FromBody] Bruker bruker)
         {
             _lugDb.endreBruker(bruker);
         }
-        public async Task<ActionResult> loggInn(Bruker bruker)
+        [HttpPost]
+        public async Task<ActionResult> loggInn([FromBody] Bruker bruker)
         {
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             bool ok = await _lugDb.loggInn(bruker);
