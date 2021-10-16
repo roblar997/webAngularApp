@@ -38,7 +38,7 @@ export class BrukerComponent {
     modalRef.componentInstance.infoBody = infoBody;
 
     modalRef.result.then(retur => {
-      if (retur == knapp1Tekst) {
+      if (retur == 'ja') {
         if (infoTitle == "slett") {
 
         }
@@ -95,6 +95,7 @@ export class BrukerComponent {
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
+        this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
         this.endreBruker();
       }
       else if (state.localeCompare("lagre") == 0) {

@@ -38,8 +38,16 @@ export class LoginComponent {
     modalRef.componentInstance.infoBody = infoBody;
 
     modalRef.result.then(retur => {
-      if (retur == knapp1Tekst) {
+      if (retur == 'ja') {
+        if (infoTitle == "slett") {
 
+        }
+        else if (infoTitle == "lagre") {
+
+        }
+        else if (infoTitle == "endre") {
+
+        }
       }
       else {
 

@@ -45,7 +45,8 @@ export class BetalingComponent {
     modalRef.componentInstance.infoBody = infoBody;
 
     modalRef.result.then(retur => {
-      if (retur == knapp1Tekst) {
+  
+      if (retur == 'ja') {
         if (infoTitle == "slett") {
 
         }
@@ -53,7 +54,7 @@ export class BetalingComponent {
 
         }
         else if (infoTitle == "endre") {
-
+          this.endreBetaling();
         }
       }
       else {
@@ -65,7 +66,8 @@ export class BetalingComponent {
     
     if (this.Skjema.valid) {
       if (state.localeCompare("endre") == 0) {
-        this.endreBetaling();
+        this.visModal("Ja", "Nei", "endre", "Vil du endre?", null);
+  
       }
       else if (state.localeCompare("lagre") == 0) {
         this.lagreBetaling();
