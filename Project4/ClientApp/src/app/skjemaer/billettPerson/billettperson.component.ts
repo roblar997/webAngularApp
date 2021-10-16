@@ -28,7 +28,7 @@ export class BillettpersonComponent {
 
 
     this._http.post("admin/lagrebillettperson", billettperson).subscribe((res) => {
-
+      this.hentAlleBillettpersoner();
     });
   }
   endreBillettPerson() {
@@ -39,7 +39,7 @@ export class BillettpersonComponent {
 
 
     this._http.post("admin/endrebillettperson", billettperson).subscribe((res) => {
-
+      this.hentAlleBillettpersoner();
     });
   }
 

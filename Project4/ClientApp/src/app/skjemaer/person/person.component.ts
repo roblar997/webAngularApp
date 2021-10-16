@@ -37,7 +37,7 @@ export class PersonComponent {
 
 
     this._http.post("admin/lagrePerson", person).subscribe((res) => {
-
+      this.hentAllePersoner();
     });
   }
   slett(index) {
@@ -67,7 +67,7 @@ export class PersonComponent {
 
 
     this._http.post("admin/endrePerson", person).subscribe((res) => {
-
+      this.hentAllePersoner();
     });
   }
 

@@ -48,7 +48,7 @@ export class LugarComponent {
     lugar.harWifi = this.Skjema.value.harWifi;
 
     this._http.post("admin/lagreLugar", lugar).subscribe((res) => {
-
+      this.hentAlleLugarer();
     });
   }
 
@@ -68,7 +68,7 @@ export class LugarComponent {
     lugar.harWifi = this.Skjema.value.harWifi;
 
     this._http.post("admin/endreLugar", lugar).subscribe((res) => {
-
+      this.hentAlleLugarer();
     });
   }
 

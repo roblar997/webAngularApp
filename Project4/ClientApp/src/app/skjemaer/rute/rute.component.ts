@@ -34,7 +34,7 @@ export class RuteComponent {
     rute.prisBarn = this.Skjema.value.prisBarn;
 
     this._http.post("admin/lagreRute", rute).subscribe((res) => {
-
+      this.hentAlleRuter();
     });
   }
 
@@ -48,7 +48,7 @@ export class RuteComponent {
     rute.prisBarn = this.Skjema.value.prisBarn;
 
     this._http.post("admin/endreRute", rute).subscribe((res) => {
-
+      this.hentAlleRuter();
     });
   }
   slett(index) {

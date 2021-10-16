@@ -34,7 +34,7 @@ export class ReservasjonComponent {
 
 
     this._http.post("admin/lagreReservasjon", reservasjon).subscribe((res) => {
-
+      this.hentAlleReservasjoner();
     });
   }
 
@@ -74,7 +74,7 @@ export class ReservasjonComponent {
 
 
     this._http.post("admin/endreReservasjon", reservasjon).subscribe((res) => {
-
+      this.hentAlleReservasjoner();
     });
   }
   visEndre(index: number) {

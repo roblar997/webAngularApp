@@ -33,7 +33,7 @@ export class RuteforekomstdatoComponent {
 
 
     this._http.post("admin/lagreRuteforekomstdato", ruteforekomstdato).subscribe((res) => {
-
+      this.hentAlleRuteforekomstdatoer();
     });
   }
   visEndre(index: number) {
@@ -78,7 +78,7 @@ export class RuteforekomstdatoComponent {
 
 
     this._http.post("admin/endreRuteforekomstdato", ruteforekomstdato).subscribe((res) => {
-
+      this.hentAlleRuteforekomstdatoer();
     });
   }
   hentAlleRuteforekomstdatoer() {

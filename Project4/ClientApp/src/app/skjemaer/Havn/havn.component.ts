@@ -41,7 +41,7 @@ export class HavnComponent {
 
 
     this._http.post("admin/lagreHavn", havn).subscribe((res) => {
-
+      this.hentAlleHavner();
     });
   }
   endreHavn() {
@@ -52,7 +52,7 @@ export class HavnComponent {
 
 
     this._http.post("admin/endreHavn", havn).subscribe((res) => {
-
+      this.hentAlleHavner();
     });
   }
   visEndre(index: number) {

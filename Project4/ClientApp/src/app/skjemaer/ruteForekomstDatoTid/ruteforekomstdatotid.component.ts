@@ -38,7 +38,7 @@ export class RuteforekomstdatotidComponent {
     ruteforekomstdatotid.erUtsolgt = this.Skjema.value.erUtsolgt;
 
     this._http.post("admin/lagreRuteforekomstdatotid", ruteforekomstdatotid).subscribe((res) => {
-
+      this.hentAlleRuteforekomstdatotider();
     });
 
   }
@@ -54,7 +54,7 @@ export class RuteforekomstdatotidComponent {
     ruteforekomstdatotid.erUtsolgt = this.Skjema.value.erUtsolgt;
 
     this._http.post("admin/endreRuteforekomstdatotid", ruteforekomstdatotid).subscribe((res) => {
-
+      this.hentAlleRuteforekomstdatotider();
     });
 
   }

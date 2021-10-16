@@ -40,7 +40,7 @@ export class BillettComponent {
     billett.antBarn = this.Skjema.value.antBarn;
 
     this._http.post("admin/lagreBillett", billett).subscribe((res) => {
-
+      this.hentAlleBilletter();
     });
   }
 
@@ -57,7 +57,7 @@ export class BillettComponent {
       billett.antBarn = this.Skjema.value.antBarn;
 
        this._http.post("admin/endreBillett", billett).subscribe((res) => {
-
+         this.hentAlleBilletter();
       });
   }
 

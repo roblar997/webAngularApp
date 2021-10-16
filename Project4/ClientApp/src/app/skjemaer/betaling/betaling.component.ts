@@ -72,7 +72,7 @@ export class BetalingComponent {
     betaling.pris = this.Skjema.value.pris;
 
     this._http.post("admin/lagreBetaling", betaling).subscribe((res) => {
-
+      this.hentAlleBetalinger();
     });
 
   }
@@ -97,7 +97,7 @@ export class BetalingComponent {
     betaling.pris = this.Skjema.value.pris;
 
     this._http.post("admin/endreBetaling", betaling).subscribe((res) => {
-
+      this.hentAlleBetalinger();
     });
 
   }
