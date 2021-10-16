@@ -302,9 +302,9 @@ namespace webAppBillett.Controllers
             return Ok();
         }
         [HttpPost]
-        public void sletteBillett([FromBody] int id)
+        public void slettBillett([FromBody] int id)
         {
-            _lugDb.sletteBillett(id);
+            _lugDb.slettBillett(id);
         }
     }
 }

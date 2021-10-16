@@ -380,7 +380,7 @@ namespace webAppBillett.DAL
             _lugDb.SaveChanges();
         }
 
-        public void sletteBillett(int id)
+        public void slettBillett(int id)
         {
             Billett billett = _lugDb.billetter.Find(id);
             _lugDb.billetter.Remove(billett);

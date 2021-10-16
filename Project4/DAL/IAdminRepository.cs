@@ -57,7 +57,7 @@ namespace webAppBillett.DAL
         public void slettRute(int id);
         public void slettRuteforekomstdato(int id);
         public void slettLugar(int id);
-        public void sletteBillett(int id);
+        public void slettBillett(int id);
     }
 }
 
