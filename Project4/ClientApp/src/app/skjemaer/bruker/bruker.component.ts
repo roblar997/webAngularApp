@@ -18,8 +18,6 @@ export class BrukerComponent {
     this.Skjema = fb.group({
       brukernavn: ["", Validators.required],
       passord: ["", Validators.required],
-      salt: ["", Validators.required],
-
 
     });
   }
@@ -29,7 +27,6 @@ export class BrukerComponent {
     const bruker = new Bruker();
     bruker.brukernavn = this.Skjema.value.brukernavn;
     bruker.passord = this.Skjema.value.passord;
-    bruker.salt = this.Skjema.value.salt;
 
 
     this._http.post("admin/lagreBruker", bruker).subscribe((res) => {
@@ -42,7 +39,6 @@ export class BrukerComponent {
     const bruker = new Bruker();
     bruker.brukernavn = this.Skjema.value.brukernavn;
     bruker.passord = this.Skjema.value.passord;
-    bruker.salt = this.Skjema.value.salt;
 
 
     this._http.post("admin/endreBruker", bruker).subscribe((res) => {
@@ -58,7 +54,6 @@ export class BrukerComponent {
     this.Skjema.setValue({
       brukernavn: this.brukere[index].brukernavn,
       passord: this.brukere[index].passord,
-      salt: this.brukere[index].salt,
 
     });
 
