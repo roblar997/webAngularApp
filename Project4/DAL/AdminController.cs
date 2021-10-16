@@ -86,10 +86,7 @@ namespace webAppBillett.Controllers
         [HttpPost]
         public async Task<ActionResult> loggInn([FromBody] Bruker bruker)
         {
-            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
-            {
-                return Unauthorized();
-            }
+        
             if (!ModelState.IsValid) return BadRequest("Ugyldig input");
             bool ok = await _lugDb.loggInn(bruker);
 
