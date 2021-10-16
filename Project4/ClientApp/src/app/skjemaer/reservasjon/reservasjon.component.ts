@@ -37,7 +37,17 @@ export class ReservasjonComponent {
   }
 
   slett(index) {
-    //TODO
+
+      const reservasjon = new Reservasjon();
+      reservasjon.billettId = this.reservasjoner[index].billettId,
+      reservasjon.ruteId = this.reservasjoner[index].ruteId,
+      reservasjon.avgangsDato = this.reservasjoner[index].avgangsDato,
+      reservasjon.avgangsTid = this.reservasjoner[index].avgangsTid,
+  
+
+        this._http.post("admin/slettReservasjon", reservasjon).subscribe((res) => {
+          this.hentAlleReservasjoner();
+      });
   }
   multipleSubmit(state: string) {
     if (this.Skjema.valid) {

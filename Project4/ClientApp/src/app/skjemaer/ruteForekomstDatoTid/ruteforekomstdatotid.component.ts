@@ -71,7 +71,18 @@ export class RuteforekomstdatotidComponent {
 
   }
   slett(index) {
-    //TODO
+    const ruteforekomstdatotid = new RuteForekomstDatoTid();
+    ruteforekomstdatotid.ruteId = this.ruteforekomstdatotider[index].ruteId;
+    ruteforekomstdatotid.avgangsDato = this.ruteforekomstdatotider[index].avgangsDato;
+    ruteforekomstdatotid.avgangsTid = this.ruteforekomstdatotider[index].avgangsTid;
+    ruteforekomstdatotid.ankomstDato = this.ruteforekomstdatotider[index].ankomstDato;
+    ruteforekomstdatotid.ankomstTid = this.ruteforekomstdatotider[index].ankomstTid;
+    ruteforekomstdatotid.forekomstDatoId = this.ruteforekomstdatotider[index].forekomstDatoId;
+    ruteforekomstdatotid.erUtsolgt = this.ruteforekomstdatotider[index].erUtsolgt;
+  
+    this._http.post("admin/slettRuteforekomstdatotid", ruteforekomstdatotid).subscribe((res) => {
+
+    });
   }
   visEndre(index: number) {
     this.Skjema.setValue({
