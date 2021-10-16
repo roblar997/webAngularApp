@@ -9,6 +9,6 @@ namespace webAppBillett.DAL
 
         public string passord { get; set; }
 
-        public byte[] salt { get; set; }
+        public string salt { get; set; }
     }
 }
