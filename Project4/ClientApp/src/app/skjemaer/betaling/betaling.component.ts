@@ -48,10 +48,12 @@ export class BetalingComponent {
   
       if (retur == 'ja') {
         if (infoTitle == "slett") {
-
+          this._http.post("admin/slettBetaling", this.betalinger[toSend].betalingsId).subscribe((res) => {
+            this.hentAlleBetalinger();
+          });
         }
         else if (infoTitle == "lagre") {
-
+          this.lagreBetaling();
         }
         else if (infoTitle == "endre") {
           this.endreBetaling();
@@ -70,7 +72,8 @@ export class BetalingComponent {
   
       }
       else if (state.localeCompare("lagre") == 0) {
-        this.lagreBetaling();
+        this.visModal("Ja", "Nei", "lagre", "Vil du lagre?", null);
+  
       }
     }
 
@@ -115,9 +118,7 @@ export class BetalingComponent {
 
   slett(index) {
     this.visModal("Ja", "Nei", "slett", "Vil du slette?",index);
-    this._http.post("admin/slettBetaling", this.betalinger[index].betalingsId).subscribe((res) => {
-      this.hentAlleBetalinger();
-    });
+
   }
 
   endreBetaling() {
