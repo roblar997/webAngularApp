@@ -9,7 +9,7 @@
           <label>billettId:</label>
         </td>
         <td>
-          <input type="number" formControlName="billettId" disabled>
+          <input type="number" formControlName="billettId" disabled placeholder="Fylles ikke ut ved lagring">
         </td>
         <td *ngIf="this.Skjema.controls.billettId.status=='INVALID'">
           Obligatorisk

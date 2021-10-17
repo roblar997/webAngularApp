@@ -8,7 +8,7 @@
           <label>personId:</label>
         </td>
         <td>
-          <input type="number" formControlName="personId" disabled>
+          <input type="number" formControlName="personId" disabled placeholder="Fylles ikke ut ved lagring">
         </td>
         <td *ngIf="this.Skjema.controls.personId.status=='INVALID'">
           Obligatorisk
