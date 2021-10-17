@@ -7,10 +7,18 @@
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
 
- 
       <tr>
-
-        <input type="text" formControlName="havnId" *ngIf="false">
+        <td>
+          <label>havnId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="havnId" disabled>
+        </td>
+        <td *ngIf="this.Skjema.controls.havnId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
         <td>
           <label>navn:</label>
         </td>

@@ -16,6 +16,7 @@ export class HavnComponent {
   public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
+      havnId: ["", Validators.required],
       navn: ["", Validators.required]
 
 
@@ -43,7 +44,7 @@ export class HavnComponent {
   lagreHavn() {
 
     const havn = new Havn();
-
+    havn.havnId = this.Skjema.value.havnId;
     havn.navn = this.Skjema.value.navn;
 
 

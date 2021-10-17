@@ -17,6 +17,7 @@ export class RuteforekomstdatoComponent {
   public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
+      forekomstDatoId: ["", Validators.required],
       avgangsDato: ["", Validators.required],
       ruteId: ["", Validators.required],
       erUtsolgt: ["", Validators.required]
@@ -26,7 +27,7 @@ export class RuteforekomstdatoComponent {
   lagreForekomstDato() {
 
     const ruteforekomstdato = new RuteforekomstDato();
-
+    ruteforekomstdato.forekomstDatoId = this.Skjema.value.forekomstDatoId;
     ruteforekomstdato.avgangsDato = this.Skjema.value.avgangsDato;
     ruteforekomstdato.ruteId = this.Skjema.value.ruteId;
     ruteforekomstdato.erUtsolgt = this.Skjema.value.erUtsolgt;

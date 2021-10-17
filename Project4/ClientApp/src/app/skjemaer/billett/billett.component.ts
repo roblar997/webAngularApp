@@ -16,6 +16,8 @@ export class BillettComponent {
   public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
+
+      billettId: ["", Validators.required],
       pris: ["", Validators.required],
       fra: ["", Validators.required],
       til: ["", Validators.required],
@@ -29,6 +31,7 @@ export class BillettComponent {
 
   lagreBillett() {
     const billett = new Billett();
+    billett.billettId = this.Skjema.value.billettId;
     billett.pris = this.Skjema.value.pris;
     billett.fra = this.Skjema.value.fra;
     billett.til = this.Skjema.value.til;

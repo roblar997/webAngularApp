@@ -3,15 +3,23 @@
   <button (click)="hentAllePersoner()"> Hent personer</button> {{laster}}
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
-
       <tr>
-
-        <input type="text" formControlName="personId" *ngIf="false">
+        <td>
+          <label>personId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="personId" disabled>
+        </td>
+        <td *ngIf="this.Skjema.controls.personId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
         <td>
           <label>Fornavn:</label>
         </td>
         <td>
-          <input type="text" formControlName="fornavn">
+          <input type="text" formControlName="fornavn" [(ngModel)]="fornavn">
         </td>
         <td *ngIf="this.Skjema.controls.fornavn.status=='INVALID'">
           Obligatorisk
@@ -22,7 +30,7 @@
           <label>Etternavn:</label>
         </td>
         <td>
-          <input type="text" formControlName="etternavn" >
+          <input type="text" formControlName="etternavn" [(ngModel)]="etternavn">
         </td>
         <td *ngIf="this.Skjema.controls.etternavn.status=='INVALID'">
           Mellom 6 og 15 siffer
@@ -33,7 +41,7 @@
           <label>Telefon:</label>
         </td>
         <td>
-          <input type="text" formControlName="telefon">
+          <input type="text" formControlName="telefon" [(ngModel)]="telefon">
         </td>
         <td *ngIf="this.Skjema.controls.telefon.status=='INVALID'">
           Mellom 6 og 15 siffer

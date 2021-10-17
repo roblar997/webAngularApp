@@ -16,6 +16,7 @@ export class RuteComponent {
   public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
+      ruteId: ["", Validators.required],
       fra: ["", Validators.required],
       til: ["", Validators.required],
       prisVoksen: ["", Validators.required],
@@ -27,7 +28,7 @@ export class RuteComponent {
   lagreRute() {
 
     const rute = new Rute();
-
+    rute.ruteId = this.Skjema.value.ruteId;
     rute.fra = this.Skjema.value.fra;
     rute.til = this.Skjema.value.til;
     rute.prisVoksen = this.Skjema.value.prisVoksen;
