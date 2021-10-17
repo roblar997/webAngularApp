@@ -4,8 +4,10 @@
 </style>
 <body>
 
-  
-  <app-nav-menu></app-nav-menu>
+  <div *ngIf="erInnlogget()">
+    <app-nav-menu></app-nav-menu>
+  </div>
+
   <div class="container">
     <router-outlet></router-outlet>
   </div>

@@ -24,6 +24,15 @@ namespace webAppBillett.Controllers
             _log = log;
 
         }
+
+        public async Task<bool> erLoggetInn()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                return false;
+            }
+            return true;
+        }
         public async Task<ActionResult> hentPersoner()
         {
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
