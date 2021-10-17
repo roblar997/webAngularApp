@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +9,11 @@ export class AppComponent {
   title = 'app';
   erLoggetInn = undefined;
 
-  constructor( private _http: HttpClient, private router: Router) {
+  constructor( private _http: HttpClient) {
   }
 
   erInnlogget() {
-    if (this.erLoggetInn == true) {
-      this.router.navigate(['/lugar']);
-    }
+
     if (this.erLoggetInn != undefined) {
       return this.erLoggetInn;
     }
