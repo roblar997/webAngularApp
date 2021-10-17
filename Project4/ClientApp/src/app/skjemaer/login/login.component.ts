@@ -5,7 +5,7 @@ import { Betaling } from "../../Models-typescript/Betaling";
 import { Bruker } from "../../Models-typescript/Bruker";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { Modal } from "../../../modal/modal";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 @Component({
   selector: "app-skjemaer-login",
   templateUrl: "login.component.html"
@@ -15,7 +15,7 @@ export class LoginComponent {
   Skjema: FormGroup;
 
 
-  constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal, private router: Router) {
+  constructor(private fb: FormBuilder, private _http: HttpClient, private routeAct: ActivatedRoute, private modalService: NgbModal, private router: Router) {
     this.Skjema = fb.group({
       brukernavn: ["", Validators.required],
       passord: ["", Validators.required],
@@ -52,6 +52,14 @@ export class LoginComponent {
 
       }
     });
+  }
+
+  ngOnInit() {
+    this.routeAct.params.subscribe((params) => {
+      if (params.id == 1)
+        window.location.reload();
+    });
+
   }
   reset() {
 
