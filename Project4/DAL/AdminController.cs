@@ -96,9 +96,15 @@ namespace webAppBillett.Controllers
             return Ok();
         }
 
-        public void logUt()
+        public bool logUt()
         {
-            HttpContext.Session.SetString("logginn", "");
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            {
+                HttpContext.Session.SetString("logginn", "");
+                return true;
+            }
+            return false;
+       
         }
         [HttpPost]
         public async Task<ActionResult> loggInn([FromBody] Bruker bruker)
