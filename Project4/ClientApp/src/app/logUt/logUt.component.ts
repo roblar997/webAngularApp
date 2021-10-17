@@ -23,7 +23,7 @@ export class LogUtComponent {
 
     this._http.get("admin/logUt").subscribe((res) => {
       window.location.reload();
-
+      this.router.navigate(['/']);
     });
   }
 }
