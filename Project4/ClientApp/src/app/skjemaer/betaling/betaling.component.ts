@@ -16,7 +16,6 @@ export class BetalingComponent {
   public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
-      betalingsId: ["", Validators.required],
       kortnummer: ["", Validators.required],
       utloper: ["", Validators.required],
       postnr: ["", Validators.required],
@@ -105,7 +104,6 @@ export class BetalingComponent {
   }
   lagreBetaling() {
     const betaling = new Betaling();
-    betaling.betalingsId = this.Skjema.value.betalingsId;
     betaling.kortnummer = this.Skjema.value.kortnummer;
     betaling.utloper = this.Skjema.value.utloper;
     betaling.postnr = this.Skjema.value.postnr;

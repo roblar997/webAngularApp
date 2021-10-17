@@ -6,18 +6,9 @@
   <button (click)="hentAlleRuteforekomstdatoer()"> Hent ruteforekomstdatoer</button> {{laster}}
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
+
       <tr>
-        <td>
-          <label>forekomstDatoId:</label>
-        </td>
-        <td>
-          <input type="number" formControlName="forekomstDatoId">
-        </td>
-        <td *ngIf="this.Skjema.controls.forekomstDatoId.status=='INVALID'">
-          Obligatorisk
-        </td>
-      </tr>
-      <tr>
+        <input type="hidden" formControlName="forekomstDatoId">
         <td>
           <label>avgangsDato:</label>
         </td>

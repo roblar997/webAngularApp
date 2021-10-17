@@ -4,18 +4,9 @@
   <button (click)="hentAlleRuter()"> Hent ruter</button> {{laster}}
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
+
       <tr>
-        <td>
-          <label>ruteId:</label>
-        </td>
-        <td>
-          <input type="number" formControlName="ruteId">
-        </td>
-        <td *ngIf="this.Skjema.controls.ruteId.status=='INVALID'">
-          Obligatorisk
-        </td>
-      </tr>
-      <tr>
+        <input type="hidden" formControlName="ruteId">
         <td>
           <label>fra:</label>
         </td>

@@ -6,18 +6,9 @@
   <button (click)="hentAlleBetalinger()"> Hent betalinger</button> {{laster}}
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
+   
       <tr>
-        <td>
-          <label>betalingsId:</label>
-        </td>
-        <td>
-          <input type="number" formControlName="betalingsId">
-        </td>
-        <td *ngIf="this.Skjema.controls.betalingsId.status=='INVALID'">
-          Obligatorisk
-        </td>
-      </tr>
-      <tr>
+        <input type="hidden" formControlName="betalingsId">
         <td>
           <label>kortnummer:</label>
         </td>

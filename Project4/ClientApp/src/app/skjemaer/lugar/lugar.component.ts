@@ -19,7 +19,6 @@ export class LugarComponent {
 
   constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
-      lugarId: ["", Validators.required],
       bildeURL: ["", Validators.required],
       beskrivelse: ["", Validators.required],
       antall: ["", Validators.required],
@@ -36,7 +35,7 @@ export class LugarComponent {
   lagreLugar() {
 
     const lugar = new Lugar();
-    lugar.lugarId = this.Skjema.value.lugarId;
+
     lugar.bildeURL = this.Skjema.value.bildeURL;
     lugar.beskrivelse = this.Skjema.value.beskrivelse;
     lugar.antall = this.Skjema.value.antall;

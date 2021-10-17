@@ -4,18 +4,9 @@
   <button (click)="hentAlleLugarer()"> Hent lugarer</button> {{laster}}
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
+
       <tr>
-        <td>
-          <label>lugarId:</label>
-        </td>
-        <td>
-          <input type="number" formControlName="lugarId">
-        </td>
-        <td *ngIf="this.Skjema.controls.lugarId.status=='INVALID'">
-          Obligatorisk
-        </td>
-      </tr>
-      <tr>
+        <input type="hidden" formControlName="lugarId">
         <td>
           <label>bildeURL:</label>
         </td>

@@ -21,7 +21,6 @@ export class PersonComponent {
 
   constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
-      personId: ["", Validators.required],
       fornavn: ["", Validators.required],
       etternavn: ["", Validators.required],
       telefon: ["", Validators.required]
@@ -31,7 +30,7 @@ export class PersonComponent {
   lagrePerson() {
 
     const person = new Person();
-    person.personId = this.Skjema.value.personId;
+
     person.fornavn = this.Skjema.value.fornavn;
     person.etternavn = this.Skjema.value.etternavn;
     person.telefon = this.Skjema.value.telefon;

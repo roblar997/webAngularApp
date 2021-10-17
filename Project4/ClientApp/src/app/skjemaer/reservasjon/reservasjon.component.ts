@@ -16,7 +16,6 @@ export class ReservasjonComponent {
   public laster: string;
   constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
-      billettId: ["", Validators.required],
       lugarId: ["", Validators.required],
       ruteId: ["", Validators.required],
       avgangsDato: ["", Validators.required],
