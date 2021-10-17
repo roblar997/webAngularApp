@@ -98,7 +98,7 @@ namespace webAppBillett.Controllers
 
         public bool logUt()
         {
-            if (string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("logginn")))
             {
                 HttpContext.Session.SetString("logginn", "");
                 return true;

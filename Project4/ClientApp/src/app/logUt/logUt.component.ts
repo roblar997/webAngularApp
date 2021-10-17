@@ -23,7 +23,7 @@ export class LogUtComponent {
 
     this._http.get("admin/logUt").subscribe((res) => {
 
-      if (res) window.location.reload();
+      if (res == true) window.location.reload();
       else     this.router.navigate(['/']);
  
       
