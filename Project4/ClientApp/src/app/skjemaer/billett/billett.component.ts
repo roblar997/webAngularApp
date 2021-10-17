@@ -31,7 +31,6 @@ export class BillettComponent {
 
   lagreBillett() {
     const billett = new Billett();
-    billett.billettId = this.Skjema.value.billettId;
     billett.pris = this.Skjema.value.pris;
     billett.fra = this.Skjema.value.fra;
     billett.til = this.Skjema.value.til;
