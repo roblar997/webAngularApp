@@ -27,7 +27,10 @@ export class PersonComponent {
       telefon: ["", Validators.required]
     });
   }
+  reset() {
 
+    this.Skjema.reset();
+  }
   lagrePerson() {
 
     const person = new Person();

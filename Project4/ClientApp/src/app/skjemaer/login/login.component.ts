@@ -53,6 +53,10 @@ export class LoginComponent {
       }
     });
   }
+  reset() {
+
+    this.Skjema.reset();
+  }
   login() {
 
     const bruker = new Bruker();

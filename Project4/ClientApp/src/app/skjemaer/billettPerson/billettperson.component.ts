@@ -70,6 +70,11 @@ export class BillettpersonComponent {
       }
     });
   }
+
+  reset() {
+
+    this.Skjema.reset();
+  }
   endreBillettPerson() {
 
     const billettperson = new BillettPerson();

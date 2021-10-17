@@ -86,6 +86,11 @@ export class HavnComponent {
       }
     });
   }
+
+  reset() {
+
+    this.Skjema.reset();
+  }
   endreHavn() {
 
     const havn = new Havn();

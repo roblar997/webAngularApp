@@ -121,6 +121,11 @@ export class RuteforekomstdatotidComponent {
 
 
   }
+
+  reset() {
+
+    this.Skjema.reset();
+  }
   visEndre(index: number) {
     this.Skjema.setValue({
       ruteId: this.ruteforekomstdatotider[index].ruteId,

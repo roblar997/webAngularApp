@@ -103,6 +103,12 @@ export class BetalingComponent {
   ngOnInit() {
     this.hentAlleBetalinger();
   }
+
+  reset() {
+
+    this.Skjema.reset();
+  }
+
   lagreBetaling() {
     const betaling = new Betaling();
     betaling.betalingsId = 1;

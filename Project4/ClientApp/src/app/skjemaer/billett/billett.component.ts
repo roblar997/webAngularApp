@@ -28,7 +28,10 @@ export class BillettComponent {
 
     });
   }
+  reset() {
 
+    this.Skjema.reset();
+  }
   lagreBillett() {
     const billett = new Billett();
     billett.billettId = 1;

@@ -38,7 +38,7 @@ export class ReservasjonComponent {
     });
   }
 
-
+ 
   multipleSubmit(state: string, toSend) {
 
     if (state.localeCompare("endre") == 0) {
@@ -123,6 +123,13 @@ export class ReservasjonComponent {
       avgangsTid: this.reservasjoner[index].avgangsTid,
     });
   }
+
+  reset() {
+
+    this.Skjema.reset();
+  }
+  
+
   ngOnInit() {
     this.hentAlleReservasjoner();
   }

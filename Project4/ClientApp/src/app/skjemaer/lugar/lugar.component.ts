@@ -32,7 +32,10 @@ export class LugarComponent {
       harWifi: ["", Validators.required]
     });
   }
+  reset() {
 
+    this.Skjema.reset();
+  }
   lagreLugar() {
 
     const lugar = new Lugar();

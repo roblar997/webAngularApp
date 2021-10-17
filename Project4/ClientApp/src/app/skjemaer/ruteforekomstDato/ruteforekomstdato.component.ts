@@ -48,6 +48,10 @@ export class RuteforekomstdatoComponent {
 
   }
 
+  reset() {
+
+    this.Skjema.reset();
+  }
 
   ngOnInit() {
     this.hentAlleRuteforekomstdatoer();

@@ -66,6 +66,11 @@ export class RuteComponent {
     });
 
   }
+
+  reset() {
+
+    this.Skjema.reset();
+  }
   visModal(knapp1Tekst: string, knapp2Tekst: string, infoTitle: string, infoBody: string, toSend) {
     const modalRef = this.modalService.open(Modal, {
       backdrop: 'static',
