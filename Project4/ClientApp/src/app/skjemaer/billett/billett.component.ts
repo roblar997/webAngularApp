@@ -17,7 +17,7 @@ export class BillettComponent {
   constructor(private fb: FormBuilder, private _http: HttpClient, private modalService: NgbModal) {
     this.Skjema = fb.group({
 
-      billettId: ["", Validators.required],
+      billettId: [""],
       pris: ["", Validators.required],
       fra: ["", Validators.required],
       til: ["", Validators.required],
