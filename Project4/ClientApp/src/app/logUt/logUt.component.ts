@@ -22,7 +22,7 @@ export class LogUtComponent {
   logUt() {
 
     this._http.get("admin/logUt").subscribe((res) => {
-      window.location.reload();
+ 
       this.router.navigate(['/']);
     });
   }
