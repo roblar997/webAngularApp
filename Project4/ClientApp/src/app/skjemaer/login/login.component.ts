@@ -60,7 +60,7 @@ export class LoginComponent {
 
 
     this._http.post("admin/loggInn", bruker).subscribe((res) => {
-
+      if (res == true) window.location.reload();
     });
   }
  

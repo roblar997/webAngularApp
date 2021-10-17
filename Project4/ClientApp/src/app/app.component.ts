@@ -13,14 +13,14 @@ export class AppComponent {
   }
 
   erInnlogget() {
-    if (this.erLoggetInn == undefined) {
+    if (this.erLoggetInn != undefined) {
       return this.erLoggetInn;
     }
 
     this._http.get<boolean>("admin/erLoggetInn").subscribe((res) => {
       this.erLoggetInn = res;
-    }, err => { }, () => { });
+    }, err => { }, () => { return this.erLoggetInn; });
 
-    return false;
+
   }
 }
