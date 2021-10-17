@@ -6,10 +6,10 @@
     <table>
       <tr>
         <td>
-          <label>brukernavn:</label>
+          <label>Brukernavn:</label>
         </td>
         <td>
-       
+          <input type="text" formControlName="brukernavn">
         </td>
         <td *ngIf="this.Skjema.controls.brukernavn.status=='INVALID'">
           Obligatorisk
@@ -26,7 +26,7 @@
           Obligatorisk
         </td>
       </tr>
-    
+
       <tr>
         <td>
           <button type="submit" (click)='multipleSubmit("lagre")' [disabled]="!Skjema.valid">Register</button>
