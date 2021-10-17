@@ -27,7 +27,7 @@ export class RuteforekomstdatoComponent {
   lagreForekomstDato() {
 
     const ruteforekomstdato = new RuteforekomstDato();
-    ruteforekomstdato.forekomstDatoId = -1;
+    ruteforekomstdato.forekomstDatoId = 1;
     ruteforekomstdato.avgangsDato = this.Skjema.value.avgangsDato;
     ruteforekomstdato.ruteId = this.Skjema.value.ruteId;
     ruteforekomstdato.erUtsolgt = this.Skjema.value.erUtsolgt;

@@ -28,7 +28,7 @@ export class RuteComponent {
   lagreRute() {
 
     const rute = new Rute();
-    rute.ruteId = -1;
+    rute.ruteId = 1;
     rute.fra = this.Skjema.value.fra;
     rute.til = this.Skjema.value.til;
     rute.prisVoksen = this.Skjema.value.prisVoksen;
