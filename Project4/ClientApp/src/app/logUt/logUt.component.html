@@ -1,0 +1,158 @@
+<div>
+
+
+
+  <h2>Betalings Skjema </h2>
+  <button (click)="hentAlleBetalinger()"> Hent betalinger</button> {{laster}}
+  <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>
+          <label>betalingsId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="betalingsId" disabled placeholder="Fylles ikke ut ved lagring">
+        </td>
+        <td *ngIf="this.Skjema.controls.betalingsId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>kortnummer:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="kortnummer">
+        </td>
+        <td *ngIf="this.Skjema.controls.kortnummer.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>utloper:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="utloper">
+        </td>
+        <td *ngIf="this.Skjema.controls.utloper.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>postnr:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="postnr">
+        </td>
+        <td *ngIf="this.Skjema.controls.postnr.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>poststed:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="poststed">
+        </td>
+        <td *ngIf="this.Skjema.controls.poststed.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>telefon:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="telefon">
+        </td>
+        <td *ngIf="this.Skjema.controls.telefon.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>adresse:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="adresse">
+        </td>
+        <td *ngIf="this.Skjema.controls.adresse.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>email:</label>
+        </td>
+        <td>
+          <input type="text" formControlName="email">
+        </td>
+        <td *ngIf="this.Skjema.controls.email.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>csv:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="csv">
+        </td>
+        <td *ngIf="this.Skjema.controls.csv.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>pris:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="pris">
+        </td>
+        <td *ngIf="this.Skjema.controls.pris.status=='INVALID'">
+          Mellom 6 og 15 siffer
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <button type="submit" (click)='multipleSubmit("lagre")' [disabled]="!Skjema.valid">Register</button>
+        </td>
+        <td>
+          <button type="submit" (click)='multipleSubmit("endre")' [disabled]="!Skjema.valid">Endre</button>
+        </td>
+        <td>
+          <button type="submit" (click)='reset()'>Reset</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+
+  <div class="container bg-white " style="width: 100vw; " >
+    <table class="table table-striped">
+
+      <tr *ngFor="let betaling of betalinger; let indexVal = index;">
+        <td>{{betaling.betalingsId}}</td>
+        <td>{{betaling.kortnummer}}</td>
+        <td>{{betaling.utloper}}</td>
+        <td>{{betaling.postnr}}</td>
+        <td>{{betaling.poststed}}</td>
+        <td>{{betaling.telefon}}</td>
+        <td>{{betaling.adresse}}</td>
+        <td>{{betaling.email}}</td>
+        <td>{{betaling.csv}}</td>
+        <td>{{betaling.pris}}</td>
+        <td>
+          <button type="submit" (click)="visEndre(indexVal)">Endre</button>
+        </td>
+        <td>
+          <button type="submit" (click)="multipleSubmit('slett',indexVal) ">Slette</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

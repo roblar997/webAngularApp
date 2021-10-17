@@ -96,7 +96,7 @@ namespace webAppBillett.Controllers
             return Ok();
         }
 
-        public void loggUt()
+        public void logUt()
         {
             HttpContext.Session.SetString("logginn", "");
         }

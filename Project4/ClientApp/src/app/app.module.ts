@@ -23,6 +23,7 @@ import { LoginComponent } from './skjemaer/login/login.component';
 import { BrukerComponent } from './skjemaer/bruker/bruker.component';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { Modal } from '../modal/modal';
+import { LogUtComponent } from './logUt/logUt.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { Modal } from '../modal/modal';
     LoginComponent,
     ReservasjonComponent,
     BrukerComponent,
+    LogUtComponent,
     Modal
   ],
   imports: [
@@ -59,7 +61,8 @@ import { Modal } from '../modal/modal';
       { path: 'ruteforekomstdato', component: RuteforekomstdatoComponent, pathMatch: 'full' },
       { path: 'ruteforekomstdatotid', component: RuteforekomstdatotidComponent, pathMatch: 'full' },
       { path: 'reservering', component: ReservasjonComponent, pathMatch: 'full' },
-      { path: 'betaling', component: BetalingComponent, pathMatch: 'full' }
+      { path: 'betaling', component: BetalingComponent, pathMatch: 'full' },
+      { path: 'logUt', component: LogUtComponent, pathMatch: 'full' }
     ])
   ],
   providers: [],
