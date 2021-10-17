@@ -127,63 +127,130 @@ namespace webAppBillett.DAL
 
         public void lagrePerson(Person person)
         {
-            _lugDb.personer.Add(person);
+            Person personen = new Person();
+            personen.fornavn = person.fornavn;
+            personen.etternavn = person.etternavn;
+            personen.telefon = person.telefon;
+            _lugDb.personer.Add(personen);
             _lugDb.SaveChanges();
+
         }
 
         public void lagreBetaling(Betaling betaling)
         {
-            _lugDb.betaling.Add(betaling);
+            Betaling betalingen = new Betaling();
+            betalingen.pris = betaling.pris;
+            betalingen.adresse = betaling.adresse;
+            betalingen.csv = betaling.csv;
+            betalingen.email = betaling.email;
+            betalingen.kortholderNavn = betaling.kortholderNavn;
+            betalingen.kortnummer = betaling.kortnummer;
+            betalingen.postnr = betaling.kortnummer;
+            betalingen.poststed = betaling.poststed;
+            betalingen.telefon = betaling.telefon;
+            betalingen.utloper = betaling.utloper;
+            _lugDb.betaling.Add(betalingen);
             _lugDb.SaveChanges();
         }
 
         public void lagreHavn(Havn havn)
         {
-            _lugDb.havn.Add(havn);
+            Havn havnen = new Havn();
+            havnen.navn = havn.navn;
+            havnen.ruteFra = havn.ruteFra;
+            havnen.ruteTil = havn.ruteTil;
+            _lugDb.havn.Add(havnen);
             _lugDb.SaveChanges();
+
         }
 
         public void lagreReservasjon(Reservasjon reservasjon)
         {
+            Reservasjon reservasjonen = new Reservasjon();
+            reservasjonen.avgangsDato = reservasjon.avgangsDato;
+            reservasjonen.avgangsTid = reservasjon.avgangsTid;
+            reservasjonen.ruteId = reservasjon.ruteId;
             _lugDb.reservasjon.Add(reservasjon);
             _lugDb.SaveChanges();
         }
 
         public void lagreRuter(Rute rute)
         {
-            _lugDb.ruter.Add(rute);
+            Rute ruten = new Rute();
+            ruten.fra = rute.fra;
+            ruten.til = rute.til;
+            ruten.prisBarn = rute.prisBarn;
+            ruten.prisVoksen = rute.prisVoksen;
+            ruten.ruteId = rute.ruteId;
+            _lugDb.ruter.Add(ruten);
             _lugDb.SaveChanges();
         }
 
         public void lagreRuteforekomstdatotid(RuteForekomstDatoTid ruteForekomstDatotid)
         {
-            _lugDb.ruteForekomstDatoTid.Add(ruteForekomstDatotid);
+            RuteForekomstDatoTid ruteforekomstdatotiden = new RuteForekomstDatoTid();
+
+            ruteforekomstdatotiden.ruteId = ruteForekomstDatotid.ruteId;
+            ruteforekomstdatotiden.ankomstDato = ruteForekomstDatotid.ankomstDato;
+            ruteforekomstdatotiden.ankomstTid = ruteForekomstDatotid.ankomstTid;
+            ruteforekomstdatotiden.avgangsDato = ruteForekomstDatotid.avgangsDato;
+            ruteforekomstdatotiden.avgangsTid = ruteForekomstDatotid.avgangsTid;
+            ruteforekomstdatotiden.erUtsolgt = ruteForekomstDatotid.erUtsolgt;
+            _lugDb.ruteForekomstDatoTid.Add(ruteforekomstdatotiden);
             _lugDb.SaveChanges();
+
         }
 
         public void lagreRuteforekomstdato(RuteForekomstDato ruteForekomstDato)
         {
-            _lugDb.ruteForekomstDato.Add(ruteForekomstDato);
+            RuteForekomstDato ruteforekomstdatoen = new RuteForekomstDato();
+            ruteforekomstdatoen.ruteId = ruteForekomstDato.ruteId;
+            ruteforekomstdatoen.avgangsDato = ruteForekomstDato.avgangsDato;
+            ruteforekomstdatoen.erUtsolgt = ruteForekomstDato.erUtsolgt;
+            _lugDb.ruteForekomstDato.Add(ruteforekomstdatoen);
             _lugDb.SaveChanges();
+
         }
 
         public void lagreLugar(Lugar lugar)
         {
-            _lugDb.lugarer.Add(lugar);
+            Lugar lugaren = new Lugar();
+            lugaren.antall = lugar.antall;
+            lugaren.pris = lugar.pris;
+            lugaren.beskrivelse = lugar.beskrivelse;
+            lugaren.bildeURL = lugar.bildeURL;
+            lugaren.harDysj = lugar.harDysj;
+            lugaren.harWc = lugar.harWc;
+            lugaren.harWifi = lugar.harWifi;
+            lugaren.romNr = lugar.romNr;
+            lugaren.tittel = lugar.tittel;
+            lugaren.lugarType = lugar.lugarType;
+            _lugDb.lugarer.Add(lugaren);
             _lugDb.SaveChanges();
+
         }
 
         public void lagreBillettperson(BillettPerson billettPerson)
         {
             _lugDb.billettPerson.Add(billettPerson);
             _lugDb.SaveChanges();
+            return;
         }
 
         public void lagreBillett(Billett billett)
         {
-            _lugDb.billetter.Add(billett);
+            Billett billetten = new Billett();
+            billetten.antBarn = billett.antBarn;
+            billetten.antVoksen = billett.antVoksen;
+            billetten.avgangsDato = billett.avgangsDato;
+            billetten.avgangsTid = billett.avgangsTid;
+            billetten.fra = billett.fra;
+            billetten.til = billett.til;
+            billetten.pris = billett.pris;
+            _lugDb.billetter.Add(billetten);
             _lugDb.SaveChanges();
         }
+
 
         public void endrePerson(Person person)
         {
