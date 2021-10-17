@@ -24,7 +24,8 @@ export class LogUtComponent {
     this._http.get("admin/logUt").subscribe((res) => {
  
       this.router.navigate(['/']);
-     
+      
+      
     });
   }
 }

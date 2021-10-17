@@ -20,6 +20,7 @@ export class AppComponent {
 
     this._http.get<boolean>("admin/erLoggetInn").subscribe((res) => {
       this.erLoggetInn = res;
+      
     }, err => { }, () => { return this.erLoggetInn; });
 
 

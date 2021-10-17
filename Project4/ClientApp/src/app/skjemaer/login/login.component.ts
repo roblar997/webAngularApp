@@ -57,6 +57,7 @@ export class LoginComponent {
 
     this.Skjema.reset();
   }
+
   login() {
 
     const bruker = new Bruker();
