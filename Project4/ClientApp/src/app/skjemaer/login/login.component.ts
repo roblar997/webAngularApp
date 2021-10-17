@@ -61,7 +61,10 @@ export class LoginComponent {
 
 
     this._http.post("admin/loggInn", bruker).subscribe((res) => {
-      if (res == true) this.router.navigate(['/lugar']);
+      if (res == true) {
+        window.location.reload();
+        this.router.navigate(['/lugar']);
+      }
     });
   }
  
