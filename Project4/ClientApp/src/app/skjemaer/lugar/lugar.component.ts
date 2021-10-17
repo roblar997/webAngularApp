@@ -36,6 +36,7 @@ export class LugarComponent {
   lagreLugar() {
 
     const lugar = new Lugar();
+    lugar.lugarId = -1;
     lugar.bildeURL = this.Skjema.value.bildeURL;
     lugar.beskrivelse = this.Skjema.value.beskrivelse;
     lugar.antall = this.Skjema.value.antall;

@@ -31,6 +31,7 @@ export class PersonComponent {
   lagrePerson() {
 
     const person = new Person();
+    person.personId = -1;
     person.fornavn = this.Skjema.value.fornavn;
     person.etternavn = this.Skjema.value.etternavn;
     person.telefon = this.Skjema.value.telefon;

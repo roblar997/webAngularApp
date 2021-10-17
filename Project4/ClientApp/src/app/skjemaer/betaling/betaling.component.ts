@@ -105,6 +105,7 @@ export class BetalingComponent {
   }
   lagreBetaling() {
     const betaling = new Betaling();
+    betaling.betalingsId = -1;
     betaling.kortnummer = this.Skjema.value.kortnummer;
     betaling.utloper = this.Skjema.value.utloper;
     betaling.postnr = this.Skjema.value.postnr;

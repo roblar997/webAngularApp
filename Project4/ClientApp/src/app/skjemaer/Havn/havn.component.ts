@@ -44,6 +44,7 @@ export class HavnComponent {
   lagreHavn() {
 
     const havn = new Havn();
+    havn.havnId = -1;
     havn.navn = this.Skjema.value.navn;
 
 
