@@ -8,16 +8,14 @@
     <table>
 
       <tr>
-        <td>
-          <input ="hidden" formControlName="forekomstDatoId">
-        </td>
 
+        <input type="hidden" formControlName="forekomstDatoId">
         <td>
           <label>avgangsDato:</label>
         </td>
         <td>
           <input type="date" formControlName="avgangsDato">
-        </td>type
+        </td>
         <td *ngIf="this.Skjema.controls.avgangsDato.status=='INVALID'">
           Mellom 6 og 15 siffer
         </td>
