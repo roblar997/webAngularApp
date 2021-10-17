@@ -4,9 +4,18 @@
   <button (click)="hentAlleBillettpersoner()"> Hent billettpersoner</button> {{laster}}
   <form [formGroup]="Skjema" (ngSubmit)="onSubmit()">
     <table>
-
       <tr>
-                  <input type="text" formControlName="billettId" *ngIf="false">
+        <td>
+          <label>billettId:</label>
+        </td>
+        <td>
+          <input type="number" formControlName="billettId">
+        </td>
+        <td *ngIf="this.Skjema.controls.billettId.status=='INVALID'">
+          Obligatorisk
+        </td>
+      </tr>
+      <tr>
         <td>
           <label>personId:</label>
         </td>
