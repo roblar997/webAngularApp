@@ -8,7 +8,11 @@
     <app-nav-menu ></app-nav-menu>
   </div>
 
-  <div class="container">
+  <div class="container" *ngIf="erInnlogget()"> 
     <router-outlet></router-outlet>
+  </div>
+  <div class="container" *ngIf="!erInnlogget()">
+
+    <app-skjemaer-login></app-skjemaer-login>
   </div>
 </body>

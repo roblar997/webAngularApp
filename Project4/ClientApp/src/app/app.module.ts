@@ -50,8 +50,7 @@ import { LogUtComponent } from './logUt/logUt.component';
     NgbModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: LoginComponent, pathMatch: 'full' },
-      { path: 'login', component: LoginComponent, pathMatch: 'full' },
+      { path: '', component: LugarComponent, pathMatch: 'full' },
       { path: 'lugar', component: LugarComponent, pathMatch: 'full' },
       { path: 'bruker', component: BrukerComponent, pathMatch: 'full' },
       { path: 'person', component: PersonComponent, pathMatch: 'full' },
