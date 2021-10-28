@@ -134,7 +134,28 @@
 
   <div class="container bg-white " style="width: 100vw; " >
     <table class="table table-striped">
+      <tr>
+        <td>betalingsId</td>
+        <td>kortnummer</td>
+        <td>utloper</td>
+        <td>postnr</td>
+        <td>poststed</td>
+        <td>telefon</td>
+        <td>adresse</td>
+        <td>poststed</td>
+        <td>telefon</td>
+        <td>adresse</td>
+        <td>email</td>
+        <td>csv</td>
+        <td>pris</td>
+        <td>
+          Endre
+        </td>
+        <td>
+          Slette
+        </td>
 
+      </tr>
       <tr *ngFor="let betaling of betalinger; let indexVal = index;">
         <td>{{betaling.betalingsId}}</td>
         <td>{{betaling.kortnummer}}</td>

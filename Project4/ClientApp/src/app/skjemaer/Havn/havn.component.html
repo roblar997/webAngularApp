@@ -44,8 +44,17 @@
   </form>
   <div class="container bg-white " style="width: 100vw; ">
     <table class="table table-striped">
-      havnId: number;
-      navn: string;
+      <tr>
+        <td>havnId</td>
+        <td>navn</td>
+        <td>
+          Endre
+        </td>
+        <td>
+          Slette
+        </td>
+
+      </tr>
       <tr *ngFor="let havn of havner; let indexVal = index;">
         <td>{{havn.havnId}}</td>
         <td>{{havn.navn}}</td>

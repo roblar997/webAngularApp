@@ -74,7 +74,21 @@
   </form>
   <div class="container bg-white " style="width: 100vw; ">
     <table class="table table-striped">
+      <tr>
+        <td>ruteId</td>
+        <td>fra</td>
+        <td>etternavn</td>
+        <td>til</td>
+        <td>prisVoksen</td>
+        <td>prisBarn</td>
+        <td>
+          Endre
+        </td>
+        <td>
+          Slette
+        </td>
 
+      </tr>
       <tr *ngFor="let rute of ruter; let indexVal = index;">
         <td>{{rute.ruteId}}</td>
         <td>{{rute.fra}}</td>

@@ -48,16 +48,17 @@ namespace webAppBillett.Contexts
 
 
 
-            modelBuilder.Entity<RuteForekomstDatoTid>().HasKey(table => new {
-                table.ruteId,
-                table.avgangsDato,
-                table.avgangsTid
-            });
+      modelBuilder.Entity<RuteForekomstDatoTid>().HasKey(table => new
+      {
+        table.ruteId,
+        table.avgangsDato,
+        table.avgangsTid
+      });
 
 
-            // base.OnModelCreating(modelBuilder);
+      // base.OnModelCreating(modelBuilder);
 
-        }
+    }
 
     }
 }
